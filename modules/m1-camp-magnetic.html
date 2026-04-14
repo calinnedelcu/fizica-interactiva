@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul 1: Campul Magnetic — Fizica Interactiva</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="progress-bar-top"></div>
+
+<nav class="top-nav">
+  <a href="../index.html" class="nav-logo">&#9889; Fizica Interactiva</a>
+  <div class="nav-modules">
+    <a class="nav-mod-link active" data-mod="1" href="m1-camp-magnetic.html">Camp Magnetic</a>
+    <a class="nav-mod-link" data-mod="2" href="m2-faraday-inductanta.html">Faraday &amp; Inductanta</a>
+    <a class="nav-mod-link" data-mod="3" href="m3-condensatorul.html">Condensatorul</a>
+    <a class="nav-mod-link" data-mod="4" href="m4-circuite-ca.html">Circuite CA</a>
+  </div>
+</nav>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">Campul Magnetic</div>
+    <a href="#intro" class="sidebar-link active" data-section="intro">
+      <span class="check"></span> Ce este campul magnetic?
+    </a>
+    <a href="#conductor" class="sidebar-link" data-section="conductor">
+      <span class="check"></span> Conductor rectiliniu
+    </a>
+    <a href="#solenoid" class="sidebar-link" data-section="solenoid">
+      <span class="check"></span> Solenoidul
+    </a>
+    <a href="#forta-conductor" class="sidebar-link" data-section="forta-conductor">
+      <span class="check"></span> Forta pe un conductor
+    </a>
+    <a href="#lorentz" class="sidebar-link" data-section="lorentz">
+      <span class="check"></span> Forta Lorentz
+    </a>
+    <a href="#exercitii" class="sidebar-link" data-section="exercitii">
+      <span class="check"></span> Exercitii rezolvate
+    </a>
+    <a href="#greseli" class="sidebar-link" data-section="greseli">
+      <span class="check"></span> Greseli comune
+    </a>
+    <a href="#quiz" class="sidebar-link" data-section="quiz">
+      <span class="check"></span> Quiz interactiv
+    </a>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<div class="main-content" data-module-id="m1">
+<div class="m1">
+
+<!-- ===================== SECTION 1: INTRO ===================== -->
+<div class="section" id="intro">
+  <div class="section-header">
+    <span class="section-num">1</span>
+    <h2>Ce este campul magnetic?</h2>
+  </div>
+
+  <div class="subsection">
+    <h3>Ideea de baza</h3>
+    <p class="explain">
+      Imagineaza-ti ca ai un magnet in mana. Simti cum atrage agrafe de birou fara sa le atingi — exista ceva <strong>invizibil</strong> in spatiul din jurul magnetului care actioneaza asupra obiectelor metalice. Acel „ceva" este <strong>campul magnetic</strong>.
+    </p>
+    <p class="explain">
+      In fizica, campul magnetic este descris printr-o marime vectoriala numita <strong>inductia magnetica</strong>, notata cu \(\vec{B}\). La fel cum campul gravitational descrie „influenta" Pamantului asupra obiectelor cu masa, campul magnetic descrie influenta magnetilor sau a curentilor electrici asupra sarcinilor electrice in miscare.
+    </p>
+
+    <div class="analogy">
+      <strong>Analogie:</strong> Gandeste-te la campul gravitational: Pamantul creeaza un camp gravitational \(\vec{g}\) in jurul sau, iar orice obiect cu masa simte o forta in acel camp. Similar, un magnet (sau un fir parcurs de curent) creeaza un camp magnetic \(\vec{B}\), iar orice sarcina in miscare sau alt curent simte o forta in acel camp. Diferenta fundamentala: campul gravitational actioneaza asupra masei, campul magnetic actioneaza asupra sarcinilor <em>in miscare</em>.
+    </div>
+
+    <p class="explain">
+      De ce e important? Fara campul magnetic nu ar exista motoare electrice, generatoare, transformatoare, difuzoare, hard-disk-uri, RMN-uri in medicina — practic, intreaga civilizatie moderna se bazeaza pe intelegerea acestui camp.
+    </p>
+  </div>
+
+  <div class="subsection">
+    <h3>Inductia magnetica \(\vec{B}\)</h3>
+    <p class="explain">
+      Inductia magnetica \(\vec{B}\) este vectorul care descrie <strong>cat de puternic</strong> si <strong>in ce directie</strong> actioneaza campul magnetic intr-un punct. Este analogul lui \(\vec{E}\) (campul electric) si \(\vec{g}\) (campul gravitational).
+    </p>
+
+    <div class="edu-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Magnet0873.png/400px-Magnet0873.png" alt="Linii de camp magnetic vizualizate cu pilitura de fier" loading="lazy">
+      <div class="edu-img-caption">Liniile de camp magnetic vizualizate cu pilitura de fier in jurul unui magnet</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Unitate de masura</div>
+      <div class="formula-math">
+        $$ [B] = 1 \; \text{T (Tesla)} = 1 \; \frac{\text{kg}}{\text{A} \cdot \text{s}^2} = 1 \; \frac{\text{Wb}}{\text{m}^2} $$
+      </div>
+      <div class="formula-desc">
+        <span>1 T = 10 000 G (Gauss)</span>
+        <span>Campul Pamantului ≈ 50 \(\mu\)T = 0,5 G</span>
+        <span>RMN medical ≈ 1,5 - 3 T</span>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>De retinut:</strong> Tesla (T) este unitatea SI a inductiei magnetice. In probleme mai vechi sau in geofizica vei intalni Gauss-ul (G). Conversia e simpla: <strong>1 T = 10 000 G</strong>. Campul Pamantului e de doar ~50 microtesla — deci 1 Tesla e un camp foarte puternic!
+    </p>
+    </div>
+
+    <p class="explain">
+      Un vector \(\vec{B}\) are trei proprietati: <strong>modul</strong> (cat de puternic e campul), <strong>directie</strong> (de-a lungul carei drepte actioneaza) si <strong>sens</strong> (in care parte a dreptei „arata" vectorul). In diagramele 2D, cand campul „iese" din pagina desenam un punct (ca varful unei sageti venind spre tine: \(\odot\)), iar cand „intra" in pagina desenam un X (ca penele unei sageti care se indeparteaza: \(\otimes\)).
+    </p>
+  </div>
+
+  <div class="subsection">
+    <h3>Permeabilitatea magnetica</h3>
+    <p class="explain">
+      Cat de bine „lasa" un material campul magnetic sa treaca prin el? Aceasta proprietate se numeste <strong>permeabilitate magnetica</strong>. In vid (sau aproximativ in aer), avem permeabilitatea vidului:
+    </p>
+
+    <div class="formula-card">
+      <div class="formula-label">Permeabilitatea vidului</div>
+      <div class="formula-math">
+        $$ \mu_0 = 4\pi \times 10^{-7} \; \text{H/m} \approx 1{,}257 \times 10^{-6} \; \text{H/m} $$
+      </div>
+      <div class="formula-desc">
+        <span>\(\mu_0\) — permeabilitatea vidului (constanta fundamentala)</span>
+        <span>H/m = Henry pe metru</span>
+      </div>
+    </div>
+
+    <p class="explain">
+      Intr-un material, permeabilitatea este:
+    </p>
+
+    <div class="formula-card">
+      <div class="formula-label">Permeabilitatea materialului</div>
+      <div class="formula-math">
+        $$ \mu = \mu_0 \cdot \mu_r $$
+      </div>
+      <div class="formula-desc">
+        <span>\(\mu_r\) — permeabilitatea relativa (adimensionala)</span>
+        <span>Aer: \(\mu_r \approx 1\)</span>
+        <span>Fier: \(\mu_r \approx\) 1 000 - 5 000</span>
+        <span>Feriti: \(\mu_r \approx\) 100 - 10 000</span>
+      </div>
+    </div>
+
+    <div class="analogy">
+      <strong>Analogie:</strong> Gandeste-te la \(\mu_r\) ca la un „multiplicator". Daca pui un miez de fier intr-un solenoid, campul magnetic creste de mii de ori fata de aer, pentru ca fierul are \(\mu_r\) foarte mare. E ca si cum ai pune o lupa care amplifica campul.
+    </div>
+
+    <div class="key-concept">
+      <h4>Rezumat: Ce am invatat?</h4>
+      <p>Campul magnetic este descris de vectorul \(\vec{B}\) (inductia magnetica), masurat in Tesla. E creat de sarcini in miscare (curenti) si de magneti permanenti. Permeabilitatea \(\mu = \mu_0 \mu_r\) ne spune cat de bine un material sustine campul magnetic.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 2: CONDUCTOR RECTILINIU ===================== -->
+<div class="section" id="conductor">
+  <div class="section-header">
+    <span class="section-num">2</span>
+    <h2>Conductorul rectiliniu infinit</h2>
+  </div>
+
+  <div class="subsection">
+    <h3>Formula campului magnetic</h3>
+    <p class="explain">
+      Un fir lung si drept, parcurs de un curent electric \(I\), creeaza un camp magnetic in jurul sau. Cum arata acest camp? Liniile de camp sunt <strong>cercuri concentrice</strong> centrate pe fir. Cu cat te indepartezi de fir, cu atat campul e mai slab.
+    </p>
+    <p class="explain">
+      Intuitia din legea Biot-Savart: fiecare bucatica mica de fir contribuie la campul total. Cand aduni (integrezi) toate contributiile de-a lungul firului infinit, obtii formula eleganta:
+    </p>
+
+    <div class="formula-card">
+      <div class="formula-label">Campul magnetic al conductorului rectiliniu</div>
+      <div class="formula-math">
+        $$ B = \frac{\mu_0 \, I}{2\pi \, r} $$
+      </div>
+      <div class="formula-desc">
+        <span>\(B\) — inductia magnetica (T)</span>
+        <span>\(I\) — intensitatea curentului (A)</span>
+        <span>\(r\) — distanta pana la fir (m)</span>
+        <span>\(\mu_0 = 4\pi \times 10^{-7}\) H/m</span>
+      </div>
+    </div>
+
+    <p class="explain">
+      Ce ne spune aceasta formula? Doua lucruri esentiale:
+    </p>
+    <ul class="explain" style="padding-left:1.2rem; margin-bottom:1rem;">
+      <li><strong>B este direct proportional cu I:</strong> Dublezi curentul → dublezi campul. Logic — mai mult curent inseamna mai multe sarcini in miscare, deci camp mai puternic.</li>
+      <li><strong>B scade ca \(1/r\):</strong> Dublezi distanta → campul se injumatateste. Campul „se imprastie" pe un cerc din ce in ce mai mare, deci se dilueaza.</li>
+    </ul>
+
+    <div class="analogy">
+      <strong>Analogie:</strong> E ca lumina de la un bec liniar: cu cat te indepartezi, cu atat primesti mai putina lumina pe unitatea de suprafata, exact proportional invers cu distanta (nu cu patratul distantei, ca la o sursa punctiforma!).
+    </div>
+
+    <div class="warning">
+      <strong>Atentie:</strong> In formula e \(2\pi r\), nu \(2\pi r^2\)! Campul scade ca \(1/r\), nu ca \(1/r^2\). Aceasta este o greseala frecventa. Motivul: campul se raspandeste pe un cerc (perimetru \(= 2\pi r\)), nu pe o sfera.
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Regula mainii drepte</h3>
+    <p class="explain">
+      Cum determinam directia si sensul campului? Folosim <strong>regula mainii drepte</strong>:
+    </p>
+    <p class="explain">
+      Tine degetul mare al mainii drepte in <strong>sensul curentului</strong> (directia de curgere a curentului conventional, de la + la -). Degetele curbare se vor inchide in jurul firului — <strong>sensul in care se curbeza degetele</strong> este sensul liniilor de camp magnetic.
+    </p>
+
+    <div class="edu-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Manoderecha.svg" alt="Regula mainii drepte pentru camp magnetic" loading="lazy">
+      <div class="edu-img-caption">Regula mainii drepte: degetul mare = curentul I, degetele infasurate = sensul campului B</div>
+    </div>
+
+    <div class="diagram">
+      <svg width="400" height="300" viewBox="0 0 400 300">
+        <!-- Wire (vertical) -->
+        <line x1="200" y1="30" x2="200" y2="270" stroke="#60a5fa" stroke-width="6" stroke-linecap="round"/>
+        <!-- Current arrow -->
+        <polygon points="200,30 192,55 208,55" fill="#60a5fa"/>
+        <text x="218" y="45" fill="#60a5fa" font-size="14" font-weight="bold">I</text>
+
+        <!-- Concentric field lines -->
+        <circle cx="200" cy="150" r="40" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.9"/>
+        <circle cx="200" cy="150" r="70" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+        <circle cx="200" cy="150" r="100" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.5"/>
+        <circle cx="200" cy="150" r="130" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.35"/>
+
+        <!-- Arrow on the innermost circle (counterclockwise = right hand rule with current going up) -->
+        <polygon points="160,147 160,140 152,150" fill="#a78bfa"/>
+        <polygon points="240,153 240,160 248,150" fill="#a78bfa"/>
+        <!-- second ring arrows -->
+        <polygon points="130,147 130,140 122,150" fill="#a78bfa" opacity="0.7"/>
+        <polygon points="270,153 270,160 278,150" fill="#a78bfa" opacity="0.7"/>
+
+        <!-- Labels -->
+        <text x="255" y="115" fill="#a78bfa" font-size="13" font-weight="600">Linii de camp B</text>
+        <text x="30" y="150" fill="#94a3b8" font-size="12">r</text>
+        <line x1="200" y1="150" x2="160" y2="150" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="165" y="170" fill="#94a3b8" font-size="11">r</text>
+
+        <!-- Cross section label -->
+        <text x="140" y="290" fill="#94a3b8" font-size="12" font-style="italic">Vedere laterala — curent in sus</text>
+      </svg>
+      <div class="diagram-caption">Liniile de camp magnetic in jurul unui conductor rectiliniu parcurs de curent. Campul scade cu distanta \(r\).</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Exemplu rezolvat</h3>
+    <div class="key-concept">
+      <h4>Problema:</h4>
+      <p>Un conductor rectiliniu lung este parcurs de un curent \(I = 5\) A. Calculeaza inductia magnetica \(B\) la distanta \(r = 10\) cm de conductor, in aer (\(\mu_r = 1\)).</p>
+    </div>
+
+    <div class="derivation">
+      <h4>Rezolvare</h4>
+      <div class="deriv-step">
+        <span class="deriv-num">1</span>
+        <span>Convertim unitatile: \(r = 10 \text{ cm} = 0{,}1 \text{ m}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">2</span>
+        <span>Aplicam formula: \(B = \dfrac{\mu_0 \, I}{2\pi \, r}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">3</span>
+        <span>Inlocuim: \(B = \dfrac{4\pi \times 10^{-7} \times 5}{2\pi \times 0{,}1}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">4</span>
+        <span>Simplificam \(\pi\): \(B = \dfrac{4 \times 10^{-7} \times 5}{2 \times 0{,}1} = \dfrac{20 \times 10^{-7}}{0{,}2}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">5</span>
+        <span>Rezultat: \(B = 10^{-5} \text{ T} = 10 \; \mu\text{T}\)</span>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>Intuitie:</strong> 10 microtesla — de ordinul campului magnetic al Pamantului! Un curent de 5 A la 10 cm distanta produce un camp comparabil cu cel terestru. Acum intelegi de ce busolele sunt sensibile la curentii electrici.
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 3: SOLENOID ===================== -->
+<div class="section" id="solenoid">
+  <div class="section-header">
+    <span class="section-num">3</span>
+    <h2>Solenoidul</h2>
+  </div>
+
+  <div class="subsection">
+    <h3>Ce este un solenoid?</h3>
+    <p class="explain">
+      Un solenoid este, pe scurt, un <strong>fir incolacit in spirala</strong> — adica multe spire de fir, asezate una langa alta, formand un cilindru. Cand curentul trece prin el, fiecare spira creeaza un camp magnetic. Toate aceste campuri se aduna (se suprapun) si rezultatul este un camp <strong>uniform si puternic in interiorul solenoidului</strong>.
+    </p>
+
+    <div class="analogy">
+      <strong>Analogie:</strong> Gandeste-te la un singur inel de fir — creeaza un camp slab. Acum pune 500 de inele unul langa altul. Campurile lor se aduna, ca mai multe becuri intr-un rand care impreuna lumineaza mult mai puternic decat unul singur. Acesta e principiul solenoidului.
+    </div>
+
+    <div class="edu-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/VFPt_Solenoid_correct2.svg" alt="Campul magnetic al unui solenoid" loading="lazy">
+      <div class="edu-img-caption">Campul magnetic al unui solenoid — uniform in interior, slab in exterior</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Formula campului interior</h3>
+
+    <div class="formula-card">
+      <div class="formula-label">Campul magnetic in interiorul solenoidului</div>
+      <div class="formula-math">
+        $$ B = \mu_0 \, n \, I = \mu_0 \, \frac{N}{\ell} \, I $$
+      </div>
+      <div class="formula-desc">
+        <span>\(N\) — numarul total de spire</span>
+        <span>\(\ell\) — lungimea solenoidului (m)</span>
+        <span>\(n = N/\ell\) — numarul de spire pe unitatea de lungime (spire/m)</span>
+        <span>\(I\) — intensitatea curentului (A)</span>
+      </div>
+    </div>
+
+    <p class="explain">
+      De ce apare \(N/\ell\) si nu doar \(N\)? Pentru ca ceea ce conteaza este <strong>densitatea de spire</strong>. Un solenoid cu 1000 de spire pe 10 cm produce un camp mult mai puternic decat unul cu 1000 de spire pe 10 m. E ca diferenta dintre o scrierea „inghesuita" si una „rara" — aceeasi cantitate de cerneala, dar concentrata pe un spatiu mai mic.
+    </p>
+
+    <div class="tip">
+      <strong>Observatie importanta:</strong> Campul in interior este <strong>uniform</strong> — are aceeasi valoare in orice punct din interiorul solenoidului (departe de capete). In exterior, campul este practic zero. Solenoidul este echivalentul magnetic al unui condensator plan — concentreaza campul intr-o regiune bine definita.
+    </div>
+
+    <p class="explain">
+      Daca solenoidul are un <strong>miez de material</strong> (fier, ferita etc.), formula devine:
+    </p>
+
+    <div class="formula-card">
+      <div class="formula-label">Cu miez magnetic</div>
+      <div class="formula-math">
+        $$ B = \mu_0 \, \mu_r \, n \, I $$
+      </div>
+      <div class="formula-desc">
+        <span>\(\mu_r\) — permeabilitatea relativa a miezului</span>
+        <span>Miez de fier (\(\mu_r \approx 2000\)): campul creste de 2000 de ori!</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Diagrama solenoidului</h3>
+
+    <div class="diagram">
+      <svg width="500" height="260" viewBox="0 0 500 260">
+        <!-- Solenoid body -->
+        <rect x="100" y="70" width="300" height="120" rx="5" fill="none" stroke="#2a3550" stroke-width="1" stroke-dasharray="5,5"/>
+
+        <!-- Coil turns -->
+        <g stroke="#60a5fa" stroke-width="2.5" fill="none">
+          <ellipse cx="120" cy="130" rx="8" ry="55"/>
+          <ellipse cx="150" cy="130" rx="8" ry="55"/>
+          <ellipse cx="180" cy="130" rx="8" ry="55"/>
+          <ellipse cx="210" cy="130" rx="8" ry="55"/>
+          <ellipse cx="240" cy="130" rx="8" ry="55"/>
+          <ellipse cx="270" cy="130" rx="8" ry="55"/>
+          <ellipse cx="300" cy="130" rx="8" ry="55"/>
+          <ellipse cx="330" cy="130" rx="8" ry="55"/>
+          <ellipse cx="360" cy="130" rx="8" ry="55"/>
+          <ellipse cx="380" cy="130" rx="8" ry="55"/>
+        </g>
+
+        <!-- Internal field lines (horizontal, uniform) -->
+        <g stroke="#34d399" stroke-width="1.5">
+          <line x1="95" y1="110" x2="405" y2="110"/>
+          <line x1="95" y1="130" x2="405" y2="130"/>
+          <line x1="95" y1="150" x2="405" y2="150"/>
+          <!-- Arrows -->
+          <polygon points="405,108 405,112 415,110" fill="#34d399"/>
+          <polygon points="405,128 405,132 415,130" fill="#34d399"/>
+          <polygon points="405,148 405,152 415,150" fill="#34d399"/>
+        </g>
+
+        <!-- External field lines (curved, weak) -->
+        <path d="M415,110 C460,110 470,50 250,30 C30,10 40,110 85,110" stroke="#34d399" stroke-width="1" fill="none" opacity="0.35" stroke-dasharray="4,4"/>
+        <path d="M415,150 C460,150 470,210 250,230 C30,250 40,150 85,150" stroke="#34d399" stroke-width="1" fill="none" opacity="0.35" stroke-dasharray="4,4"/>
+
+        <!-- Labels -->
+        <text x="220" y="25" fill="#34d399" font-size="13" font-weight="600" text-anchor="middle">B ≈ 0 (exterior)</text>
+        <text x="250" y="135" fill="#f8fafc" font-size="14" font-weight="bold" text-anchor="middle">B = uniform</text>
+
+        <!-- Length marker -->
+        <line x1="110" y1="210" x2="370" y2="210" stroke="#94a3b8" stroke-width="1"/>
+        <line x1="110" y1="205" x2="110" y2="215" stroke="#94a3b8" stroke-width="1"/>
+        <line x1="370" y1="205" x2="370" y2="215" stroke="#94a3b8" stroke-width="1"/>
+        <text x="240" y="225" fill="#94a3b8" font-size="12" text-anchor="middle">&#8467; (lungime)</text>
+
+        <!-- Current direction -->
+        <text x="30" y="135" fill="#60a5fa" font-size="13" font-weight="bold">I</text>
+        <path d="M50,130 C60,100 80,90 100,85" stroke="#60a5fa" stroke-width="1.5" fill="none" marker-end="url(#arrowBlue)"/>
+        <defs>
+          <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#60a5fa"/>
+          </marker>
+        </defs>
+      </svg>
+      <div class="diagram-caption">Solenoid cu linii de camp uniform in interior (verde). In exterior, campul este neglijabil.</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Exemplu rezolvat</h3>
+    <div class="key-concept">
+      <h4>Problema:</h4>
+      <p>Un solenoid are \(N = 500\) de spire, lungimea \(\ell = 25\) cm si este parcurs de un curent \(I = 2\) A. Calculeaza campul magnetic in interior (in aer).</p>
+    </div>
+
+    <div class="derivation">
+      <h4>Rezolvare</h4>
+      <div class="deriv-step">
+        <span class="deriv-num">1</span>
+        <span>Convertim: \(\ell = 25 \text{ cm} = 0{,}25 \text{ m}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">2</span>
+        <span>Calculam densitatea de spire: \(n = \dfrac{N}{\ell} = \dfrac{500}{0{,}25} = 2000 \text{ spire/m}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">3</span>
+        <span>Aplicam: \(B = \mu_0 \, n \, I = 4\pi \times 10^{-7} \times 2000 \times 2\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">4</span>
+        <span>\(B = 4\pi \times 10^{-7} \times 4000 = 16000\pi \times 10^{-7}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">5</span>
+        <span>\(B \approx 5{,}03 \times 10^{-3} \text{ T} \approx 5 \text{ mT}\)</span>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>Intuitie:</strong> 5 mT este de ~100 ori mai puternic decat campul Pamantului. Un solenoid modest, de 25 cm, cu 500 de spire, deja produce un camp semnificativ. Daca adaugi un miez de fier (\(\mu_r = 2000\)), obtii \(B \approx 10\) T — comparabil cu un RMN medical!
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 4: FORTA PE CONDUCTOR ===================== -->
+<div class="section" id="forta-conductor">
+  <div class="section-header">
+    <span class="section-num">4</span>
+    <h2>Forta pe un conductor parcurs de curent</h2>
+  </div>
+
+  <div class="subsection">
+    <h3>De unde apare forta?</h3>
+    <p class="explain">
+      Cand un conductor parcurs de curent se afla intr-un camp magnetic extern, apare o <strong>forta mecanica</strong> asupra conductorului. Acesta este principiul fundamental al <strong>motorului electric</strong> — curent + camp magnetic = miscare!
+    </p>
+    <p class="explain">
+      De ce? Curentul inseamna sarcini in miscare. Fiecare sarcina in miscare simte o forta in campul magnetic (forta Lorentz — vom vedea in sectiunea urmatoare). Cand aduni fortele pe toate sarcinile din conductor, obtii o forta macroscopica pe intreg firul.
+    </p>
+
+    <div class="analogy">
+      <strong>Analogie:</strong> Imagineaza-ti un furtun de apa (curentul) intr-o furtuna cu vant lateral (campul magnetic). Apa care curge prin furtun va fi impinsa lateral de vant, si furtunul insusi va fi deviat. Similar, „curentul" de electroni este „deviat" de campul magnetic, tragand conductorul cu el.
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Formula fortei</h3>
+
+    <div class="formula-card">
+      <div class="formula-label">Forta pe un conductor in camp magnetic</div>
+      <div class="formula-math">
+        $$ F = B \cdot I \cdot l \cdot \sin\alpha $$
+      </div>
+      <div class="formula-desc">
+        <span>\(F\) — forta (N)</span>
+        <span>\(B\) — inductia magnetica (T)</span>
+        <span>\(I\) — intensitatea curentului (A)</span>
+        <span>\(l\) — lungimea conductorului in camp (m)</span>
+        <span>\(\alpha\) — unghiul dintre conductor si \(\vec{B}\)</span>
+      </div>
+    </div>
+
+    <p class="explain">
+      Aceasta formula are o logica frumoasa:
+    </p>
+    <ul class="explain" style="padding-left:1.2rem; margin-bottom:1rem;">
+      <li><strong>Cand \(\alpha = 90°\)</strong> (conductor perpendicular pe camp): \(\sin 90° = 1\), deci \(F = BIl\) — <strong>forta maxima</strong>.</li>
+      <li><strong>Cand \(\alpha = 0°\)</strong> (conductor paralel cu campul): \(\sin 0° = 0\), deci \(F = 0\) — <strong>forta nula</strong>.</li>
+      <li>La unghiuri intermediare, forta e proportionala cu \(\sin\alpha\).</li>
+    </ul>
+
+    <div class="tip">
+      <strong>Intuitie:</strong> De ce \(\sin\alpha\)? Doar componenta curentului perpendiculara pe camp produce forta. Componenta paralela „aluneca" de-a lungul liniilor de camp fara efect. E ca atunci cand impingi o cutie pe podea: doar componenta orizontala a fortei o misca, componenta verticala apasa doar pe podea.
+    </div>
+
+    <p class="explain">
+      In forma vectoriala, formula se scrie: \(\vec{F} = I \, \vec{l} \times \vec{B}\), unde \(\vec{l}\) este vectorul lungime in sensul curentului, iar \(\times\) este produsul vectorial. Directia fortei este data de regula mainii stangi (sau echivalent, de produsul vectorial).
+    </p>
+  </div>
+
+  <div class="subsection">
+    <h3>Directia fortei — regula mainii stangi</h3>
+    <p class="explain">
+      Pentru a gasi directia fortei, foloseste <strong>regula mainii stangi</strong> (sau regula celor trei degete ale mainii drepte, in functie de conventie). O metoda simpla:
+    </p>
+    <p class="explain">
+      Cu mana stanga, orienteaza <strong>degetele intinse</strong> in sensul curentului \(I\), apoi <strong>curbeza-le</strong> in sensul lui \(\vec{B}\). <strong>Degetul mare</strong> (perpendicular pe palma) va indica sensul fortei \(\vec{F}\).
+    </p>
+
+    <div class="diagram">
+      <svg width="420" height="280" viewBox="0 0 420 280">
+        <!-- Magnetic field arrows (horizontal, pointing right) -->
+        <defs>
+          <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#34d399"/>
+          </marker>
+          <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#f87171"/>
+          </marker>
+          <marker id="arrowYellow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#fbbf24"/>
+          </marker>
+        </defs>
+
+        <!-- B field arrows -->
+        <line x1="30" y1="80" x2="390" y2="80" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+        <line x1="30" y1="130" x2="390" y2="130" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+        <line x1="30" y1="180" x2="390" y2="180" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+        <text x="395" y="135" fill="#34d399" font-size="16" font-weight="bold">B</text>
+
+        <!-- Conductor (vertical wire) -->
+        <line x1="210" y1="40" x2="210" y2="240" stroke="#60a5fa" stroke-width="5" stroke-linecap="round"/>
+        <!-- Current direction (downward) -->
+        <polygon points="210,240 203,215 217,215" fill="#60a5fa"/>
+        <text x="222" y="250" fill="#60a5fa" font-size="14" font-weight="bold">I</text>
+
+        <!-- Force arrow (out of page, shown as upward in diagram) -->
+        <line x1="210" y1="130" x2="210" y2="30" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrowYellow)" stroke-dasharray="8,4"/>
+        <text x="225" y="35" fill="#fbbf24" font-size="16" font-weight="bold">F</text>
+
+        <!-- Labels -->
+        <text x="50" y="60" fill="#34d399" font-size="12">Camp magnetic B (spre dreapta)</text>
+        <text x="80" y="265" fill="#60a5fa" font-size="12">Curent I (in jos)</text>
+        <text x="230" y="20" fill="#fbbf24" font-size="12">Forta F (in sus)</text>
+
+        <!-- Angle indicator -->
+        <text x="155" y="145" fill="#94a3b8" font-size="14">\u03b1=90\u00b0</text>
+      </svg>
+      <div class="diagram-caption">Conductor parcurs de curent (albastru) in camp magnetic uniform (verde). Forta (galben) este perpendiculara pe ambele.</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Exemplu rezolvat</h3>
+    <div class="key-concept">
+      <h4>Problema:</h4>
+      <p>Un conductor de lungime \(l = 20\) cm se afla intr-un camp magnetic uniform \(B = 0{,}5\) T. Prin conductor trece un curent \(I = 3\) A, perpendicular pe liniile de camp. Calculeaza forta care actioneaza asupra conductorului.</p>
+    </div>
+
+    <div class="derivation">
+      <h4>Rezolvare</h4>
+      <div class="deriv-step">
+        <span class="deriv-num">1</span>
+        <span>Convertim: \(l = 20 \text{ cm} = 0{,}2 \text{ m}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">2</span>
+        <span>Perpendicular pe camp inseamna \(\alpha = 90°\), deci \(\sin 90° = 1\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">3</span>
+        <span>Aplicam: \(F = B \cdot I \cdot l \cdot \sin\alpha = 0{,}5 \times 3 \times 0{,}2 \times 1\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">4</span>
+        <span>\(F = 0{,}3 \text{ N}\)</span>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>Intuitie:</strong> 0,3 N — cam cat greutatea a 3 grame (o moneda mica). Nu pare mult, dar intr-un motor electric ai sute de conductori, campuri puternice si bratul fortei e amplificat de rotatie. De aceea motoarele electrice sunt atat de eficiente!
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 5: FORTA LORENTZ ===================== -->
+<div class="section" id="lorentz">
+  <div class="section-header">
+    <span class="section-num">5</span>
+    <h2>Forta Lorentz</h2>
+  </div>
+
+  <div class="subsection">
+    <h3>Forta pe o sarcina in miscare</h3>
+    <p class="explain">
+      Am vazut ca un conductor parcurs de curent simte o forta in camp magnetic. Dar curentul e format din sarcini in miscare. Ce simte o <strong>singura sarcina</strong> care se misca prin camp magnetic? Raspunsul este <strong>forta Lorentz</strong>.
+    </p>
+
+    <div class="formula-card">
+      <div class="formula-label">Forta Lorentz (componenta magnetica)</div>
+      <div class="formula-math">
+        $$ F = q \cdot v \cdot B \cdot \sin\alpha $$
+      </div>
+      <div class="formula-desc">
+        <span>\(F\) — forta (N)</span>
+        <span>\(q\) — sarcina particulei (C)</span>
+        <span>\(v\) — viteza particulei (m/s)</span>
+        <span>\(B\) — inductia magnetica (T)</span>
+        <span>\(\alpha\) — unghiul dintre \(\vec{v}\) si \(\vec{B}\)</span>
+      </div>
+    </div>
+
+    <p class="explain">
+      Proprietati esentiale ale fortei Lorentz:
+    </p>
+    <ul class="explain" style="padding-left:1.2rem; margin-bottom:1rem;">
+      <li>Forta este intotdeauna <strong>perpendiculara</strong> pe viteza — nu accelereaza si nu franeze particula, doar ii schimba directia.</li>
+      <li>Daca \(\alpha = 0°\) (sarcina se misca paralel cu campul), forta este zero.</li>
+      <li>Daca \(\alpha = 90°\) (sarcina se misca perpendicular pe camp), forta e maxima.</li>
+      <li>Lucrul mecanic al fortei Lorentz este <strong>intotdeauna zero</strong> — forta nu modifica energia cinetica, doar directia.</li>
+    </ul>
+
+    <div class="analogy">
+      <strong>Analogie:</strong> E ca o masina care ia o curba pe un drum. Forta centripeta (aici, forta Lorentz) este mereu perpendiculara pe directia de mers. Nu accelereaza masina, doar o tine pe traiectorie circulara. Viteza (ca modul) ramane constanta, dar directia se schimba continuu.
+    </div>
+  </div>
+
+  <div class="edu-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Charged_particle_in_uniform_B_field.svg" alt="Traiectoria particulei incarcate in camp magnetic" loading="lazy">
+    <div class="edu-img-caption">Traiectoria circulara a unei particule incarcate in camp magnetic uniform</div>
+  </div>
+
+  <div class="subsection">
+    <h3>Miscarea circulara in camp magnetic</h3>
+    <p class="explain">
+      Cand o sarcina intra perpendicular intr-un camp magnetic uniform, forta Lorentz o deviaza continuu, rezultand o <strong>traiectorie circulara</strong>. Raza cercului se obtine egaland forta Lorentz cu forta centripeta:
+    </p>
+
+    <div class="derivation">
+      <h4>Derivare: raza traiectoriei</h4>
+      <div class="deriv-step">
+        <span class="deriv-num">1</span>
+        <span>Forta Lorentz (cu \(\alpha = 90°\)): \(F_L = qvB\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">2</span>
+        <span>Forta centripeta: \(F_c = \dfrac{mv^2}{r}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">3</span>
+        <span>Egaland: \(qvB = \dfrac{mv^2}{r}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">4</span>
+        <span>Simplificam \(v\) si rezolvam: \(r = \dfrac{mv}{qB}\)</span>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Raza traiectoriei circulare</div>
+      <div class="formula-math">
+        $$ r = \frac{m \cdot v}{q \cdot B} $$
+      </div>
+      <div class="formula-desc">
+        <span>\(m\) — masa particulei (kg)</span>
+        <span>\(v\) — viteza (m/s)</span>
+        <span>\(q\) — sarcina (C)</span>
+        <span>\(B\) — inductia magnetica (T)</span>
+      </div>
+    </div>
+
+    <p class="explain">
+      Ce ne spune aceasta formula? Particule mai grele sau mai rapide fac cercuri mai mari. Camp mai puternic sau sarcina mai mare inseamna cercuri mai mici (campul „strange" mai tare traiectoria).
+    </p>
+  </div>
+
+  <div class="subsection">
+    <h3>Perioada revolutiei — independenta de viteza!</h3>
+    <p class="explain">
+      Unul dintre cele mai surprinzatoare rezultate: perioada miscarii circulare (timpul pentru o rotatie completa) <strong>nu depinde de viteza</strong> particulei!
+    </p>
+
+    <div class="derivation">
+      <h4>Derivare: perioada</h4>
+      <div class="deriv-step">
+        <span class="deriv-num">1</span>
+        <span>Perimetrul cercului: \(C = 2\pi r = 2\pi \cdot \dfrac{mv}{qB}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">2</span>
+        <span>Perioada: \(T = \dfrac{C}{v} = \dfrac{2\pi m}{qB}\)</span>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Perioada revolutiei (ciclotron)</div>
+      <div class="formula-math">
+        $$ T = \frac{2\pi \, m}{q \, B} $$
+      </div>
+      <div class="formula-desc">
+        <span>Depinde doar de masa, sarcina si campul magnetic — <strong>nu de viteza!</strong></span>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>Intuitie:</strong> Cum e posibil ca perioada sa nu depinda de viteza? O particula rapida face un cerc mare (raza mare), dar o parcurge repede. O particula lenta face un cerc mic, dar il parcurge incet. Cele doua efecte se compenseaza perfect! Acest principiu sta la baza <strong>ciclotronului</strong> — un accelerator de particule inventat in 1930.
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Diagrama miscarii circulare</h3>
+    <div class="diagram">
+      <svg width="400" height="350" viewBox="0 0 400 350">
+        <!-- Magnetic field (into the page) -->
+        <g fill="#34d399" font-size="16" opacity="0.4">
+          <text x="30" y="40">&#10799;</text><text x="90" y="40">&#10799;</text><text x="150" y="40">&#10799;</text><text x="210" y="40">&#10799;</text><text x="270" y="40">&#10799;</text><text x="330" y="40">&#10799;</text>
+          <text x="30" y="90">&#10799;</text><text x="90" y="90">&#10799;</text><text x="150" y="90">&#10799;</text><text x="210" y="90">&#10799;</text><text x="270" y="90">&#10799;</text><text x="330" y="90">&#10799;</text>
+          <text x="30" y="140">&#10799;</text><text x="90" y="140">&#10799;</text><text x="150" y="140">&#10799;</text><text x="210" y="140">&#10799;</text><text x="270" y="140">&#10799;</text><text x="330" y="140">&#10799;</text>
+          <text x="30" y="190">&#10799;</text><text x="90" y="190">&#10799;</text><text x="150" y="190">&#10799;</text><text x="210" y="190">&#10799;</text><text x="270" y="190">&#10799;</text><text x="330" y="190">&#10799;</text>
+          <text x="30" y="240">&#10799;</text><text x="90" y="240">&#10799;</text><text x="150" y="240">&#10799;</text><text x="210" y="240">&#10799;</text><text x="270" y="240">&#10799;</text><text x="330" y="240">&#10799;</text>
+          <text x="30" y="290">&#10799;</text><text x="90" y="290">&#10799;</text><text x="150" y="290">&#10799;</text><text x="210" y="290">&#10799;</text><text x="270" y="290">&#10799;</text><text x="330" y="290">&#10799;</text>
+        </g>
+
+        <!-- Circular trajectory -->
+        <circle cx="200" cy="175" r="90" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+
+        <!-- Particle position -->
+        <circle cx="290" cy="175" r="7" fill="#fbbf24"/>
+        <text x="300" y="170" fill="#fbbf24" font-size="12" font-weight="bold">+q</text>
+
+        <!-- Velocity vector (tangent, upward at rightmost point) -->
+        <line x1="290" y1="175" x2="290" y2="115" stroke="#f87171" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+        <text x="296" y="110" fill="#f87171" font-size="14" font-weight="bold">v</text>
+
+        <!-- Force vector (centripetal, pointing left toward center) -->
+        <line x1="290" y1="175" x2="230" y2="175" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrowYellow)"/>
+        <text x="245" y="168" fill="#fbbf24" font-size="14" font-weight="bold">F</text>
+
+        <!-- Radius -->
+        <line x1="200" y1="175" x2="290" y2="175" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="240" y="195" fill="#94a3b8" font-size="13">r</text>
+
+        <!-- Center -->
+        <circle cx="200" cy="175" r="3" fill="#94a3b8"/>
+
+        <!-- Labels -->
+        <text x="70" y="320" fill="#34d399" font-size="12">&#10799; = B in pagina (perpendicular)</text>
+        <text x="100" y="340" fill="#94a3b8" font-size="12">Sarcina pozitiva se roteste in sens orar</text>
+      </svg>
+      <div class="diagram-caption">Miscarea circulara a unei sarcini pozitive in camp magnetic perpendicular (in pagina). Forta Lorentz (galben) actioneaza mereu spre centru.</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Exemplu rezolvat</h3>
+    <div class="key-concept">
+      <h4>Problema:</h4>
+      <p>Un electron (\(m = 9{,}1 \times 10^{-31}\) kg, \(q = 1{,}6 \times 10^{-19}\) C) se misca cu viteza \(v = 2 \times 10^{6}\) m/s perpendicular pe un camp magnetic \(B = 0{,}01\) T. Calculeaza raza traiectoriei circulare.</p>
+    </div>
+
+    <div class="derivation">
+      <h4>Rezolvare</h4>
+      <div class="deriv-step">
+        <span class="deriv-num">1</span>
+        <span>Folosim formula: \(r = \dfrac{mv}{qB}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">2</span>
+        <span>Inlocuim: \(r = \dfrac{9{,}1 \times 10^{-31} \times 2 \times 10^{6}}{1{,}6 \times 10^{-19} \times 0{,}01}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">3</span>
+        <span>Numarator: \(9{,}1 \times 2 \times 10^{-31+6} = 18{,}2 \times 10^{-25}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">4</span>
+        <span>Numitor: \(1{,}6 \times 10^{-19} \times 10^{-2} = 1{,}6 \times 10^{-21}\)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">5</span>
+        <span>\(r = \dfrac{18{,}2 \times 10^{-25}}{1{,}6 \times 10^{-21}} = 11{,}375 \times 10^{-4} \approx 1{,}14 \times 10^{-3} \text{ m} \approx 1{,}14 \text{ mm}\)</span>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>Intuitie:</strong> Un electron rapid (2 milioane m/s!) face un cerc de doar ~1 mm intr-un camp de 0,01 T. Electronii sunt foarte usori, deci campul ii curbeza puternic. Protonii, de ~2000 de ori mai grei, ar face un cerc de ~2 m in aceleasi conditii!
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 6: EXERCITII REZOLVATE ===================== -->
+<div class="section" id="exercitii">
+  <div class="section-header">
+    <span class="section-num">6</span>
+    <h2>Exercitii rezolvate</h2>
+  </div>
+
+  <!-- Ex 1 -->
+  <div class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-badge">Ex. 1</span>
+      <h4>Campul magnetic la distanta de un conductor (usor)</h4>
+    </div>
+    <div class="exercise-body">
+      <div class="given">
+        <strong>Date:</strong> Un conductor rectiliniu lung, parcurs de curentul \(I = 8\) A. Calculeaza \(B\) la distanta \(r = 4\) cm de conductor, in aer.
+      </div>
+
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 1: Convertim unitatile</div>
+        <div class="step-content">\(r = 4 \text{ cm} = 0{,}04 \text{ m}\)</div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 2: Scriem formula</div>
+        <div class="step-content">\(B = \dfrac{\mu_0 \, I}{2\pi \, r}\)</div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 3: Inlocuim valorile</div>
+        <div class="step-content">\(B = \dfrac{4\pi \times 10^{-7} \times 8}{2\pi \times 0{,}04} = \dfrac{32\pi \times 10^{-7}}{0{,}08\pi}\)</div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 4: Simplificam si calculam</div>
+        <div class="step-content">Simplificam \(\pi\): \(B = \dfrac{32 \times 10^{-7}}{0{,}08} = 400 \times 10^{-7} = 4 \times 10^{-5}\) T \(= 40 \; \mu\)T</div>
+      </div>
+
+      <button class="reveal-all-btn">Arata toti pasii</button>
+    </div>
+  </div>
+
+  <!-- Ex 2 -->
+  <div class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-badge">Ex. 2</span>
+      <h4>Campul in interiorul unui solenoid (usor)</h4>
+    </div>
+    <div class="exercise-body">
+      <div class="given">
+        <strong>Date:</strong> Solenoid cu \(N = 800\) spire, lungime \(\ell = 40\) cm, curent \(I = 1{,}5\) A, in aer.
+      </div>
+
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 1: Convertim si calculam n</div>
+        <div class="step-content">\(\ell = 0{,}4\) m. \(n = \dfrac{N}{\ell} = \dfrac{800}{0{,}4} = 2000\) spire/m</div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 2: Aplicam formula</div>
+        <div class="step-content">\(B = \mu_0 \, n \, I = 4\pi \times 10^{-7} \times 2000 \times 1{,}5\)</div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 3: Calculam</div>
+        <div class="step-content">\(B = 4\pi \times 10^{-7} \times 3000 = 12000\pi \times 10^{-7} \approx 3{,}77 \times 10^{-3}\) T \(\approx 3{,}77\) mT</div>
+      </div>
+
+      <button class="reveal-all-btn">Arata toti pasii</button>
+    </div>
+  </div>
+
+  <!-- Ex 3 -->
+  <div class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-badge">Ex. 3</span>
+      <h4>Doua fire paralele — campul la mijloc (mediu)</h4>
+    </div>
+    <div class="exercise-body">
+      <div class="given">
+        <strong>Date:</strong> Doua conductoare paralele, la distanta \(d = 20\) cm unul de altul. Primul poarta curentul \(I_1 = 6\) A (in sus), al doilea \(I_2 = 4\) A (in jos). Calculeaza \(B\) la mijlocul distantei dintre ele.
+      </div>
+
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 1: Distanta de la fiecare fir la punct</div>
+        <div class="step-content">Punctul de mijloc: \(r = d/2 = 0{,}1\) m de fiecare fir.</div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 2: Campul creat de fiecare fir</div>
+        <div class="step-content">
+          \(B_1 = \dfrac{\mu_0 \, I_1}{2\pi \, r} = \dfrac{4\pi \times 10^{-7} \times 6}{2\pi \times 0{,}1} = \dfrac{24 \times 10^{-7}}{0{,}2} = 12 \times 10^{-6}\) T \(= 12 \; \mu\)T<br><br>
+          \(B_2 = \dfrac{\mu_0 \, I_2}{2\pi \, r} = \dfrac{4\pi \times 10^{-7} \times 4}{2\pi \times 0{,}1} = \dfrac{16 \times 10^{-7}}{0{,}2} = 8 \times 10^{-6}\) T \(= 8 \; \mu\)T
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 3: Determinam directiile (regula mainii drepte)</div>
+        <div class="step-content">
+          Firul 1 (curent in sus): la dreapta firului (unde e punctul de mijloc), campul intra in pagina.<br>
+          Firul 2 (curent in jos): la stanga firului (unde e punctul de mijloc), campul tot intra in pagina.<br>
+          <strong>Ambele campuri au acelasi sens!</strong> Se aduna.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 4: Campul total</div>
+        <div class="step-content">\(B_{total} = B_1 + B_2 = 12 + 8 = 20 \; \mu\)T \(= 2 \times 10^{-5}\) T</div>
+      </div>
+
+      <button class="reveal-all-btn">Arata toti pasii</button>
+    </div>
+  </div>
+
+  <!-- Ex 4 -->
+  <div class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-badge">Ex. 4</span>
+      <h4>Forta pe un conductor in camp magnetic (mediu)</h4>
+    </div>
+    <div class="exercise-body">
+      <div class="given">
+        <strong>Date:</strong> Un conductor de lungime \(l = 50\) cm, parcurs de curentul \(I = 4\) A, se afla intr-un camp magnetic uniform \(B = 0{,}2\) T. Unghiul dintre conductor si directia campului este \(\alpha = 30°\). Calculeaza forta.
+      </div>
+
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 1: Convertim unitatile</div>
+        <div class="step-content">\(l = 50 \text{ cm} = 0{,}5 \text{ m}\)</div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 2: Aplicam formula</div>
+        <div class="step-content">\(F = B \cdot I \cdot l \cdot \sin\alpha = 0{,}2 \times 4 \times 0{,}5 \times \sin 30°\)</div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 3: Calculam</div>
+        <div class="step-content">\(\sin 30° = 0{,}5\), deci \(F = 0{,}2 \times 4 \times 0{,}5 \times 0{,}5 = 0{,}2\) N</div>
+      </div>
+
+      <button class="reveal-all-btn">Arata toti pasii</button>
+    </div>
+  </div>
+
+  <!-- Ex 5 -->
+  <div class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-badge">Ex. 5</span>
+      <h4>Forta Lorentz — raza traiectoriei unui proton (mediu)</h4>
+    </div>
+    <div class="exercise-body">
+      <div class="given">
+        <strong>Date:</strong> Un proton (\(m = 1{,}67 \times 10^{-27}\) kg, \(q = 1{,}6 \times 10^{-19}\) C) intra perpendicular intr-un camp magnetic \(B = 0{,}5\) T cu viteza \(v = 10^{7}\) m/s. Calculeaza raza traiectoriei si perioada revolutiei.
+      </div>
+
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 1: Raza traiectoriei</div>
+        <div class="step-content">
+          \(r = \dfrac{mv}{qB} = \dfrac{1{,}67 \times 10^{-27} \times 10^{7}}{1{,}6 \times 10^{-19} \times 0{,}5}\)
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 2: Calculam numaratorul si numitorul</div>
+        <div class="step-content">
+          Numarator: \(1{,}67 \times 10^{-20}\)<br>
+          Numitor: \(0{,}8 \times 10^{-19} = 8 \times 10^{-20}\)
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 3: Rezultat raza</div>
+        <div class="step-content">\(r = \dfrac{1{,}67 \times 10^{-20}}{8 \times 10^{-20}} = 0{,}209\) m \(\approx 20{,}9\) cm</div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 4: Perioada revolutiei</div>
+        <div class="step-content">
+          \(T = \dfrac{2\pi m}{qB} = \dfrac{2\pi \times 1{,}67 \times 10^{-27}}{1{,}6 \times 10^{-19} \times 0{,}5} = \dfrac{10{,}49 \times 10^{-27}}{8 \times 10^{-20}}\)<br><br>
+          \(T \approx 1{,}31 \times 10^{-7}\) s \(\approx 131\) ns
+        </div>
+      </div>
+
+      <button class="reveal-all-btn">Arata toti pasii</button>
+    </div>
+  </div>
+
+  <!-- Ex 6 -->
+  <div class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-badge">Ex. 6</span>
+      <h4>Combinat: solenoid + forta pe sarcina (dificil)</h4>
+    </div>
+    <div class="exercise-body">
+      <div class="given">
+        <strong>Date:</strong> Un solenoid cu \(N = 1000\) spire si lungime \(\ell = 50\) cm este parcurs de curentul \(I = 3\) A (in aer). Un electron (\(m = 9{,}1 \times 10^{-31}\) kg, \(q = 1{,}6 \times 10^{-19}\) C) intra in solenoid cu viteza \(v = 5 \times 10^{6}\) m/s, perpendicular pe axul solenoidului. Calculeaza: (a) campul magnetic in solenoid, (b) raza traiectoriei electronului, (c) perioada revolutiei.
+      </div>
+
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 1: Campul magnetic in solenoid</div>
+        <div class="step-content">
+          \(n = \dfrac{N}{\ell} = \dfrac{1000}{0{,}5} = 2000\) spire/m<br><br>
+          \(B = \mu_0 \, n \, I = 4\pi \times 10^{-7} \times 2000 \times 3 = 24000\pi \times 10^{-7}\)<br><br>
+          \(B \approx 7{,}54 \times 10^{-3}\) T \(\approx 7{,}54\) mT
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 2: Raza traiectoriei electronului</div>
+        <div class="step-content">
+          \(r = \dfrac{mv}{qB} = \dfrac{9{,}1 \times 10^{-31} \times 5 \times 10^{6}}{1{,}6 \times 10^{-19} \times 7{,}54 \times 10^{-3}}\)<br><br>
+          Numarator: \(45{,}5 \times 10^{-25} = 4{,}55 \times 10^{-24}\)<br>
+          Numitor: \(12{,}064 \times 10^{-22} = 1{,}2064 \times 10^{-21}\)<br><br>
+          \(r = \dfrac{4{,}55 \times 10^{-24}}{1{,}2064 \times 10^{-21}} \approx 3{,}77 \times 10^{-3}\) m \(\approx 3{,}77\) mm
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 3: Perioada revolutiei</div>
+        <div class="step-content">
+          \(T = \dfrac{2\pi m}{qB} = \dfrac{2\pi \times 9{,}1 \times 10^{-31}}{1{,}6 \times 10^{-19} \times 7{,}54 \times 10^{-3}}\)<br><br>
+          \(T = \dfrac{57{,}18 \times 10^{-31}}{1{,}2064 \times 10^{-21}} \approx 4{,}74 \times 10^{-9}\) s \(\approx 4{,}74\) ns
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">&#9654; Pasul 4: Interpretare</div>
+        <div class="step-content">
+          Electronul se roteste pe un cerc cu raza de ~3,8 mm, facand o rotatie la fiecare ~4,7 nanosecunde. Aceasta inseamna o frecventa de ~211 MHz — in domeniul undelor radio! Principiul este folosit in magnetroane (cuptoarele cu microunde).
+        </div>
+      </div>
+
+      <button class="reveal-all-btn">Arata toti pasii</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 7: GRESELI COMUNE ===================== -->
+<div class="section" id="greseli">
+  <div class="section-header">
+    <span class="section-num">7</span>
+    <h2>Greseli comune</h2>
+  </div>
+
+  <div class="mistakes-section">
+    <h3>&#9888;&#65039; Evita aceste greseli!</h3>
+
+    <div class="mistake-item">
+      <div class="wrong-way">&#10060; Confuzia intre formulele conductorului si solenoidului</div>
+      <div class="right-way">&#10004; Conductorul: \(B = \dfrac{\mu_0 I}{2\pi r}\) (depinde de distanta \(r\)). Solenoidul: \(B = \mu_0 n I\) (depinde de densitatea de spire \(n\), NU de distanta). Sunt formule complet diferite — nu le amesteca!</div>
+    </div>
+
+    <div class="mistake-item">
+      <div class="wrong-way">&#10060; Uitarea conversiei cm → m</div>
+      <div class="right-way">&#10004; Toate formulele din fizica functioneaza in unitati SI: metri, nu centimetri! \(r = 10\) cm \(= 0{,}1\) m. Aceasta este sursa #1 de erori la calcule. Fa INTOTDEAUNA conversia inainte de a inlocui in formula.</div>
+    </div>
+
+    <div class="mistake-item">
+      <div class="wrong-way">&#10060; Omiterea lui \(\sin\alpha\) cand unghiul nu este 90°</div>
+      <div class="right-way">&#10004; Formula completa este \(F = BIl\sin\alpha\) sau \(F = qvB\sin\alpha\). Cand \(\alpha = 90°\), \(\sin\alpha = 1\) si dispare din formula. Dar daca \(\alpha \ne 90°\), TREBUIE sa incluzi \(\sin\alpha\). La \(\alpha = 30°\), forta e doar jumatate din maxim!</div>
+    </div>
+
+    <div class="mistake-item">
+      <div class="wrong-way">&#10060; Confuzia intre directia campului si directia fortei</div>
+      <div class="right-way">&#10004; Forta magnetica este INTOTDEAUNA perpendiculara atat pe viteza (sau curent) cat si pe campul \(\vec{B}\). Nu este in directia campului! Foloseste regula mainii drepte/stangi sau produsul vectorial.</div>
+    </div>
+
+    <div class="mistake-item">
+      <div class="wrong-way">&#10060; Confuzia intre \(N\) (numar de spire) si \(n\) (densitate de spire)</div>
+      <div class="right-way">&#10004; \(n = N/\ell\). Daca ai un solenoid cu 500 de spire pe 25 cm, atunci \(n = 500/0{,}25 = 2000\) spire/m. Formula foloseste \(n\), nu \(N\)! Alternativ, poti folosi \(B = \mu_0 \cdot \dfrac{N}{\ell} \cdot I\).</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION 8: QUIZ ===================== -->
+<div class="section" id="quiz">
+  <div class="section-header">
+    <span class="section-num">8</span>
+    <h2>Quiz interactiv</h2>
+  </div>
+
+  <p class="explain" style="margin-bottom:1.5rem;">Testeaza-ti cunostintele! Ai 10 intrebari — un mix de alegere multipla si calcule numerice. Foloseste indiciile daca ai nevoie si verifica-ti solutiile pas cu pas.</p>
+
+  <div class="quiz-container" id="quiz-m1"></div>
+</div>
+
+</div><!-- .m1 -->
+</div><!-- .main-content -->
+
+<footer class="footer">
+  Fizica Interactiva — Modul 1: Campul Magnetic &middot; Teorie + Exemple + Quiz
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/quiz.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/math-init.js"></script>
+
+<script>
+quizInstances['quiz-m1'] = new Quiz('quiz-m1', [
+  {
+    type: 'mc',
+    text: 'Care este unitatea de masura SI a inductiei magnetice \\(\\vec{B}\\)?',
+    options: [
+      'Gauss (G)',
+      'Tesla (T)',
+      'Henry (H)',
+      'Weber (Wb)'
+    ],
+    correct: 1,
+    explanation: 'Tesla (T) este unitatea SI. Gauss este o unitate CGS mai veche (1 T = 10 000 G). Henry masoara inductanta, Weber masoara fluxul magnetic.',
+    hints: ['Gandeste-te la unitatile SI fundamentale.', 'Un camp de 1 T este foarte puternic — RMN-urile medicale folosesc 1,5 - 3 T.'],
+    solution: 'Unitatea SI a inductiei magnetice \\(B\\) este <strong>Tesla (T)</strong>. Relatia: \\(1 \\text{ T} = 1 \\frac{\\text{kg}}{\\text{A} \\cdot \\text{s}^2} = 1 \\frac{\\text{Wb}}{\\text{m}^2}\\). Gauss-ul este unitate CGS: \\(1 \\text{ T} = 10^4 \\text{ G}\\).'
+  },
+  {
+    type: 'numeric',
+    text: 'Un conductor rectiliniu lung este parcurs de curentul \\(I = 10\\) A. Calculeaza inductia magnetica \\(B\\) la distanta \\(r = 5\\) cm de conductor, in aer. Exprima rezultatul in microtesla (\\(\\mu\\)T).',
+    correct: 40,
+    unit: 'uT',
+    tolerance: 0.05,
+    explanation: 'B = mu_0 * I / (2 * pi * r) = 4 * pi * 1e-7 * 10 / (2 * pi * 0,05) = 40 * 1e-6 T = 40 uT.',
+    hints: ['Formula: \\(B = \\frac{\\mu_0 I}{2\\pi r}\\)', 'Nu uita sa convertesti: \\(r = 5\\) cm \\(= 0{,}05\\) m'],
+    solution: '\\(B = \\frac{4\\pi \\times 10^{-7} \\times 10}{2\\pi \\times 0{,}05} = \\frac{40 \\times 10^{-7}}{0{,}1} = 4 \\times 10^{-5}\\) T \\(= 40 \\; \\mu\\)T'
+  },
+  {
+    type: 'mc',
+    text: 'Campul magnetic in interiorul unui solenoid ideal (lung) este:',
+    options: [
+      'Neuniform — variaza de la un capat la altul',
+      'Zero — campul exista doar in exterior',
+      'Uniform — are aceeasi valoare in orice punct din interior',
+      'Radial — orientat de la centru spre exterior'
+    ],
+    correct: 2,
+    explanation: 'In interiorul unui solenoid ideal (infinit de lung), campul este uniform — are aceeasi magnitudine si directie in orice punct. In exterior, campul este practic zero.',
+    hints: ['Gandeste-te la ce se intampla cand suprapui campurile tuturor spirelor.', 'Solenoidul este echivalentul magnetic al condensatorului plan.'],
+    solution: 'Prin aplicarea legii lui Ampere pe un contur dreptunghiular, se demonstreaza ca \\(B\\) este constant in interior si zero in exterior. Campul este <strong>uniform</strong> si orientat de-a lungul axului solenoidului.'
+  },
+  {
+    type: 'numeric',
+    text: 'Un solenoid are 600 de spire pe o lungime de 30 cm si este parcurs de un curent de 2,5 A (in aer). Calculeaza campul magnetic in interior, in mT (militesla).',
+    correct: 6.28,
+    unit: 'mT',
+    tolerance: 0.05,
+    explanation: 'n = 600/0,3 = 2000 spire/m. B = 4*pi*1e-7 * 2000 * 2,5 = 6,28e-3 T = 6,28 mT.',
+    hints: ['Formula solenoid: \\(B = \\mu_0 \\cdot n \\cdot I\\)', 'Calculeaza mai intai \\(n = N/\\ell\\). Nu uita sa convertesti \\(\\ell\\) in metri!'],
+    solution: '\\(n = 600 / 0{,}3 = 2000\\) spire/m<br>\\(B = 4\\pi \\times 10^{-7} \\times 2000 \\times 2{,}5 = 20000\\pi \\times 10^{-7}\\)<br>\\(B \\approx 6{,}28 \\times 10^{-3}\\) T \\(= 6{,}28\\) mT'
+  },
+  {
+    type: 'mc',
+    text: 'Un conductor parcurs de curent este plasat paralel cu liniile de camp magnetic (\\(\\alpha = 0°\\)). Ce forta actioneaza asupra lui?',
+    options: [
+      '\\(F = BIl\\) (forta maxima)',
+      '\\(F = BIl/2\\) (jumatate din maxim)',
+      '\\(F = 0\\) (forta nula)',
+      'Depinde de lungimea conductorului'
+    ],
+    correct: 2,
+    explanation: 'Cand conductorul este paralel cu campul, alpha = 0 si sin(0) = 0, deci forta este zero. Doar componenta perpendiculara contribuie la forta.',
+    hints: ['Formula: \\(F = BIl \\sin\\alpha\\)', 'Ce valoare are \\(\\sin 0°\\)?'],
+    solution: '\\(F = BIl \\sin 0° = BIl \\times 0 = 0\\). Cand conductorul este paralel cu \\(\\vec{B}\\), nu exista componenta perpendiculara a curentului care sa genereze forta.'
+  },
+  {
+    type: 'numeric',
+    text: 'Un conductor de 40 cm se afla perpendicular pe un camp magnetic \\(B = 0{,}8\\) T si este parcurs de curentul \\(I = 5\\) A. Cat este forta (in N)?',
+    correct: 1.6,
+    unit: 'N',
+    tolerance: 0.03,
+    explanation: 'F = B * I * l * sin(90) = 0,8 * 5 * 0,4 * 1 = 1,6 N.',
+    hints: ['Perpendicular inseamna \\(\\alpha = 90°\\), deci \\(\\sin\\alpha = 1\\).', '\\(F = BIl = 0{,}8 \\times 5 \\times 0{,}4\\)'],
+    solution: '\\(l = 40\\) cm \\(= 0{,}4\\) m, \\(\\alpha = 90°\\)<br>\\(F = BIl\\sin 90° = 0{,}8 \\times 5 \\times 0{,}4 \\times 1 = 1{,}6\\) N'
+  },
+  {
+    type: 'mc',
+    text: 'Ce se intampla cu perioada de revolutie a unei particule incarcate in camp magnetic daca ii dublam viteza?',
+    options: [
+      'Perioada se dubleaza',
+      'Perioada se injumatateste',
+      'Perioada ramane aceeasi',
+      'Perioada creste de 4 ori'
+    ],
+    correct: 2,
+    explanation: 'Perioada T = 2*pi*m/(qB) NU depinde de viteza. Daca dublezi viteza, raza se dubleaza, dar particula parcurge cercul mai mare in acelasi timp. E un rezultat surprinzator!',
+    hints: ['Scrie formula perioadei: \\(T = \\frac{2\\pi m}{qB}\\).', 'Ce variabile apar in formula?'],
+    solution: '\\(T = \\frac{2\\pi m}{qB}\\) — formula nu contine \\(v\\)! Perioada depinde doar de masa \\(m\\), sarcina \\(q\\) si campul \\(B\\). Acest principiu sta la baza ciclotronului.'
+  },
+  {
+    type: 'numeric',
+    text: 'Un electron (\\(m = 9{,}1 \\times 10^{-31}\\) kg, \\(q = 1{,}6 \\times 10^{-19}\\) C) se misca cu \\(v = 4 \\times 10^{6}\\) m/s perpendicular pe un camp \\(B = 0{,}02\\) T. Cat este raza traiectoriei, in mm?',
+    correct: 1.14,
+    unit: 'mm',
+    tolerance: 0.05,
+    explanation: 'r = mv/(qB) = (9,1e-31 * 4e6) / (1,6e-19 * 0,02) = 3,64e-24 / 3,2e-21 = 1,14e-3 m = 1,14 mm.',
+    hints: ['Formula: \\(r = \\frac{mv}{qB}\\)', 'Calculeaza separat numaratorul si numitorul, apoi imparte.'],
+    solution: '\\(r = \\frac{mv}{qB} = \\frac{9{,}1 \\times 10^{-31} \\times 4 \\times 10^{6}}{1{,}6 \\times 10^{-19} \\times 0{,}02}\\)<br>\\(= \\frac{36{,}4 \\times 10^{-25}}{3{,}2 \\times 10^{-21}} = 11{,}375 \\times 10^{-4}\\) m<br>\\(\\approx 1{,}14\\) mm'
+  },
+  {
+    type: 'mc',
+    text: 'Regula mainii drepte pentru un conductor rectiliniu ne da:',
+    options: [
+      'Directia curentului, daca stim directia campului',
+      'Directia si sensul liniilor de camp magnetic in jurul firului',
+      'Magnitudinea campului magnetic',
+      'Forta pe conductor intr-un camp extern'
+    ],
+    correct: 1,
+    explanation: 'Regula mainii drepte (degetul mare = curent, degetele curbate = camp) ne arata directia si sensul liniilor de camp in jurul unui conductor rectiliniu.',
+    hints: ['Degetul mare indica curentul. Ce indica celelalte degete?', 'Aceasta regula e despre geometria campului, nu despre forte.'],
+    solution: 'Regula mainii drepte: <strong>degetul mare</strong> in sensul curentului \\(I\\), <strong>degetele curbate</strong> arata sensul liniilor de camp \\(\\vec{B}\\) (cercuri concentrice in jurul firului).'
+  },
+  {
+    type: 'mc',
+    text: 'Un solenoid fara miez produce campul \\(B_0\\). Daca introducem un miez de fier cu \\(\\mu_r = 3000\\), noul camp va fi:',
+    options: [
+      '\\(B_0 / 3000\\)',
+      '\\(B_0\\) (neschimbat)',
+      '\\(3000 \\cdot B_0\\)',
+      '\\(\\sqrt{3000} \\cdot B_0\\)'
+    ],
+    correct: 2,
+    explanation: 'Cu miez, B = mu_0 * mu_r * n * I = mu_r * B_0. Miezul de fier amplifica campul de mu_r ori. Cu mu_r = 3000, campul creste de 3000 de ori!',
+    hints: ['Formula cu miez: \\(B = \\mu_0 \\mu_r n I\\)', 'Compara cu formula fara miez: \\(B_0 = \\mu_0 n I\\)'],
+    solution: 'Fara miez: \\(B_0 = \\mu_0 n I\\)<br>Cu miez: \\(B = \\mu_0 \\mu_r n I = \\mu_r \\cdot B_0 = 3000 \\cdot B_0\\)<br>Miezul de fier amplifica campul de \\(\\mu_r = 3000\\) ori.'
+  }
+]);
+</script>
+
+</body>
+</html>

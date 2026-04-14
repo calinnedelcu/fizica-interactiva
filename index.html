@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fizica Interactiva — Oscilatii si Unde Electromagnetice</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="progress-bar-top"></div>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-logo">&#9889; Fizica Interactiva</a>
+  <div class="nav-modules">
+    <a class="nav-mod-link" data-mod="1" href="modules/m1-camp-magnetic.html">Camp Magnetic</a>
+    <a class="nav-mod-link" data-mod="2" href="modules/m2-faraday-inductanta.html">Faraday & Inductanta</a>
+    <a class="nav-mod-link" data-mod="3" href="modules/m3-condensatorul.html">Condensatorul</a>
+    <a class="nav-mod-link" data-mod="4" href="modules/m4-circuite-ca.html">Circuite CA</a>
+  </div>
+</nav>
+
+<div class="index-content">
+  <header class="hero">
+    <h1>Fizica Interactiva</h1>
+    <p>Oscilatii si Unde Electromagnetice — teorie, exemple rezolvate, quiz-uri interactive. Invata, nu memora.</p>
+  </header>
+
+  <div class="global-stats">
+    <div class="stat-card">
+      <div class="stat-value" id="overallProgress">0%</div>
+      <div class="stat-label">Progres total</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">4</div>
+      <div class="stat-label">Module</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">26+</div>
+      <div class="stat-label">Exercitii rezolvate</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">40+</div>
+      <div class="stat-label">Intrebari quiz</div>
+    </div>
+  </div>
+
+  <div class="modules-grid">
+    <a href="modules/m1-camp-magnetic.html" class="module-card" data-mod="1" data-total-sections="8">
+      <div class="module-num">MODUL 1</div>
+      <h3>Campul Magnetic</h3>
+      <p>Inductia magnetica B, conductor drept, solenoid, forta Lorentz, forta pe conductor. Cu exercitii si quiz.</p>
+      <div class="module-progress"><div class="module-progress-fill"></div></div>
+    </a>
+    <a href="modules/m2-faraday-inductanta.html" class="module-card" data-mod="2" data-total-sections="8">
+      <div class="module-num">MODUL 2</div>
+      <h3>Faraday & Inductanta</h3>
+      <p>Flux magnetic, legea lui Faraday, legea lui Lenz, inductanta L, energia campului magnetic.</p>
+      <div class="module-progress"><div class="module-progress-fill"></div></div>
+    </a>
+    <a href="modules/m3-condensatorul.html" class="module-card" data-mod="3" data-total-sections="8">
+      <div class="module-num">MODUL 3</div>
+      <h3>Condensatorul</h3>
+      <p>Camp electric, capacitate, condensator plan, serie si paralel, energie, dielectrici.</p>
+      <div class="module-progress"><div class="module-progress-fill"></div></div>
+    </a>
+    <a href="modules/m4-circuite-ca.html" class="module-card" data-mod="4" data-total-sections="10">
+      <div class="module-num">MODUL 4</div>
+      <h3>Circuite in Curent Alternativ</h3>
+      <p>Valori efective, defazaj, RL, RC, RLC serie, impedanta, reactante, rezonanta, puterea in CA.</p>
+      <div class="module-progress"><div class="module-progress-fill"></div></div>
+    </a>
+  </div>
+
+  <div class="tip" style="margin-top:2rem;">
+    <strong>Cum sa folosesti acest site:</strong> Parcurge fiecare modul in ordine. Citeste teoria, studiaza exemplele rezolvate pas cu pas, apoi testeaza-te cu quiz-ul. Progresul tau se salveaza automat in browser.
+  </div>
+</div>
+
+<footer class="footer">
+  Fizica Interactiva — 4 Module &middot; Teorie + Exemple + Quiz-uri &middot; Pregatire Test
+</footer>
+
+<script src="js/progress.js"></script>
+</body>
+</html>

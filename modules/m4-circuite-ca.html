@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulul 4: Circuite in Curent Alternativ | Fizica Interactiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-bar-top"></div>
+
+<!-- Top navigation -->
+<nav class="top-nav">
+  <a href="../index.html" class="nav-logo">&#9889; Fizica Interactiva</a>
+  <div class="nav-modules">
+    <a class="nav-mod-link" data-mod="1" href="m1-camp-magnetic.html">Camp Magnetic</a>
+    <a class="nav-mod-link" data-mod="2" href="m2-faraday-inductanta.html">Faraday &amp; Inductanta</a>
+    <a class="nav-mod-link" data-mod="3" href="m3-condensatorul.html">Condensatorul</a>
+    <a class="nav-mod-link active" data-mod="4" href="m4-circuite-ca.html">Circuite CA</a>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">Modulul 4 &mdash; Circuite CA</div>
+    <a class="sidebar-link active" href="#baza-ca" data-section="baza-ca">
+      <span class="check"></span> Curentul alternativ
+    </a>
+    <a class="sidebar-link" href="#valori-efective" data-section="valori-efective">
+      <span class="check"></span> Valori efective
+    </a>
+    <a class="sidebar-link" href="#defazaj" data-section="defazaj">
+      <span class="check"></span> Defazajul
+    </a>
+    <a class="sidebar-link" href="#circuit-rl" data-section="circuit-rl">
+      <span class="check"></span> Circuitul RL
+    </a>
+    <a class="sidebar-link" href="#circuit-rc" data-section="circuit-rc">
+      <span class="check"></span> Circuitul RC
+    </a>
+    <a class="sidebar-link" href="#circuit-rlc" data-section="circuit-rlc">
+      <span class="check"></span> Circuitul RLC serie
+    </a>
+    <a class="sidebar-link" href="#rezonanta" data-section="rezonanta">
+      <span class="check"></span> Rezonanta
+    </a>
+    <a class="sidebar-link" href="#putere" data-section="putere">
+      <span class="check"></span> Puterea in CA
+    </a>
+    <a class="sidebar-link" href="#exercitii" data-section="exercitii">
+      <span class="check"></span> Exercitii rezolvate
+    </a>
+    <a class="sidebar-link" href="#greseli" data-section="greseli">
+      <span class="check"></span> Greseli comune
+    </a>
+    <a class="sidebar-link" href="#quiz" data-section="quiz">
+      <span class="check"></span> Quiz interactiv
+    </a>
+  </div>
+</aside>
+
+<!-- Main content -->
+<main class="main-content">
+<div class="m4" data-module-id="m4">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Circuite in Curent Alternativ</h1>
+    <p>De la priza de acasa pana la rezonanta care face radioul sa functioneze &mdash; descopera fizica din spatele curentului alternativ.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 1: Curentul alternativ — baza -->
+  <!-- ============================================================ -->
+  <section class="section" id="baza-ca">
+    <div class="section-header">
+      <span class="section-num">4.1</span>
+      <h2>Curentul alternativ &mdash; baza</h2>
+    </div>
+
+    <p class="explain">
+      In viata de zi cu zi, curentul din priza nu curge mereu in aceeasi directie &mdash; el <strong>isi schimba sensul periodic</strong>. Asta e curentul alternativ (CA). Spre deosebire de curentul continuu (CC) de la o baterie, unde electronii merg intr-o singura directie, in CA electronii "danseaza" inainte si inapoi de zeci de ori pe secunda.
+    </p>
+
+    <div class="analogy">
+      <strong>Analogie:</strong> Gandeste-te la valurile oceanului. Apa nu se deplaseaza permanent intr-o directie &mdash; urca si coboara. Dar valurile tot transporta energie! La fel face si curentul alternativ: isi schimba sensul, dar tot alimenteaza becuri, frigidere si telefoane.
+    </div>
+
+    <p class="explain">
+      Tensiunea alternativa variaza sinusoidal in timp. Formula fundamentala este:
+    </p>
+
+    <div class="edu-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Waveforms.svg" alt="Forme de unda sinusoidale" loading="lazy">
+      <div class="edu-img-caption">Forme de unda — sinusoidala (CA), in practica vizualizata pe osciloscop</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Tensiunea instantanee</div>
+      <div class="formula-math">
+        $$ u(t) = U_{max} \cdot \sin(\omega t) $$
+      </div>
+      <div class="formula-desc">
+        <span>\( u(t) \) = tensiunea la momentul \( t \)</span>
+        <span>\( U_{max} \) = tensiunea maxima (de varf)</span>
+        <span>\( \omega \) = pulsatia (viteza unghiulara)</span>
+      </div>
+    </div>
+
+    <p class="explain">
+      Curentul electric urmeaza o forma similara, dar poate fi <strong>decalat in timp</strong> fata de tensiune:
+    </p>
+
+    <div class="formula-card">
+      <div class="formula-label">Curentul instantaneu</div>
+      <div class="formula-math">
+        $$ i(t) = I_{max} \cdot \sin(\omega t + \varphi) $$
+      </div>
+      <div class="formula-desc">
+        <span>\( I_{max} \) = curentul maxim</span>
+        <span>\( \varphi \) = defazajul (cat de mult e decalat curentul fata de tensiune)</span>
+      </div>
+    </div>
+
+    <p class="explain">
+      Legaturile intre pulsatie, frecventa si perioada:
+    </p>
+
+    <div class="formula-card">
+      <div class="formula-label">Relatii fundamentale</div>
+      <div class="formula-math">
+        $$ \omega = 2\pi\nu \qquad T = \frac{1}{\nu} $$
+      </div>
+      <div class="formula-desc">
+        <span>\( \nu \) = frecventa [Hz]</span>
+        <span>\( T \) = perioada [s]</span>
+        <span>\( \omega \) = pulsatia [rad/s]</span>
+      </div>
+    </div>
+
+    <!-- SVG diagram: sinusoidal wave -->
+    <div class="diagram">
+      <svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;">
+        <!-- Axes -->
+        <line x1="50" y1="130" x2="570" y2="130" stroke="#94a3b8" stroke-width="1.5"/>
+        <line x1="50" y1="20" x2="50" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+        <!-- Arrow tips -->
+        <polygon points="570,130 560,125 560,135" fill="#94a3b8"/>
+        <polygon points="50,20 45,30 55,30" fill="#94a3b8"/>
+        <!-- Sine wave -->
+        <path d="M50,130 Q115,10 180,130 Q245,250 310,130 Q375,10 440,130 Q505,250 570,130" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+        <!-- Umax lines -->
+        <line x1="45" y1="30" x2="570" y2="30" stroke="#fbbf24" stroke-width="0.7" stroke-dasharray="6,4" opacity="0.4"/>
+        <line x1="45" y1="230" x2="570" y2="230" stroke="#fbbf24" stroke-width="0.7" stroke-dasharray="6,4" opacity="0.4"/>
+        <!-- Period bracket -->
+        <line x1="50" y1="248" x2="310" y2="248" stroke="#60a5fa" stroke-width="1.5"/>
+        <line x1="50" y1="243" x2="50" y2="253" stroke="#60a5fa" stroke-width="1.5"/>
+        <line x1="310" y1="243" x2="310" y2="253" stroke="#60a5fa" stroke-width="1.5"/>
+        <!-- Labels -->
+        <text x="35" y="35" fill="#fbbf24" font-size="13" font-weight="600" text-anchor="end">U_max</text>
+        <text x="35" y="235" fill="#fbbf24" font-size="13" font-weight="600" text-anchor="end">-U_max</text>
+        <text x="575" y="125" fill="#94a3b8" font-size="12">t</text>
+        <text x="30" y="18" fill="#94a3b8" font-size="12">u(t)</text>
+        <text x="165" y="245" fill="#60a5fa" font-size="13" font-weight="600" text-anchor="middle">T (perioada)</text>
+      </svg>
+      <div class="diagram-caption">Tensiunea alternativa sinusoidala: oscileaza intre +U_max si -U_max cu perioada T.</div>
+    </div>
+
+    <div class="key-concept">
+      <h4>In Romania</h4>
+      <p>
+        Reteaua electrica are frecventa \( \nu = 50 \text{ Hz} \) si tensiune eficace \( U = 230 \text{ V} \). Asta inseamna ca tensiunea de varf este \( U_{max} = 230\sqrt{2} \approx 325 \text{ V} \). Curentul isi schimba sensul de 100 de ori pe secunda (de 2 ori pe perioada, 50 perioade pe secunda)!
+      </p>
+    </div>
+
+    <div class="tip">
+      Perioada retelei electrice din Romania: \( T = \frac{1}{50} = 0{,}02 \text{ s} = 20 \text{ ms} \). In doar 20 de milisecunde, tensiunea face un ciclu complet &mdash; de la zero, la maxim, inapoi la zero, la minim, si iar la zero.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 2: Valori efective -->
+  <!-- ============================================================ -->
+  <section class="section" id="valori-efective">
+    <div class="section-header">
+      <span class="section-num">4.2</span>
+      <h2>Valori efective (RMS)</h2>
+    </div>
+
+    <p class="explain">
+      Cand zici "tensiunea la priza e 230 V", nu te referi la valoarea maxima &mdash; te referi la <strong>valoarea eficace</strong> (sau RMS &mdash; Root Mean Square). Asta e valoarea pe care o arata multimetrul tau.
+    </p>
+
+    <div class="analogy">
+      <strong>Analogie:</strong> Imagineaza-ti ca incalzesti apa cu un boiler electric. Valoarea eficace e tensiunea continua care ar produce <strong>aceeasi caldura</strong> in acelasi timp. E ca si cum ai compara efectul mediu al valurilor (curent alternativ) cu un curent constant de apa (curent continuu).
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Valorile maxime si eficace</div>
+      <div class="formula-math">
+        $$ U_{max} = U\sqrt{2} \qquad I_{max} = I\sqrt{2} $$
+      </div>
+      <div class="formula-desc">
+        <span>\( U \) = tensiunea eficace (RMS)</span>
+        <span>\( U_{max} \) = tensiunea de varf</span>
+        <span>Factorul \( \sqrt{2} \approx 1{,}414 \)</span>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>De ce sqrt(2)?</h3>
+      <p class="explain">
+        Valoarea eficace se obtine calculand media patratica a functiei sinusoidale pe o perioada. Matematic:
+      </p>
+      <div class="formula-card">
+        <div class="formula-label">Definitia RMS</div>
+        <div class="formula-math">
+          $$ U = \sqrt{\frac{1}{T}\int_0^T u^2(t)\, dt} = \frac{U_{max}}{\sqrt{2}} $$
+        </div>
+        <div class="formula-desc">
+          <span>Media lui \( \sin^2 \) pe o perioada completa este \( \frac{1}{2} \)</span>
+          <span>De aceea apare \( \sqrt{2} \) la numitor</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="key-concept">
+      <h4>Retine diferenta!</h4>
+      <p>
+        <strong>U (eficace/RMS)</strong> = ce arata multimetrul, ce scrie pe prize, ce folosesti in cele mai multe formule.<br>
+        <strong>U_max (de varf)</strong> = maximul real al undei. E mai mare cu factorul \( \sqrt{2} \).
+      </p>
+    </div>
+
+    <!-- Worked example -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EXEMPLU</span>
+        <h4>Priza din Romania</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Dat:</strong> Tensiunea eficace la priza: \( U = 230 \text{ V} \).<br>
+          <strong>Cerinta:</strong> Gaseste tensiunea maxima (de varf).
+        </div>
+        <div class="step revealed">
+          <div class="step-header">Pas 1: Aplicam formula</div>
+          <div class="step-content">
+            <p>
+              $$ U_{max} = U \cdot \sqrt{2} = 230 \cdot 1{,}414 \approx 325 \text{ V} $$
+            </p>
+            <p>Deci tensiunea oscileaza de fapt intre \( -325 \text{ V} \) si \( +325 \text{ V} \)! Multimetrul arata 230 V pentru ca asta e echivalentul energetic.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning">
+      Atentie! Cand lucrezi probleme, verifica mereu daca datele sunt in valori eficace sau maxime. Confuzia intre ele e una din cele mai frecvente greseli.
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 3: Defazajul -->
+  <!-- ============================================================ -->
+  <section class="section" id="defazaj">
+    <div class="section-header">
+      <span class="section-num">4.3</span>
+      <h2>Defazajul &#966;</h2>
+    </div>
+
+    <p class="explain">
+      In curent continuu, tensiunea si curentul sunt mereu "sincronizate". Dar in curent alternativ, componentele din circuit pot face ca <strong>curentul sa nu atinga maximul in acelasi moment cu tensiunea</strong>. Acest decalaj in timp se numeste <strong>defazaj</strong> si se noteaza cu \( \varphi \) (phi).
+    </p>
+
+    <div class="analogy">
+      <strong>Analogie:</strong> Imagineaza-ti doi dansatori care fac aceeasi miscare, dar unul incepe cu o fractiune de secunda mai tarziu. Amandoi fac acelasi dans (aceeasi frecventa), dar nu sunt sincronizati &mdash; sunt defazati.
+    </div>
+
+    <div class="subsection">
+      <h3>Pe rezistor (R): fara defazaj</h3>
+      <p class="explain">
+        Pe un rezistor ideal, tensiunea si curentul variaza exact in acelasi ritm. Cand tensiunea creste, curentul creste. Cand tensiunea e zero, curentul e zero. <strong>Defazajul este \( \varphi = 0 \)</strong>.
+      </p>
+      <p class="explain">
+        De ce? Rezistorul nu "stocheaza" energie &mdash; reactioneaza instantaneu la tensiune.
+      </p>
+    </div>
+
+    <div class="subsection">
+      <h3>Pe bobina (L): curentul intarzie</h3>
+      <p class="explain">
+        Bobina (inductorul) se opune schimbarilor de curent. Cand tensiunea creste brusc, bobina "rezista" si curentul creste mai incet. Rezultat: <strong>curentul intarzie dupa tensiune cu \( \frac{\pi}{2} \)</strong> (un sfert de perioada).
+      </p>
+      <div class="formula-card">
+        <div class="formula-label">Defazaj pe bobina</div>
+        <div class="formula-math">
+          $$ \varphi = +\frac{\pi}{2} \quad \text{(curentul intarzie dupa tensiune)} $$
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Pe condensator (C): curentul o ia inainte</h3>
+      <p class="explain">
+        Condensatorul se incarca rapid la inceput (curent mare), apoi curentul scade pe masura ce se umple. Rezultat: <strong>curentul este in avans fata de tensiune cu \( \frac{\pi}{2} \)</strong>.
+      </p>
+      <div class="formula-card">
+        <div class="formula-label">Defazaj pe condensator</div>
+        <div class="formula-math">
+          $$ \varphi = -\frac{\pi}{2} \quad \text{(curentul e in avans fata de tensiune)} $$
+        </div>
+      </div>
+    </div>
+
+    <!-- SVG diagram: three sinusoids -->
+    <div class="diagram">
+      <svg viewBox="0 0 620 380" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;">
+        <!-- R: in phase -->
+        <text x="30" y="30" fill="#e2e8f0" font-size="13" font-weight="700">Pe R (in faza):</text>
+        <line x1="50" y1="75" x2="590" y2="75" stroke="#475569" stroke-width="0.8"/>
+        <path d="M50,75 Q140,15 230,75 Q320,135 410,75 Q500,15 590,75" fill="none" stroke="#fbbf24" stroke-width="2"/>
+        <path d="M50,75 Q140,15 230,75 Q320,135 410,75 Q500,15 590,75" fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="8,4"/>
+        <text x="595" y="60" fill="#fbbf24" font-size="11">u</text>
+        <text x="595" y="90" fill="#60a5fa" font-size="11">i</text>
+
+        <!-- L: current lags -->
+        <text x="30" y="155" fill="#e2e8f0" font-size="13" font-weight="700">Pe L (curentul intarzie):</text>
+        <line x1="50" y1="200" x2="590" y2="200" stroke="#475569" stroke-width="0.8"/>
+        <path d="M50,200 Q140,140 230,200 Q320,260 410,200 Q500,140 590,200" fill="none" stroke="#fbbf24" stroke-width="2"/>
+        <path d="M95,200 Q185,140 275,200 Q365,260 455,200 Q545,140 590,185" fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="8,4"/>
+        <text x="595" y="185" fill="#fbbf24" font-size="11">u</text>
+        <text x="595" y="215" fill="#60a5fa" font-size="11">i</text>
+        <text x="310" y="270" fill="#a78bfa" font-size="11" text-anchor="middle">i intarzie cu pi/2</text>
+
+        <!-- C: current leads -->
+        <text x="30" y="290" fill="#e2e8f0" font-size="13" font-weight="700">Pe C (curentul e in avans):</text>
+        <line x1="50" y1="335" x2="590" y2="335" stroke="#475569" stroke-width="0.8"/>
+        <path d="M50,335 Q140,275 230,335 Q320,395 410,335 Q500,275 590,335" fill="none" stroke="#fbbf24" stroke-width="2"/>
+        <path d="M5,350 Q95,275 185,335 Q275,395 365,335 Q455,275 545,335" fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="8,4"/>
+        <text x="595" y="320" fill="#fbbf24" font-size="11">u</text>
+        <text x="595" y="350" fill="#60a5fa" font-size="11">i</text>
+        <text x="310" y="375" fill="#34d399" font-size="11" text-anchor="middle">i e in avans cu pi/2</text>
+      </svg>
+      <div class="diagram-caption">Linia continua galbena = tensiunea u(t). Linia intrerupta albastra = curentul i(t). Pe R sunt in faza; pe L curentul intarzie; pe C curentul e in avans.</div>
+    </div>
+
+    <div class="key-concept">
+      <h4>Mnemonica: "ELI the ICE man"</h4>
+      <p>
+        <strong>ELI:</strong> pe inductor (L), E (tensiunea) este inaintea lui I (curentul) &mdash; curentul intarzie.<br>
+        <strong>ICE:</strong> pe condensator (C), I (curentul) este inaintea lui E (tensiunea) &mdash; curentul e in avans.
+      </p>
+    </div>
+
+    <div class="subsection">
+      <h3>Diagrama fazoriala (concept)</h3>
+      <p class="explain">
+        Un <strong>fazor</strong> este un vector care se roteste cu viteza unghiulara \( \omega \). Proiectia lui pe axa verticala da valoarea instantanee. Doua marimi defazate cu \( \varphi \) sunt reprezentate ca doi vectori care fac un unghi \( \varphi \) intre ei. Vom folosi aceasta reprezentare intens in sectiunile urmatoare!
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 4: Circuitul RL -->
+  <!-- ============================================================ -->
+  <section class="section" id="circuit-rl">
+    <div class="section-header">
+      <span class="section-num">4.4</span>
+      <h2>Circuitul RL</h2>
+    </div>
+
+    <p class="explain">
+      Un circuit RL contine un rezistor (R) si o bobina (L) in serie, alimentate de o sursa de curent alternativ. Bobina introduce un efect nou: <strong>reactanta inductiva</strong> &mdash; o "rezistenta" care depinde de frecventa.
+    </p>
+
+    <div class="subsection">
+      <h3>Reactanta inductiva</h3>
+      <div class="formula-card">
+        <div class="formula-label">Reactanta inductiva</div>
+        <div class="formula-math">
+          $$ X_L = \omega L = 2\pi\nu L $$
+        </div>
+        <div class="formula-desc">
+          <span>\( X_L \) = reactanta inductiva [\( \Omega \)]</span>
+          <span>\( L \) = inductanta [H]</span>
+          <span>\( \nu \) = frecventa [Hz]</span>
+        </div>
+      </div>
+
+      <p class="explain">
+        Observa: <strong>\( X_L \) creste cu frecventa!</strong> Cu cat semnalul variaza mai repede, cu atat bobina se opune mai mult. La curent continuu (\( \omega = 0 \)), \( X_L = 0 \) &mdash; bobina e doar un fir. La frecvente mari, bobina blocheaza semnalul aproape complet.
+      </p>
+
+      <div class="analogy">
+        <strong>Analogie:</strong> Bobina e ca un gard impotriva schimbarilor rapide. Un curent lent trece usor. Un curent care se schimba foarte repede e oprit.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Impedanta circuitului RL</h3>
+      <p class="explain">
+        In CA, nu putem aduna pur si simplu R si \( X_L \), pentru ca tensiunile pe ele sunt defazate (una pe R e in faza cu curentul, cea pe L intarzie cu \( \pi/2 \)). Le combinam cu teorema lui Pitagora:
+      </p>
+
+      <div class="formula-card">
+        <div class="formula-label">Impedanta RL</div>
+        <div class="formula-math">
+          $$ Z = \sqrt{R^2 + X_L^2} $$
+        </div>
+        <div class="formula-desc">
+          <span>\( Z \) = impedanta (analog "rezistentei totale") [\( \Omega \)]</span>
+        </div>
+      </div>
+
+      <div class="formula-card">
+        <div class="formula-label">Legea lui Ohm generalizata</div>
+        <div class="formula-math">
+          $$ U = Z \cdot I $$
+        </div>
+        <div class="formula-desc">
+          <span>Exact ca \( U = RI \), dar cu impedanta Z in loc de R</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Defazajul in circuitul RL</h3>
+      <div class="formula-card">
+        <div class="formula-label">Defazaj RL</div>
+        <div class="formula-math">
+          $$ \tan\varphi = \frac{X_L}{R} \qquad \varphi > 0 \text{ (circuit inductiv)} $$
+        </div>
+        <div class="formula-desc">
+          <span>Curentul intarzie dupa tensiune (comportament inductiv)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SVG phasor diagram RL -->
+    <div class="diagram">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;">
+        <!-- Axes -->
+        <line x1="60" y1="220" x2="360" y2="220" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="60" y1="280" x2="60" y2="30" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+        <!-- R*I (horizontal) -->
+        <line x1="60" y1="220" x2="260" y2="220" stroke="#34d399" stroke-width="3"/>
+        <polygon points="260,220 250,215 250,225" fill="#34d399"/>
+        <text x="160" y="245" fill="#34d399" font-size="13" font-weight="600" text-anchor="middle">R&#183;I = U_R</text>
+        <!-- X_L*I (vertical up) -->
+        <line x1="260" y1="220" x2="260" y2="80" stroke="#a78bfa" stroke-width="3"/>
+        <polygon points="260,80 255,90 265,90" fill="#a78bfa"/>
+        <text x="290" y="150" fill="#a78bfa" font-size="13" font-weight="600">X_L&#183;I = U_L</text>
+        <!-- U = hypotenuse -->
+        <line x1="60" y1="220" x2="260" y2="80" stroke="#fbbf24" stroke-width="3"/>
+        <polygon points="260,80 253,92 263,96" fill="#fbbf24"/>
+        <text x="140" y="140" fill="#fbbf24" font-size="14" font-weight="700">U = Z&#183;I</text>
+        <!-- Angle phi -->
+        <path d="M100,220 A40,40 0 0,0 88,195" fill="none" stroke="#f87171" stroke-width="2"/>
+        <text x="105" y="200" fill="#f87171" font-size="13" font-weight="600">&#966;</text>
+        <!-- Dashed projection -->
+        <line x1="260" y1="80" x2="260" y2="220" stroke="#475569" stroke-width="0.8" stroke-dasharray="3,3"/>
+      </svg>
+      <div class="diagram-caption">Diagrama fazoriala a circuitului RL: U_R pe orizontala, U_L pe verticala (in sus), U este ipotenuza. Unghiul phi este defazajul.</div>
+    </div>
+
+    <div class="tip">
+      "Triunghiul impedantelor" din diagrama de mai sus e cheia pentru orice circuit RL. R pe orizontala, X_L pe verticala, Z = ipotenuza.
+    </div>
+
+    <!-- Worked example -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EXEMPLU</span>
+        <h4>Circuit RL &mdash; calcule complete</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> \( R = 30 \text{ }\Omega \), \( L = 0{,}1 \text{ H} \), \( \nu = 50 \text{ Hz} \), \( U = 100 \text{ V} \).<br>
+          <strong>Cerinta:</strong> Gaseste \( X_L \), \( Z \), \( I \), \( \varphi \).
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 1: Calculam reactanta inductiva</div>
+          <div class="step-content">
+            $$ X_L = 2\pi\nu L = 2\pi \cdot 50 \cdot 0{,}1 = 10\pi \approx 31{,}4 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Calculam impedanta</div>
+          <div class="step-content">
+            $$ Z = \sqrt{R^2 + X_L^2} = \sqrt{30^2 + 31{,}4^2} = \sqrt{900 + 986} = \sqrt{1886} \approx 43{,}4 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 3: Calculam curentul</div>
+          <div class="step-content">
+            $$ I = \frac{U}{Z} = \frac{100}{43{,}4} \approx 2{,}3 \text{ A} $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 4: Calculam defazajul</div>
+          <div class="step-content">
+            $$ \tan\varphi = \frac{X_L}{R} = \frac{31{,}4}{30} \approx 1{,}047 $$
+            $$ \varphi = \arctan(1{,}047) \approx 46{,}3° $$
+            <p>Defazajul este pozitiv &mdash; circuitul e inductiv, curentul intarzie dupa tensiune cu ~46 de grade.</p>
+          </div>
+        </div>
+        <button class="reveal-all-btn">Arata toti pasii</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 5: Circuitul RC -->
+  <!-- ============================================================ -->
+  <section class="section" id="circuit-rc">
+    <div class="section-header">
+      <span class="section-num">4.5</span>
+      <h2>Circuitul RC</h2>
+    </div>
+
+    <p class="explain">
+      Circuitul RC contine un rezistor (R) si un condensator (C) in serie. Condensatorul introduce <strong>reactanta capacitiva</strong> &mdash; o "rezistenta" care scade cu frecventa (exact invers fata de bobina!).
+    </p>
+
+    <div class="subsection">
+      <h3>Reactanta capacitiva</h3>
+      <div class="formula-card">
+        <div class="formula-label">Reactanta capacitiva</div>
+        <div class="formula-math">
+          $$ X_C = \frac{1}{\omega C} = \frac{1}{2\pi\nu C} $$
+        </div>
+        <div class="formula-desc">
+          <span>\( X_C \) = reactanta capacitiva [\( \Omega \)]</span>
+          <span>\( C \) = capacitatea [F]</span>
+          <span>\( \nu \) = frecventa [Hz]</span>
+        </div>
+      </div>
+
+      <p class="explain">
+        Comportament crucial: <strong>\( X_C \) scade cand frecventa creste!</strong> Asta e exact opusul bobinei:
+      </p>
+      <ul class="explain" style="padding-left: 1.5rem; margin-bottom: 0.85rem;">
+        <li>La curent continuu (\( \omega \to 0 \)): \( X_C \to \infty \) &mdash; condensatorul <strong>blocheaza</strong> curentul continuu complet!</li>
+        <li>La frecvente mari (\( \omega \to \infty \)): \( X_C \to 0 \) &mdash; condensatorul lasa sa treaca semnalele de frecventa inalta.</li>
+      </ul>
+
+      <div class="analogy">
+        <strong>Analogie:</strong> Condensatorul e ca un burete. Un flux lent de apa (frecventa mica) il umple si se blocheaza. Un flux rapid (frecventa mare) trece aproape liber, pentru ca buretele nu are timp sa se sature.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Impedanta circuitului RC</h3>
+      <div class="formula-card">
+        <div class="formula-label">Impedanta RC</div>
+        <div class="formula-math">
+          $$ Z = \sqrt{R^2 + X_C^2} $$
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Defazajul in circuitul RC</h3>
+      <div class="formula-card">
+        <div class="formula-label">Defazaj RC</div>
+        <div class="formula-math">
+          $$ \tan\varphi = -\frac{X_C}{R} \qquad \varphi < 0 \text{ (circuit capacitiv)} $$
+        </div>
+        <div class="formula-desc">
+          <span>Curentul e in avans fata de tensiune (comportament capacitiv)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SVG phasor diagram RC -->
+    <div class="diagram">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;">
+        <!-- Axes -->
+        <line x1="60" y1="80" x2="360" y2="80" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="60" y1="20" x2="60" y2="280" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+        <!-- R*I (horizontal) -->
+        <line x1="60" y1="80" x2="260" y2="80" stroke="#34d399" stroke-width="3"/>
+        <polygon points="260,80 250,75 250,85" fill="#34d399"/>
+        <text x="160" y="70" fill="#34d399" font-size="13" font-weight="600" text-anchor="middle">R&#183;I = U_R</text>
+        <!-- X_C*I (vertical down) -->
+        <line x1="260" y1="80" x2="260" y2="220" stroke="#a78bfa" stroke-width="3"/>
+        <polygon points="260,220 255,210 265,210" fill="#a78bfa"/>
+        <text x="290" y="160" fill="#a78bfa" font-size="13" font-weight="600">X_C&#183;I = U_C</text>
+        <!-- U = hypotenuse -->
+        <line x1="60" y1="80" x2="260" y2="220" stroke="#fbbf24" stroke-width="3"/>
+        <polygon points="260,220 250,213 258,207" fill="#fbbf24"/>
+        <text x="138" y="170" fill="#fbbf24" font-size="14" font-weight="700">U = Z&#183;I</text>
+        <!-- Angle phi -->
+        <path d="M100,80 A40,40 0 0,1 88,105" fill="none" stroke="#f87171" stroke-width="2"/>
+        <text x="105" y="105" fill="#f87171" font-size="13" font-weight="600">&#966;</text>
+        <!-- Dashed projection -->
+        <line x1="260" y1="80" x2="260" y2="220" stroke="#475569" stroke-width="0.8" stroke-dasharray="3,3"/>
+      </svg>
+      <div class="diagram-caption">Diagrama fazoriala a circuitului RC: U_R pe orizontala, U_C in jos, U este ipotenuza. Unghiul phi este negativ (capacitiv).</div>
+    </div>
+
+    <!-- Worked example -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EXEMPLU</span>
+        <h4>Circuit RC &mdash; calcule complete</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> \( R = 40 \text{ }\Omega \), \( C = 100 \text{ }\mu\text{F} = 100 \times 10^{-6} \text{ F} \), \( \nu = 50 \text{ Hz} \), \( U = 120 \text{ V} \).<br>
+          <strong>Cerinta:</strong> Gaseste \( X_C \), \( Z \), \( I \), \( \varphi \).
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 1: Calculam reactanta capacitiva</div>
+          <div class="step-content">
+            $$ X_C = \frac{1}{2\pi\nu C} = \frac{1}{2\pi \cdot 50 \cdot 100 \times 10^{-6}} = \frac{1}{0{,}0314} \approx 31{,}8 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Calculam impedanta</div>
+          <div class="step-content">
+            $$ Z = \sqrt{R^2 + X_C^2} = \sqrt{40^2 + 31{,}8^2} = \sqrt{1600 + 1011} = \sqrt{2611} \approx 51{,}1 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 3: Calculam curentul</div>
+          <div class="step-content">
+            $$ I = \frac{U}{Z} = \frac{120}{51{,}1} \approx 2{,}35 \text{ A} $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 4: Calculam defazajul</div>
+          <div class="step-content">
+            $$ \tan\varphi = -\frac{X_C}{R} = -\frac{31{,}8}{40} = -0{,}795 $$
+            $$ \varphi = \arctan(-0{,}795) \approx -38{,}5° $$
+            <p>Defazajul e negativ &mdash; circuitul e capacitiv, curentul este in avans fata de tensiune cu ~38,5 de grade.</p>
+          </div>
+        </div>
+        <button class="reveal-all-btn">Arata toti pasii</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 6: Circuitul RLC serie -->
+  <!-- ============================================================ -->
+  <section class="section" id="circuit-rlc">
+    <div class="section-header">
+      <span class="section-num">4.6</span>
+      <h2>Circuitul RLC serie</h2>
+    </div>
+
+    <p class="explain">
+      Acum vine cazul general: un circuit cu <strong>rezistor, bobina si condensator in serie</strong>. Efectele inductorului (\( X_L \) in sus) si condensatorului (\( X_C \) in jos) se contracareaza partial. Impedanta totala depinde de diferenta lor.
+    </p>
+
+    <div class="edu-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/RLC_series_circuit_v1.svg" alt="Circuit RLC serie" loading="lazy">
+      <div class="edu-img-caption">Circuit RLC serie — rezistor, bobina si condensator conectate in serie</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Impedanta RLC serie</div>
+      <div class="formula-math">
+        $$ Z = \sqrt{R^2 + (X_L - X_C)^2} $$
+      </div>
+      <div class="formula-desc">
+        <span>\( X_L - X_C \) = reactanta neta (poate fi pozitiva sau negativa)</span>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Defazaj RLC serie</div>
+      <div class="formula-math">
+        $$ \tan\varphi = \frac{X_L - X_C}{R} $$
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Trei cazuri posibile</h3>
+      <p class="explain">
+        Comportamentul circuitului depinde de care reactanta "castiga":
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Conditie</th>
+            <th>Defazaj</th>
+            <th>Comportament</th>
+            <th>Descriere</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>\( X_L > X_C \)</td>
+            <td>\( \varphi > 0 \)</td>
+            <td>Inductiv</td>
+            <td>Bobina domina; curentul intarzie</td>
+          </tr>
+          <tr>
+            <td>\( X_C > X_L \)</td>
+            <td>\( \varphi < 0 \)</td>
+            <td>Capacitiv</td>
+            <td>Condensatorul domina; curentul e in avans</td>
+          </tr>
+          <tr>
+            <td>\( X_L = X_C \)</td>
+            <td>\( \varphi = 0 \)</td>
+            <td><strong>Rezonanta!</strong></td>
+            <td>Reactantele se anuleaza; \( Z = R \)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SVG phasor diagram RLC -->
+    <div class="diagram">
+      <svg viewBox="0 0 450 340" xmlns="http://www.w3.org/2000/svg" style="max-width:430px;">
+        <!-- Axes -->
+        <line x1="60" y1="180" x2="400" y2="180" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="60" y1="20" x2="60" y2="320" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+        <!-- R*I (horizontal) -->
+        <line x1="60" y1="180" x2="270" y2="180" stroke="#34d399" stroke-width="3"/>
+        <polygon points="270,180 260,175 260,185" fill="#34d399"/>
+        <text x="165" y="200" fill="#34d399" font-size="12" font-weight="600" text-anchor="middle">U_R = R&#183;I</text>
+        <!-- X_L*I (vertical up from endpoint) -->
+        <line x1="270" y1="180" x2="270" y2="80" stroke="#60a5fa" stroke-width="2.5"/>
+        <polygon points="270,80 265,90 275,90" fill="#60a5fa"/>
+        <text x="300" y="85" fill="#60a5fa" font-size="11" font-weight="600">U_L = X_L&#183;I</text>
+        <!-- X_C*I (vertical down from endpoint) -->
+        <line x1="270" y1="180" x2="270" y2="260" stroke="#a78bfa" stroke-width="2.5"/>
+        <polygon points="270,260 265,250 275,250" fill="#a78bfa"/>
+        <text x="300" y="260" fill="#a78bfa" font-size="11" font-weight="600">U_C = X_C&#183;I</text>
+        <!-- Net reactive = (X_L - X_C)*I (this case: X_L > X_C, net up) -->
+        <line x1="270" y1="180" x2="270" y2="110" stroke="#f87171" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="308" y="150" fill="#f87171" font-size="10">(X_L-X_C)&#183;I</text>
+        <!-- U = hypotenuse -->
+        <line x1="60" y1="180" x2="270" y2="110" stroke="#fbbf24" stroke-width="3"/>
+        <polygon points="270,110 262,119 268,124" fill="#fbbf24"/>
+        <text x="145" y="133" fill="#fbbf24" font-size="14" font-weight="700">U = Z&#183;I</text>
+        <!-- Angle phi -->
+        <path d="M105,180 A45,45 0 0,0 97,162" fill="none" stroke="#f87171" stroke-width="2"/>
+        <text x="112" y="166" fill="#f87171" font-size="13" font-weight="600">&#966;</text>
+      </svg>
+      <div class="diagram-caption">Diagrama fazoriala RLC: U_L in sus (albastru), U_C in jos (violet). Diferenta lor da reactanta neta. U (galben) este ipotenuza triunghiului format cu U_R.</div>
+    </div>
+
+    <div class="subsection">
+      <h3>Tabel rezumativ: toate tipurile de circuite</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Circuit</th>
+            <th>Impedanta Z</th>
+            <th>Defazaj tan(&#966;)</th>
+            <th>Semnul lui &#966;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>R pur</td>
+            <td>\( R \)</td>
+            <td>0</td>
+            <td>\( \varphi = 0 \)</td>
+          </tr>
+          <tr>
+            <td>RL</td>
+            <td>\( \sqrt{R^2 + X_L^2} \)</td>
+            <td>\( X_L / R \)</td>
+            <td>\( \varphi > 0 \)</td>
+          </tr>
+          <tr>
+            <td>RC</td>
+            <td>\( \sqrt{R^2 + X_C^2} \)</td>
+            <td>\( -X_C / R \)</td>
+            <td>\( \varphi < 0 \)</td>
+          </tr>
+          <tr>
+            <td>RLC</td>
+            <td>\( \sqrt{R^2 + (X_L - X_C)^2} \)</td>
+            <td>\( (X_L - X_C)/R \)</td>
+            <td>depinde</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Worked example RLC -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EXEMPLU</span>
+        <h4>Circuit RLC serie complet</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> \( R = 50 \text{ }\Omega \), \( L = 0{,}2 \text{ H} \), \( C = 50 \text{ }\mu\text{F} \), \( \nu = 50 \text{ Hz} \), \( U = 200 \text{ V} \).<br>
+          <strong>Cerinta:</strong> Gaseste \( X_L, X_C, Z, I, \varphi \).
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 1: Reactanta inductiva</div>
+          <div class="step-content">
+            $$ X_L = 2\pi \cdot 50 \cdot 0{,}2 = 20\pi \approx 62{,}8 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Reactanta capacitiva</div>
+          <div class="step-content">
+            $$ X_C = \frac{1}{2\pi \cdot 50 \cdot 50 \times 10^{-6}} = \frac{1}{0{,}01571} \approx 63{,}7 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 3: Reactanta neta si impedanta</div>
+          <div class="step-content">
+            $$ X_L - X_C = 62{,}8 - 63{,}7 = -0{,}9 \text{ }\Omega $$
+            $$ Z = \sqrt{50^2 + (-0{,}9)^2} = \sqrt{2500 + 0{,}81} \approx 50{,}01 \text{ }\Omega $$
+            <p>Aproape de rezonanta! Reactantele aproape se anuleaza, asa ca \( Z \approx R \).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 4: Curentul</div>
+          <div class="step-content">
+            $$ I = \frac{U}{Z} = \frac{200}{50{,}01} \approx 4{,}0 \text{ A} $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 5: Defazajul</div>
+          <div class="step-content">
+            $$ \tan\varphi = \frac{X_L - X_C}{R} = \frac{-0{,}9}{50} = -0{,}018 $$
+            $$ \varphi \approx -1° $$
+            <p>Defazajul e aproape zero si usor negativ &mdash; circuitul e foarte aproape de rezonanta, cu un caracter usor capacitiv (deoarece \( X_C > X_L \) cu doar 0,9 ohmi).</p>
+          </div>
+        </div>
+        <button class="reveal-all-btn">Arata toti pasii</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 7: Rezonanta -->
+  <!-- ============================================================ -->
+  <section class="section" id="rezonanta">
+    <div class="section-header">
+      <span class="section-num">4.7</span>
+      <h2>Rezonanta</h2>
+    </div>
+
+    <p class="explain">
+      Rezonanta este unul dintre cele mai spectaculoase fenomene din circuitele CA. Apare cand <strong>reactanta inductiva devine exact egala cu reactanta capacitiva</strong>, si efectele lor se anuleaza reciproc complet.
+    </p>
+
+    <div class="edu-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Resonance.PNG" alt="Curba de rezonanta" loading="lazy">
+      <div class="edu-img-caption">Curba de rezonanta — curentul atinge maximul la frecventa de rezonanta</div>
+    </div>
+
+    <div class="subsection">
+      <h3>Conditia de rezonanta</h3>
+      <div class="formula-card">
+        <div class="formula-label">Conditia de rezonanta</div>
+        <div class="formula-math">
+          $$ X_L = X_C \implies \omega_0 L = \frac{1}{\omega_0 C} $$
+        </div>
+      </div>
+
+      <p class="explain">
+        Din aceasta conditie, putem gasi frecventa la care apare rezonanta &mdash; <strong>formula lui Thomson</strong>:
+      </p>
+
+      <div class="formula-card">
+        <div class="formula-label">Formula lui Thomson</div>
+        <div class="formula-math">
+          $$ \nu_0 = \frac{1}{2\pi\sqrt{LC}} $$
+        </div>
+        <div class="formula-desc">
+          <span>\( \nu_0 \) = frecventa de rezonanta [Hz]</span>
+          <span>\( L \) = inductanta [H]</span>
+          <span>\( C \) = capacitatea [F]</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Ce se intampla la rezonanta?</h3>
+      <p class="explain">Lucruri remarcabile:</p>
+      <ul class="explain" style="padding-left: 1.5rem; margin-bottom: 0.85rem;">
+        <li><strong>Impedanta e minima:</strong> \( Z = R \) (reactantele s-au anulat complet)</li>
+        <li><strong>Curentul e maxim:</strong> \( I = U/R \) (valoarea cea mai mare posibila)</li>
+        <li><strong>Defazajul e zero:</strong> \( \varphi = 0 \) (tensiunea si curentul sunt in faza, ca pe un rezistor pur)</li>
+        <li><strong>Tensiunile pe L si C pot fi ENORME</strong> (mult mai mari decat tensiunea sursei!), dar se anuleaza reciproc</li>
+      </ul>
+
+      <div class="analogy">
+        <strong>Analogie:</strong> Rezonanta e ca atunci cand impingi un copil pe leagan. Daca impingi la frecventa potrivita (frecventa naturala a leaganului), amplitudinea creste enorm cu efort minim. Daca impingi la frecventa gresita, efectul e mic. Circuitul "leagana" energia intre bobina (camp magnetic) si condensator (camp electric), iar la frecventa de rezonanta, transferul e perfect.
+      </div>
+    </div>
+
+    <!-- SVG diagram: I vs frequency curve -->
+    <div class="diagram">
+      <svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" style="max-width:480px;">
+        <!-- Axes -->
+        <line x1="60" y1="240" x2="460" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+        <line x1="60" y1="240" x2="60" y2="30" stroke="#94a3b8" stroke-width="1.5"/>
+        <polygon points="460,240 450,235 450,245" fill="#94a3b8"/>
+        <polygon points="60,30 55,40 65,40" fill="#94a3b8"/>
+        <!-- Labels -->
+        <text x="470" y="245" fill="#94a3b8" font-size="13">&#957;</text>
+        <text x="40" y="30" fill="#94a3b8" font-size="13">I</text>
+        <!-- Resonance curve (sharp peak) -->
+        <path d="M80,235 Q120,230 160,225 Q200,210 220,180 Q235,140 245,60 Q250,45 255,60 Q265,140 280,180 Q300,210 340,225 Q380,230 440,235" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+        <!-- Peak vertical line -->
+        <line x1="250" y1="45" x2="250" y2="240" stroke="#fbbf24" stroke-width="0.8" stroke-dasharray="5,4"/>
+        <!-- Labels -->
+        <text x="250" y="258" fill="#fbbf24" font-size="12" font-weight="700" text-anchor="middle">&#957;_0</text>
+        <text x="42" y="50" fill="#fbbf24" font-size="11" font-weight="600">I_max</text>
+        <text x="42" y="230" fill="#94a3b8" font-size="11">U/R</text>
+        <!-- Arrow to peak -->
+        <text x="300" y="65" fill="#f87171" font-size="11" font-weight="600">Rezonanta!</text>
+        <line x1="295" y1="68" x2="258" y2="50" stroke="#f87171" stroke-width="1"/>
+        <!-- Broader curve (higher R) -->
+        <path d="M80,233 Q140,225 180,210 Q210,190 230,150 Q242,110 250,95 Q258,110 270,150 Q290,190 320,210 Q360,225 440,233" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="6,3"/>
+        <text x="390" y="218" fill="#60a5fa" font-size="10">R mare</text>
+        <text x="390" y="200" fill="#fbbf24" font-size="10">R mic</text>
+      </svg>
+      <div class="diagram-caption">Curba de rezonanta: curentul atinge maximul la frecventa &#957;_0. Cu R mic (galben), varful e inalt si ingust. Cu R mare (albastru), varful e mai lat si mai scund.</div>
+    </div>
+
+    <div class="subsection">
+      <h3>De ce conteaza rezonanta?</h3>
+      <p class="explain">
+        <strong>Acordarea radioului:</strong> Cand rotesti butonul unui radio, schimbi capacitatea unui condensator variabil. Asta schimba frecventa de rezonanta a circuitului LC. Cand frecventa de rezonanta se potriveste cu frecventa unui post de radio, curentul la acea frecventa e amplificat maxim &mdash; si auzi acel post!
+      </p>
+      <p class="explain">
+        <strong>Filtre:</strong> Circuitele RLC sunt baza filtrelor electronice care selecteaza anumite frecvente si le blocheaza pe altele (folosite in audio, telecomunicatii, procesare de semnal).
+      </p>
+    </div>
+
+    <div class="subsection">
+      <h3>Factorul de calitate Q</h3>
+      <p class="explain">
+        Factorul de calitate masoara cat de "ascutit" e varful de rezonanta:
+      </p>
+      <div class="formula-card">
+        <div class="formula-label">Factorul de calitate</div>
+        <div class="formula-math">
+          $$ Q = \frac{\omega_0 L}{R} = \frac{1}{R}\sqrt{\frac{L}{C}} $$
+        </div>
+        <div class="formula-desc">
+          <span>Q mare = varf ascutit, selectivitate buna (bun pentru radio)</span>
+          <span>Q mic = varf lat, selectivitate slaba</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Worked examples -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EXEMPLU 1</span>
+        <h4>Frecventa de rezonanta</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> \( L = 0{,}1 \text{ H} \), \( C = 100 \text{ }\mu\text{F} = 10^{-4} \text{ F} \).<br>
+          <strong>Cerinta:</strong> Gaseste frecventa de rezonanta \( \nu_0 \).
+        </div>
+        <div class="step revealed">
+          <div class="step-header">Aplicam formula lui Thomson</div>
+          <div class="step-content">
+            $$ \nu_0 = \frac{1}{2\pi\sqrt{LC}} = \frac{1}{2\pi\sqrt{0{,}1 \cdot 10^{-4}}} = \frac{1}{2\pi\sqrt{10^{-5}}} = \frac{1}{2\pi \cdot 3{,}162 \times 10^{-3}} $$
+            $$ \nu_0 = \frac{1}{0{,}01987} \approx 50{,}3 \text{ Hz} $$
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EXEMPLU 2</span>
+        <h4>Curentul la rezonanta</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> Circuit RLC la rezonanta, \( R = 10 \text{ }\Omega \), \( U = 50 \text{ V} \).<br>
+          <strong>Cerinta:</strong> Gaseste curentul maxim (la rezonanta).
+        </div>
+        <div class="step revealed">
+          <div class="step-header">La rezonanta, Z = R</div>
+          <div class="step-content">
+            $$ I_{max} = \frac{U}{Z} = \frac{U}{R} = \frac{50}{10} = 5 \text{ A} $$
+            <p>La rezonanta, curentul e maxim posibil &mdash; singurul lucru care il limiteaza e rezistenta R.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 8: Puterea in CA -->
+  <!-- ============================================================ -->
+  <section class="section" id="putere">
+    <div class="section-header">
+      <span class="section-num">4.8</span>
+      <h2>Puterea in curent alternativ</h2>
+    </div>
+
+    <p class="explain">
+      In curent continuu, puterea e simpla: \( P = UI \). In curent alternativ, lucrurile sunt mai nuantate din cauza defazajului. Nu toata energia "trimisa" de sursa e efectiv consumata &mdash; o parte doar se "plimba" inainte si inapoi intre sursa si componentele reactive (bobina, condensatorul).
+    </p>
+
+    <div class="subsection">
+      <h3>Puterea activa (reala)</h3>
+      <div class="formula-card">
+        <div class="formula-label">Puterea activa</div>
+        <div class="formula-math">
+          $$ P = U \cdot I \cdot \cos\varphi $$
+        </div>
+        <div class="formula-desc">
+          <span>\( P \) = puterea activa [W] &mdash; energia efectiv consumata (transformata in caldura, lumina etc.)</span>
+          <span>\( \cos\varphi \) = factorul de putere</span>
+        </div>
+      </div>
+
+      <p class="explain">
+        <strong>Factorul de putere \( \cos\varphi \)</strong> spune cat din energia "aparenta" e efectiv consumata:
+      </p>
+      <ul class="explain" style="padding-left: 1.5rem; margin-bottom: 0.85rem;">
+        <li>Daca \( \varphi = 0 \) (rezonanta sau R pur): \( \cos\varphi = 1 \) &rarr; <strong>toata energia e consumata</strong>. \( P = UI \).</li>
+        <li>Daca \( \varphi = 90° \) (L pur sau C pur): \( \cos\varphi = 0 \) &rarr; <strong>nicio energie nu e consumata!</strong> \( P = 0 \).</li>
+        <li>Cazurile reale sunt undeva intre: \( 0 < \cos\varphi < 1 \).</li>
+      </ul>
+
+      <div class="analogy">
+        <strong>Analogie:</strong> Gandeste-te la un caine care trage o sanie. Daca trage exact inainte (phi = 0), toata forta lui muta sania. Daca trage in lateral (phi = 90 de grade), sania nu se misca deloc. Puterea activa e doar componenta "utila" &mdash; cea care face treaba.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Puterea reactiva si aparenta</h3>
+      <div class="formula-card">
+        <div class="formula-label">Puterea reactiva</div>
+        <div class="formula-math">
+          $$ Q_{react} = U \cdot I \cdot \sin\varphi $$
+        </div>
+        <div class="formula-desc">
+          <span>\( Q_{react} \) = puterea reactiva [VAR] &mdash; energia care "penduleaza" fara a fi consumata</span>
+        </div>
+      </div>
+
+      <div class="formula-card">
+        <div class="formula-label">Puterea aparenta</div>
+        <div class="formula-math">
+          $$ S = U \cdot I $$
+        </div>
+        <div class="formula-desc">
+          <span>\( S \) = puterea aparenta [VA] &mdash; "totalul" fara a tine cont de defazaj</span>
+          <span>Relatia: \( S^2 = P^2 + Q_{react}^2 \)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="key-concept">
+      <h4>De ce conteaza factorul de putere?</h4>
+      <p>
+        Companiile electrice penalizeaza consumatorii industriali cu factor de putere mic. Un motor electric cu \( \cos\varphi = 0{,}5 \) "cere" de doua ori mai mult curent decat unul cu \( \cos\varphi = 1 \) pentru aceeasi putere utila. Asta inseamna pierderi mai mari in cabluri si transformatoare. De aceea se monteaza condensatoare de compensare in fabrici &mdash; sa aduca defazajul cat mai aproape de zero.
+      </p>
+    </div>
+
+    <!-- Worked example -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EXEMPLU</span>
+        <h4>Puterea intr-un circuit RLC</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> \( U = 230 \text{ V} \), \( I = 2 \text{ A} \), \( \varphi = 30° \).<br>
+          <strong>Cerinta:</strong> Gaseste puterea activa.
+        </div>
+        <div class="step revealed">
+          <div class="step-header">Aplicam formula puterii active</div>
+          <div class="step-content">
+            $$ P = U \cdot I \cdot \cos\varphi = 230 \cdot 2 \cdot \cos 30° = 460 \cdot 0{,}866 \approx 398{,}4 \text{ W} $$
+            <p>Din cei 460 VA aparenti, doar ~398 W sunt efectiv consumati. Restul de ~230 VAR sunt putere reactiva care "penduleaza" fara efect util.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning">
+      Cand vezi \( P = UI \) in probleme de CA, verifica INTOTDEAUNA daca trebuie inmultit cu \( \cos\varphi \). Formula \( P = UI \) fara cosinus e valida DOAR cand \( \varphi = 0 \) (R pur sau la rezonanta).
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 9: Exercitii rezolvate -->
+  <!-- ============================================================ -->
+  <section class="section" id="exercitii">
+    <div class="section-header">
+      <span class="section-num">4.9</span>
+      <h2>Exercitii rezolvate</h2>
+    </div>
+
+    <p class="explain">
+      Iata 8 exercitii rezolvate pas cu pas, de la simplu la complex. Incearca sa rezolvi singur inainte de a apasa pe pasi!
+    </p>
+
+    <!-- Exercise 1 -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EX. 1</span>
+        <h4>Valori eficace si maxime</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> Un aparat masoara curentul eficace \( I = 5 \text{ A} \) si tensiunea eficace \( U = 120 \text{ V} \).<br>
+          <strong>Cerinta:</strong> Gaseste valorile maxime \( I_{max} \) si \( U_{max} \).
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 1: Curentul maxim</div>
+          <div class="step-content">
+            $$ I_{max} = I\sqrt{2} = 5 \cdot 1{,}414 \approx 7{,}07 \text{ A} $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Tensiunea maxima</div>
+          <div class="step-content">
+            $$ U_{max} = U\sqrt{2} = 120 \cdot 1{,}414 \approx 169{,}7 \text{ V} $$
+          </div>
+        </div>
+        <button class="reveal-all-btn">Arata toti pasii</button>
+      </div>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EX. 2</span>
+        <h4>Reactanta inductiva</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> O bobina cu \( L = 0{,}05 \text{ H} \) intr-un circuit cu \( \nu = 1000 \text{ Hz} \).<br>
+          <strong>Cerinta:</strong> Gaseste \( X_L \).
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 1: Aplicam formula</div>
+          <div class="step-content">
+            $$ X_L = 2\pi\nu L = 2\pi \cdot 1000 \cdot 0{,}05 = 100\pi \approx 314{,}2 \text{ }\Omega $$
+            <p>Observa cat de mare e reactanta la frecventa inalta (1000 Hz vs 50 Hz din retea)!</p>
+          </div>
+        </div>
+        <button class="reveal-all-btn">Arata toti pasii</button>
+      </div>
+    </div>
+
+    <!-- Exercise 3 -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EX. 3</span>
+        <h4>Circuit RL: impedanta, curent, defazaj</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> \( R = 60 \text{ }\Omega \), \( L = 0{,}15 \text{ H} \), \( \nu = 50 \text{ Hz} \), \( U = 150 \text{ V} \).<br>
+          <strong>Cerinta:</strong> Gaseste \( Z, I, \varphi \).
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 1: Reactanta inductiva</div>
+          <div class="step-content">
+            $$ X_L = 2\pi \cdot 50 \cdot 0{,}15 = 15\pi \approx 47{,}1 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Impedanta</div>
+          <div class="step-content">
+            $$ Z = \sqrt{60^2 + 47{,}1^2} = \sqrt{3600 + 2218} = \sqrt{5818} \approx 76{,}3 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 3: Curentul</div>
+          <div class="step-content">
+            $$ I = \frac{U}{Z} = \frac{150}{76{,}3} \approx 1{,}97 \text{ A} $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 4: Defazajul</div>
+          <div class="step-content">
+            $$ \tan\varphi = \frac{X_L}{R} = \frac{47{,}1}{60} = 0{,}785 \implies \varphi \approx 38{,}1° $$
+            <p>Circuit inductiv, curentul intarzie dupa tensiune cu ~38 de grade.</p>
+          </div>
+        </div>
+        <button class="reveal-all-btn">Arata toti pasii</button>
+      </div>
+    </div>
+
+    <!-- Exercise 4 -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EX. 4</span>
+        <h4>Circuit RC: impedanta, curent, defazaj</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> \( R = 80 \text{ }\Omega \), \( C = 40 \text{ }\mu\text{F} \), \( \nu = 50 \text{ Hz} \), \( U = 200 \text{ V} \).<br>
+          <strong>Cerinta:</strong> Gaseste \( X_C, Z, I, \varphi \).
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 1: Reactanta capacitiva</div>
+          <div class="step-content">
+            $$ X_C = \frac{1}{2\pi \cdot 50 \cdot 40 \times 10^{-6}} = \frac{1}{0{,}01257} \approx 79{,}6 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Impedanta</div>
+          <div class="step-content">
+            $$ Z = \sqrt{80^2 + 79{,}6^2} = \sqrt{6400 + 6336} = \sqrt{12736} \approx 112{,}9 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 3: Curentul</div>
+          <div class="step-content">
+            $$ I = \frac{200}{112{,}9} \approx 1{,}77 \text{ A} $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 4: Defazajul</div>
+          <div class="step-content">
+            $$ \tan\varphi = -\frac{79{,}6}{80} = -0{,}995 \implies \varphi \approx -44{,}9° $$
+            <p>Circuit capacitiv, curentul e in avans fata de tensiune cu ~45 de grade. Interesant &mdash; R si X_C sunt aproape egale, asa ca defazajul e aproape -45 de grade exact.</p>
+          </div>
+        </div>
+        <button class="reveal-all-btn">Arata toti pasii</button>
+      </div>
+    </div>
+
+    <!-- Exercise 5 -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EX. 5</span>
+        <h4>Circuit RLC complet</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> \( R = 100 \text{ }\Omega \), \( L = 0{,}3 \text{ H} \), \( C = 20 \text{ }\mu\text{F} \), \( \nu = 50 \text{ Hz} \), \( U = 220 \text{ V} \).<br>
+          <strong>Cerinta:</strong> Gaseste totul: \( X_L, X_C, Z, I, \varphi \) si tipul de comportament.
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 1: Reactantele</div>
+          <div class="step-content">
+            $$ X_L = 2\pi \cdot 50 \cdot 0{,}3 = 30\pi \approx 94{,}2 \text{ }\Omega $$
+            $$ X_C = \frac{1}{2\pi \cdot 50 \cdot 20 \times 10^{-6}} = \frac{1}{0{,}00628} \approx 159{,}2 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Reactanta neta</div>
+          <div class="step-content">
+            $$ X_L - X_C = 94{,}2 - 159{,}2 = -65{,}0 \text{ }\Omega $$
+            <p>Valoarea e negativa, deci condensatorul domina &mdash; ne asteptam la comportament capacitiv.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 3: Impedanta</div>
+          <div class="step-content">
+            $$ Z = \sqrt{100^2 + (-65)^2} = \sqrt{10000 + 4225} = \sqrt{14225} \approx 119{,}3 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 4: Curentul</div>
+          <div class="step-content">
+            $$ I = \frac{220}{119{,}3} \approx 1{,}84 \text{ A} $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 5: Defazajul</div>
+          <div class="step-content">
+            $$ \tan\varphi = \frac{-65}{100} = -0{,}65 \implies \varphi \approx -33° $$
+            <p>Confirmat: circuit capacitiv (\( \varphi < 0 \)). Curentul e in avans fata de tensiune cu 33 de grade.</p>
+          </div>
+        </div>
+        <button class="reveal-all-btn">Arata toti pasii</button>
+      </div>
+    </div>
+
+    <!-- Exercise 6 -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EX. 6</span>
+        <h4>Frecventa de rezonanta</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> \( L = 0{,}5 \text{ H} \), \( C = 2 \text{ }\mu\text{F} = 2 \times 10^{-6} \text{ F} \).<br>
+          <strong>Cerinta:</strong> La ce frecventa apare rezonanta?
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 1: Formula lui Thomson</div>
+          <div class="step-content">
+            $$ \nu_0 = \frac{1}{2\pi\sqrt{LC}} = \frac{1}{2\pi\sqrt{0{,}5 \cdot 2 \times 10^{-6}}} = \frac{1}{2\pi\sqrt{10^{-6}}} = \frac{1}{2\pi \cdot 10^{-3}} $$
+            $$ \nu_0 = \frac{1}{6{,}283 \times 10^{-3}} \approx 159{,}2 \text{ Hz} $$
+          </div>
+        </div>
+        <button class="reveal-all-btn">Arata toti pasii</button>
+      </div>
+    </div>
+
+    <!-- Exercise 7 -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent4);">EX. 7</span>
+        <h4>Putere in circuit RLC</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> \( R = 40 \text{ }\Omega \), \( X_L = 50 \text{ }\Omega \), \( X_C = 20 \text{ }\Omega \), \( U = 100 \text{ V} \).<br>
+          <strong>Cerinta:</strong> Gaseste \( Z \), \( I \), \( \cos\varphi \) si puterea activa \( P \).
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 1: Impedanta</div>
+          <div class="step-content">
+            $$ Z = \sqrt{40^2 + (50-20)^2} = \sqrt{1600 + 900} = \sqrt{2500} = 50 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Curentul</div>
+          <div class="step-content">
+            $$ I = \frac{U}{Z} = \frac{100}{50} = 2 \text{ A} $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 3: Factorul de putere</div>
+          <div class="step-content">
+            $$ \cos\varphi = \frac{R}{Z} = \frac{40}{50} = 0{,}8 $$
+            <p>(Alta formula utila: \( \cos\varphi = R/Z \) &mdash; derivata direct din triunghiul impedantelor!)</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 4: Puterea activa</div>
+          <div class="step-content">
+            $$ P = U \cdot I \cdot \cos\varphi = 100 \cdot 2 \cdot 0{,}8 = 160 \text{ W} $$
+            <p>Alternativ: \( P = R \cdot I^2 = 40 \cdot 4 = 160 \text{ W} \). Rezultatul e acelasi &mdash; puterea activa se disipa doar pe rezistor!</p>
+          </div>
+        </div>
+        <button class="reveal-all-btn">Arata toti pasii</button>
+      </div>
+    </div>
+
+    <!-- Exercise 8: Complex problem from notes -->
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--red);">EX. 8 &#9733;</span>
+        <h4>Problema complexa: R&#8321; + RC in serie</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          <strong>Date:</strong> Un circuit serie format din rezistorul \( R_1 \) si un bloc RC (rezistor + condensator in serie). Se masoara: <br>
+          \( U = 190 \text{ V} \) (tensiunea totala), \( U_1 = 60 \text{ V} \) (pe \( R_1 \)), \( U_2 = 160 \text{ V} \) (pe blocul RC).<br>
+          \( R_1 = 20 \text{ }\Omega \), \( \nu = 50 \text{ Hz} \).<br>
+          <strong>Cerinta:</strong> Gaseste curentul \( I \), rezistenta \( R \) din blocul RC, reactanta \( X_C \) si capacitatea \( C \).
+        </div>
+
+        <div class="danger">
+          Atentie! \( U \neq U_1 + U_2 \) in curent alternativ! (190 &ne; 60 + 160 = 220). Tensiunile sunt fazori si trebuie adunate vectorial!
+        </div>
+
+        <div class="step">
+          <div class="step-header">Pas 1: Curentul prin circuit</div>
+          <div class="step-content">
+            <p>Pe \( R_1 \), tensiunea si curentul sunt in faza. Putem folosi legea lui Ohm direct:</p>
+            $$ I = \frac{U_1}{R_1} = \frac{60}{20} = 3 \text{ A} $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Impedanta blocului RC</div>
+          <div class="step-content">
+            $$ |Z_{RC}| = \frac{U_2}{I} = \frac{160}{3} \approx 53{,}3 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 3: Verificam ca nu putem aduna direct</div>
+          <div class="step-content">
+            $$ U_1^2 + U_2^2 = 60^2 + 160^2 = 3600 + 25600 = 29200 $$
+            $$ U^2 = 190^2 = 36100 $$
+            <p>Cum \( 36100 \neq 29200 \), tensiunile NU sunt perpendiculare! Blocul RC contine si o componenta rezistiva (R), care e in faza cu \( U_1 \).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 4: Relatia intre tensiuni cu defazaj</div>
+          <div class="step-content">
+            <p>Fie \( \psi \) unghiul intre \( U_1 \) (pur rezistiv) si \( U_2 \) (care are si componenta reactiva). Folosim regula cosinusului:</p>
+            $$ U^2 = U_1^2 + U_2^2 + 2U_1 U_2 \cos\psi $$
+            $$ 36100 = 3600 + 25600 + 2 \cdot 60 \cdot 160 \cdot \cos\psi $$
+            $$ 36100 = 29200 + 19200 \cdot \cos\psi $$
+            $$ \cos\psi = \frac{36100 - 29200}{19200} = \frac{6900}{19200} \approx 0{,}359 $$
+            $$ \psi \approx 69° $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 5: Descompunem impedanta RC</div>
+          <div class="step-content">
+            <p>Din blocul RC, componenta rezistiva e pe orizontala si componenta capacitiva pe verticala:</p>
+            $$ R = |Z_{RC}| \cdot \cos\psi = 53{,}3 \cdot 0{,}359 \approx 19{,}1 \text{ }\Omega $$
+            $$ X_C = |Z_{RC}| \cdot \sin\psi = 53{,}3 \cdot \sin 69° = 53{,}3 \cdot 0{,}934 \approx 49{,}8 \text{ }\Omega $$
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 6: Calculam capacitatea</div>
+          <div class="step-content">
+            $$ C = \frac{1}{2\pi\nu X_C} = \frac{1}{2\pi \cdot 50 \cdot 49{,}8} = \frac{1}{15644} \approx 63{,}9 \text{ }\mu\text{F} $$
+          </div>
+        </div>
+        <button class="reveal-all-btn">Arata toti pasii</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 10: Greseli comune -->
+  <!-- ============================================================ -->
+  <section class="section" id="greseli">
+    <div class="section-header">
+      <span class="section-num">4.10</span>
+      <h2>Greseli comune</h2>
+    </div>
+
+    <div class="mistakes-section">
+      <h3>&#9888;&#65039; Greseli de evitat</h3>
+
+      <div class="mistake-item">
+        <div class="wrong-way">
+          <strong>GRESIT:</strong> Adunarea directa a tensiunilor in CA: \( U = U_R + U_L + U_C \)
+        </div>
+        <div class="right-way">
+          <strong>CORECT:</strong> Tensiunile sunt FAZORI! Trebuie adunate vectorial. De exemplu, in RLC serie: \( U = \sqrt{U_R^2 + (U_L - U_C)^2} \). Tensiunile pe componente pot fi MAI MARI decat tensiunea sursei!
+        </div>
+      </div>
+
+      <div class="mistake-item">
+        <div class="wrong-way">
+          <strong>GRESIT:</strong> Confuzia intre formulele \( X_L \) si \( X_C \).
+        </div>
+        <div class="right-way">
+          <strong>CORECT:</strong> \( X_L = \omega L \) CRESTE cu frecventa (bobina se opune schimbarilor rapide). \( X_C = 1/(\omega C) \) SCADE cu frecventa (condensatorul lasa sa treaca semnalele rapide). Sunt INVERSATE!
+        </div>
+      </div>
+
+      <div class="mistake-item">
+        <div class="wrong-way">
+          <strong>GRESIT:</strong> La rezonanta, \( X_L = 0 \) si \( X_C = 0 \).
+        </div>
+        <div class="right-way">
+          <strong>CORECT:</strong> La rezonanta, \( X_L = X_C \neq 0 \)! Reactantele NU devin zero &mdash; ele SUNT egale si se ANULEAZA reciproc. Tensiunile pe L si C pot fi foarte mari, dar sunt in antifaza si se compenseaza.
+        </div>
+      </div>
+
+      <div class="mistake-item">
+        <div class="wrong-way">
+          <strong>GRESIT:</strong> Calculul puterii ca \( P = U \cdot I \) in CA.
+        </div>
+        <div class="right-way">
+          <strong>CORECT:</strong> Puterea activa in CA este \( P = U \cdot I \cdot \cos\varphi \). Fara factorul de putere, obtii puterea aparenta (S), nu cea activa (P). Doar la rezonanta sau pe R pur (\( \cos\varphi = 1 \)) sunt egale.
+        </div>
+      </div>
+
+      <div class="mistake-item">
+        <div class="wrong-way">
+          <strong>GRESIT:</strong> Uitarea conversiei \( \nu \to \omega \) (lipsa lui \( 2\pi \)).
+        </div>
+        <div class="right-way">
+          <strong>CORECT:</strong> Daca problema da frecventa \( \nu \) in Hz, trebuie sa calculezi \( \omega = 2\pi\nu \) inainte de a folosi formulele cu \( \omega \). Frecventa de 50 Hz inseamna \( \omega = 100\pi \approx 314 \text{ rad/s} \), NU 50!
+        </div>
+      </div>
+
+      <div class="mistake-item">
+        <div class="wrong-way">
+          <strong>GRESIT:</strong> "Pe bobina curentul e in avans" sau "Pe condensator curentul intarzie".
+        </div>
+        <div class="right-way">
+          <strong>CORECT:</strong> E exact invers! Pe L: curentul INTARZIE (ELI). Pe C: curentul e IN AVANS (ICE). Memoreaza "ELI the ICE man"!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 11: Quiz interactiv -->
+  <!-- ============================================================ -->
+  <section class="section" id="quiz">
+    <div class="section-header">
+      <span class="section-num">4.11</span>
+      <h2>Quiz interactiv</h2>
+    </div>
+
+    <p class="explain">
+      Testeaza-ti cunostintele cu acest quiz de 12 intrebari! Acoperim tot ce am invatat: valori eficace, reactante, impedante, rezonanta si putere.
+    </p>
+
+    <div class="quiz-container" id="quiz-m4"></div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2025 Fizica Interactiva &mdash; Oscilatii si unde electromagnetice. Proiect educational.</p>
+  </div>
+
+</div><!-- end .m4 -->
+</main>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/math-init.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/quiz.js"></script>
+
+<script>
+  // Initialize Quiz
+  const quizQuestionsM4 = [
+    {
+      type: 'mc',
+      text: 'Tensiunea eficace la priza in Romania este 230 V. Cat este tensiunea maxima (de varf)?',
+      options: [
+        '\\( 230 \\text{ V} \\)',
+        '\\( 325 \\text{ V} \\)',
+        '\\( 460 \\text{ V} \\)',
+        '\\( 163 \\text{ V} \\)'
+      ],
+      correct: 1,
+      explanation: 'U_max = U * sqrt(2) = 230 * 1.414 = 325 V.',
+      hints: ['Relatia intre valoarea eficace si cea maxima implica factorul sqrt(2).']
+    },
+    {
+      type: 'numeric',
+      text: 'Calculeaza reactanta inductiva a unei bobine cu L = 0,2 H la frecventa de 50 Hz. Raspunde in ohmi, rotunjit la un zecimal.',
+      correct: 62.8,
+      tolerance: 0.02,
+      unit: '\\(\\Omega\\)',
+      explanation: 'X_L = 2*pi*50*0.2 = 20*pi = 62.8 ohmi.',
+      hints: ['Formula: X_L = 2*pi*nu*L', 'omega = 2*pi*50 = 314.16 rad/s']
+    },
+    {
+      type: 'numeric',
+      text: 'Calculeaza reactanta capacitiva a unui condensator cu C = 50 microF la frecventa de 50 Hz. Raspunde in ohmi, rotunjit la un zecimal.',
+      correct: 63.7,
+      tolerance: 0.02,
+      unit: '\\(\\Omega\\)',
+      explanation: 'X_C = 1/(2*pi*50*50*10^-6) = 1/0.01571 = 63.7 ohmi.',
+      hints: ['Formula: X_C = 1/(2*pi*nu*C)', 'Nu uita sa convertesti microfarazi in farazi!']
+    },
+    {
+      type: 'numeric',
+      text: 'Un circuit RL are R = 30 ohmi si X_L = 40 ohmi. Cat este impedanta Z?',
+      correct: 50,
+      tolerance: 0.01,
+      unit: '\\(\\Omega\\)',
+      explanation: 'Z = sqrt(30^2 + 40^2) = sqrt(900 + 1600) = sqrt(2500) = 50 ohmi. Un triunghi dreptunghic clasic 3-4-5!',
+      hints: ['Z = sqrt(R^2 + X_L^2)', 'Recunosti triunghiul pitagoreic 3-4-5?']
+    },
+    {
+      type: 'mc',
+      text: 'Intr-un circuit RC, care este semnul defazajului \\(\\varphi\\)?',
+      options: [
+        '\\( \\varphi > 0 \\) (curentul intarzie)',
+        '\\( \\varphi < 0 \\) (curentul e in avans)',
+        '\\( \\varphi = 0 \\) (in faza)',
+        'Depinde de frecventa'
+      ],
+      correct: 1,
+      explanation: 'In circuitul RC, condensatorul face ca curentul sa fie in avans fata de tensiune, deci phi < 0 (ICE!).',
+      hints: ['Gandeste-te la mnemonica ELI the ICE man.']
+    },
+    {
+      type: 'numeric',
+      text: 'Un circuit RLC serie are R = 40 ohmi, X_L = 70 ohmi, X_C = 40 ohmi. Calculeaza impedanta Z.',
+      correct: 50,
+      tolerance: 0.01,
+      unit: '\\(\\Omega\\)',
+      explanation: 'Z = sqrt(40^2 + (70-40)^2) = sqrt(1600 + 900) = sqrt(2500) = 50 ohmi.',
+      hints: ['Z = sqrt(R^2 + (X_L - X_C)^2)', 'Calculeaza mai intai X_L - X_C = 30 ohmi.']
+    },
+    {
+      type: 'numeric',
+      text: 'Gaseste frecventa de rezonanta pentru un circuit cu L = 0,1 H si C = 100 microF. Raspunde in Hz, rotunjit la un zecimal.',
+      correct: 50.3,
+      tolerance: 0.03,
+      unit: 'Hz',
+      explanation: 'nu_0 = 1/(2*pi*sqrt(0.1*10^-4)) = 1/(2*pi*sqrt(10^-5)) = 1/(2*pi*3.162*10^-3) = 50.3 Hz.',
+      hints: ['Formula lui Thomson: nu_0 = 1/(2*pi*sqrt(LC))', 'LC = 0.1 * 100*10^-6 = 10^-5']
+    },
+    {
+      type: 'numeric',
+      text: 'La rezonanta, un circuit RLC serie cu R = 25 ohmi este alimentat cu U = 100 V. Cat este curentul?',
+      correct: 4,
+      tolerance: 0.01,
+      unit: 'A',
+      explanation: 'La rezonanta, Z = R = 25 ohmi, deci I = U/R = 100/25 = 4 A.',
+      hints: ['La rezonanta, impedanta se reduce la...', 'Z = R cand X_L = X_C']
+    },
+    {
+      type: 'mc',
+      text: 'Care formula da puterea activa (reala) intr-un circuit de curent alternativ?',
+      options: [
+        '\\( P = U \\cdot I \\)',
+        '\\( P = U \\cdot I \\cdot \\cos\\varphi \\)',
+        '\\( P = U \\cdot I \\cdot \\sin\\varphi \\)',
+        '\\( P = Z \\cdot I^2 \\)'
+      ],
+      correct: 1,
+      explanation: 'Puterea activa in CA este P = U*I*cos(phi). Factorul cos(phi) tine cont de defazaj.',
+      hints: ['Factorul de putere joaca un rol crucial.']
+    },
+    {
+      type: 'mc',
+      text: 'Ce se intampla cu reactanta inductiva \\(X_L\\) cand frecventa creste?',
+      options: [
+        'Scade',
+        'Creste',
+        'Ramane constanta',
+        'Devine zero'
+      ],
+      correct: 1,
+      explanation: 'X_L = omega*L = 2*pi*nu*L. Creste liniar cu frecventa! Bobina se opune mai mult la frecvente inalte.',
+      hints: ['Analizeaza formula X_L = omega * L. Ce se intampla daca omega creste?']
+    },
+    {
+      type: 'mc',
+      text: 'Pe o bobina ideala in curent alternativ, puterea activa consumata este:',
+      options: [
+        '\\( P = U \\cdot I \\)',
+        '\\( P = 0 \\)',
+        '\\( P = U^2 / X_L \\)',
+        '\\( P = R \\cdot I^2 \\)'
+      ],
+      correct: 1,
+      explanation: 'Pe o bobina ideala, phi = pi/2, deci cos(phi) = 0 si P = UI*cos(pi/2) = 0. Bobina ideala nu consuma energie!',
+      hints: ['Cat este defazajul pe bobina ideala? Si cat este cos(pi/2)?']
+    },
+    {
+      type: 'numeric',
+      text: 'Un circuit RLC serie cu R = 50 ohmi, Z = 100 ohmi este alimentat cu U = 200 V. Calculeaza puterea activa P. Raspunde in W.',
+      correct: 200,
+      tolerance: 0.02,
+      unit: 'W',
+      explanation: 'I = U/Z = 200/100 = 2 A. cos(phi) = R/Z = 50/100 = 0.5. P = U*I*cos(phi) = 200*2*0.5 = 200 W. Alternativ: P = R*I^2 = 50*4 = 200 W.',
+      hints: ['Calculeaza I = U/Z si cos(phi) = R/Z', 'P = U*I*cos(phi) sau P = R*I^2'],
+      solution: 'I = U/Z = 200/100 = 2 A<br>cos(phi) = R/Z = 50/100 = 0.5<br>P = U*I*cos(phi) = 200*2*0.5 = 200 W'
+    }
+  ];
+
+  quizInstances['quiz-m4'] = new Quiz('quiz-m4', quizQuestionsM4, 'var(--accent4)');
+</script>
+
+</body>
+</html>

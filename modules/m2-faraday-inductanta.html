@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul 2: Faraday & Inductanta — Fizica Interactiva</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="progress-bar-top"></div>
+
+<!-- ===== TOP NAV ===== -->
+<nav class="top-nav">
+  <a href="../index.html" class="nav-logo">&#9889; Fizica Interactiva</a>
+  <div class="nav-modules">
+    <a class="nav-mod-link" data-mod="1" href="m1-camp-magnetic.html">Camp Magnetic</a>
+    <a class="nav-mod-link active" data-mod="2" href="m2-faraday-inductanta.html">Faraday &amp; Inductanta</a>
+    <a class="nav-mod-link" data-mod="3" href="m3-condensatorul.html">Condensatorul</a>
+    <a class="nav-mod-link" data-mod="4" href="m4-circuite-ca.html">Circuite CA</a>
+  </div>
+</nav>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">Modul 2 — Faraday &amp; Inductanta</div>
+    <a href="#flux" class="sidebar-link" data-section="flux">
+      <span class="check"></span> Fluxul magnetic &Phi;
+    </a>
+    <a href="#faraday" class="sidebar-link" data-section="faraday">
+      <span class="check"></span> Legea lui Faraday
+    </a>
+    <a href="#lenz" class="sidebar-link" data-section="lenz">
+      <span class="check"></span> Legea lui Lenz
+    </a>
+    <a href="#inductanta" class="sidebar-link" data-section="inductanta">
+      <span class="check"></span> Inductanta L
+    </a>
+    <a href="#autoinductie" class="sidebar-link" data-section="autoinductie">
+      <span class="check"></span> Autoinductia
+    </a>
+    <a href="#energie" class="sidebar-link" data-section="energie">
+      <span class="check"></span> Energia campului magnetic
+    </a>
+    <a href="#exercitii" class="sidebar-link" data-section="exercitii">
+      <span class="check"></span> Exercitii rezolvate
+    </a>
+    <a href="#greseli" class="sidebar-link" data-section="greseli">
+      <span class="check"></span> Greseli comune
+    </a>
+    <a href="#quiz" class="sidebar-link" data-section="quiz">
+      <span class="check"></span> Quiz interactiv
+    </a>
+  </div>
+</aside>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main-content" data-module-id="m2">
+<div class="m2">
+
+<!-- HERO -->
+<header class="hero">
+  <h1>Faraday &amp; Inductanta</h1>
+  <p>De la flux magnetic la energia stocata in bobina — cum schimbarea genereaza curent, si cum curentul se opune schimbarii.</p>
+</header>
+
+<!-- ============================================================ -->
+<!--  SECTIUNEA 1: FLUXUL MAGNETIC                                 -->
+<!-- ============================================================ -->
+<section class="section" id="flux">
+  <div class="section-header">
+    <span class="section-num">2.1</span>
+    <h2>Fluxul magnetic &Phi;</h2>
+  </div>
+
+  <p class="explain">
+    Inainte sa intelegem inductia electromagnetica, trebuie sa intelegem <strong>fluxul magnetic</strong>. Gandeste-te la flux ca la o masura a cator linii de camp magnetic trec printr-o suprafata. E o idee simpla, dar e fundamentala pentru tot ce urmeaza.
+  </p>
+
+  <div class="analogy">
+    <strong>Analogia cu ploaia si umbrela:</strong> Imagineaza-ti ca \( \vec{B} \) e densitatea picaturilor de ploaie, iar \( S \) e suprafata umbrelei tale. Fluxul \( \Phi \) masoara cate picaturi ajung pe umbrela. Daca tii umbrela perfect orizontal (perpendicular pe ploaie), prinzi maximum de picaturi. Daca o inclini, prinzi mai putine. Daca o tii vertical (paralel cu ploaia), nu prinzi nimic. Exact asa functioneaza fluxul magnetic!
+  </div>
+
+  <div class="formula-card">
+    <div class="formula-label">Definitia fluxului magnetic</div>
+    <div class="formula-math">
+      $$ \Phi = B \cdot S \cdot \cos\alpha $$
+    </div>
+    <div class="formula-desc">
+      <span>\( \Phi \) — fluxul magnetic (Wb)</span>
+      <span>\( B \) — inductia magnetica (T)</span>
+      <span>\( S \) — aria suprafetei (m&sup2;)</span>
+      <span>\( \alpha \) — unghiul intre \( \vec{B} \) si normala la suprafata</span>
+    </div>
+  </div>
+
+  <p class="explain">
+    Unghiul \( \alpha \) e masurat intre vectorul camp magnetic \( \vec{B} \) si <strong>normala la suprafata</strong> (linia perpendiculara pe suprafata). Nu e unghiul cu suprafata in sine — asta e o greseala frecventa!
+  </p>
+
+  <div class="subsection">
+    <h3>Cele trei cazuri importante</h3>
+
+    <!-- SVG Diagram: 3 cases -->
+    <div class="diagram">
+      <svg viewBox="0 0 750 220" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;">
+        <!-- Case 1: perpendicular -->
+        <rect x="30" y="80" width="100" height="60" rx="4" fill="none" stroke="#a78bfa" stroke-width="2"/>
+        <text x="80" y="75" text-anchor="middle" fill="#94a3b8" font-size="11">S</text>
+        <!-- Normal vector -->
+        <line x1="80" y1="80" x2="80" y2="20" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrowBlue)"/>
+        <text x="92" y="35" fill="#60a5fa" font-size="11">n</text>
+        <!-- B vector -->
+        <line x1="80" y1="170" x2="80" y2="90" stroke="#f87171" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+        <text x="92" y="160" fill="#f87171" font-size="12" font-weight="bold">B</text>
+        <text x="80" y="200" text-anchor="middle" fill="#a78bfa" font-size="13" font-weight="bold">&alpha; = 0&deg;</text>
+        <text x="80" y="215" text-anchor="middle" fill="#e2e8f0" font-size="11">&Phi; = B&middot;S</text>
+
+        <!-- Case 2: angled -->
+        <rect x="270" y="80" width="100" height="60" rx="4" fill="none" stroke="#a78bfa" stroke-width="2" transform="rotate(-20, 320, 110)"/>
+        <text x="320" y="75" text-anchor="middle" fill="#94a3b8" font-size="11">S</text>
+        <line x1="320" y1="80" x2="300" y2="20" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrowBlue)"/>
+        <text x="295" y="18" fill="#60a5fa" font-size="11">n</text>
+        <line x1="320" y1="170" x2="320" y2="90" stroke="#f87171" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+        <text x="332" y="160" fill="#f87171" font-size="12" font-weight="bold">B</text>
+        <!-- Angle arc -->
+        <path d="M 320 70 A 15 15 0 0 0 308 63" fill="none" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="305" y="58" fill="#fbbf24" font-size="10">&alpha;</text>
+        <text x="320" y="200" text-anchor="middle" fill="#a78bfa" font-size="13" font-weight="bold">&alpha; = 60&deg;</text>
+        <text x="320" y="215" text-anchor="middle" fill="#e2e8f0" font-size="11">&Phi; = B&middot;S&middot;cos60&deg;</text>
+
+        <!-- Case 3: parallel -->
+        <rect x="520" y="60" width="10" height="100" rx="2" fill="none" stroke="#a78bfa" stroke-width="2"/>
+        <text x="525" y="55" text-anchor="middle" fill="#94a3b8" font-size="11">S</text>
+        <line x1="525" y1="110" x2="590" y2="110" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrowBlue)"/>
+        <text x="585" y="100" fill="#60a5fa" font-size="11">n</text>
+        <line x1="525" y1="170" x2="525" y2="120" stroke="#f87171" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+        <text x="537" y="165" fill="#f87171" font-size="12" font-weight="bold">B</text>
+        <text x="555" y="200" text-anchor="middle" fill="#a78bfa" font-size="13" font-weight="bold">&alpha; = 90&deg;</text>
+        <text x="555" y="215" text-anchor="middle" fill="#e2e8f0" font-size="11">&Phi; = 0</text>
+
+        <!-- Arrow markers -->
+        <defs>
+          <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#f87171"/>
+          </marker>
+          <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#60a5fa"/>
+          </marker>
+        </defs>
+      </svg>
+      <div class="diagram-caption">Cele trei cazuri: B perpendicular pe S (flux maxim), B inclinat (flux partial), B paralel cu S (flux zero).</div>
+    </div>
+
+    <p class="explain">
+      <strong>Caz 1: \(\alpha = 0°\)</strong> — Campul magnetic e perpendicular pe suprafata (paralel cu normala). Fluxul e <strong>maxim</strong>: \(\Phi = B \cdot S\). Toate liniile de camp traverseaza suprafata.
+    </p>
+    <p class="explain">
+      <strong>Caz 2: \(\alpha\) oarecare</strong> — Campul e inclinat fata de normala. Fluxul e \(\Phi = B \cdot S \cdot \cos\alpha\). Cu cat unghiul e mai mare, cu atat fluxul e mai mic.
+    </p>
+    <p class="explain">
+      <strong>Caz 3: \(\alpha = 90°\)</strong> — Campul e paralel cu suprafata (perpendicular pe normala). Fluxul e <strong>zero</strong>: \(\cos 90° = 0\). Nicio linie de camp nu traverseaza suprafata.
+    </p>
+  </div>
+
+  <div class="subsection">
+    <h3>Unitatea de masura</h3>
+    <p class="explain">
+      Fluxul magnetic se masoara in <strong>Weber (Wb)</strong>:
+    </p>
+    <div class="formula-card">
+      <div class="formula-label">Unitate</div>
+      <div class="formula-math">$$ 1 \text{ Wb} = 1 \text{ T} \cdot 1 \text{ m}^2 $$</div>
+      <div class="formula-desc">
+        <span>Un weber = fluxul unui camp de 1 Tesla prin 1 m&sup2; perpendicular</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Bobina cu N spire</h3>
+    <p class="explain">
+      Daca avem o bobina cu \( N \) spire, fiecare spira prinde acelasi flux. Deci fluxul total e:
+    </p>
+    <div class="formula-card">
+      <div class="formula-label">Flux total prin N spire</div>
+      <div class="formula-math">$$ \Phi_{\text{total}} = N \cdot B \cdot S \cdot \cos\alpha $$</div>
+      <div class="formula-desc">
+        <span>\( N \) — numarul de spire</span>
+        <span>Fiecare spira contribuie cu \( B \cdot S \cdot \cos\alpha \)</span>
+      </div>
+    </div>
+    <div class="tip">
+      <strong>Retine:</strong> In multe probleme, \( N \) e ascuns in enunt. Cand auzi "bobina cu 200 de spire", nu uita sa inmultesti cu \( N \)!
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Exemplu rezolvat</h3>
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent2);">EXEMPLU</span>
+        <h4>Flux prin bobina dreptunghiulara</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          O bobina dreptunghiulara cu dimensiunile <strong>10 cm &times; 20 cm</strong> se afla intr-un camp magnetic uniform \( B = 0{,}3 \text{ T} \). Normala la suprafata bobinei face un unghi de <strong>60&deg;</strong> cu directia campului. Calculeaza fluxul magnetic.
+        </div>
+
+        <div class="step">
+          <div class="step-header">Pas 1: Convertim unitatile</div>
+          <div class="step-content">
+            <p>\( S = 10 \text{ cm} \times 20 \text{ cm} = 0{,}1 \text{ m} \times 0{,}2 \text{ m} = 0{,}02 \text{ m}^2 \)</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Aplicam formula</div>
+          <div class="step-content">
+            <p>$$ \Phi = B \cdot S \cdot \cos\alpha = 0{,}3 \cdot 0{,}02 \cdot \cos 60° $$</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 3: Calculam</div>
+          <div class="step-content">
+            <p>$$ \Phi = 0{,}3 \cdot 0{,}02 \cdot 0{,}5 = 0{,}003 \text{ Wb} = 3 \times 10^{-3} \text{ Wb} $$</p>
+          </div>
+        </div>
+        <button class="reveal-all-btn" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--accent2);">Arata toti pasii</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  SECTIUNEA 2: LEGEA LUI FARADAY                               -->
+<!-- ============================================================ -->
+<section class="section" id="faraday">
+  <div class="section-header">
+    <span class="section-num">2.2</span>
+    <h2>Legea lui Faraday</h2>
+  </div>
+
+  <p class="explain">
+    Acum vine partea magica: Michael Faraday a descoperit ca atunci cand <strong>fluxul magnetic prin un circuit se schimba</strong>, in circuit apare o <strong>tensiune electromotoare (EMF) indusa</strong>. Cu alte cuvinte, schimbarea campului magnetic genereaza curent electric. Asta e baza generatoarelor electrice, a transformatoarelor si a unei mari parti din tehnologia moderna.
+  </p>
+
+  <div class="edu-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Faraday_emf_experiment.svg" alt="Experimentul lui Faraday cu inductie electromagnetica" loading="lazy">
+    <div class="edu-img-caption">Experimentul lui Faraday: magnetul in miscare induce curent in bobina</div>
+  </div>
+
+  <div class="formula-card">
+    <div class="formula-label">Legea lui Faraday</div>
+    <div class="formula-math">
+      $$ e = -\frac{d\Phi}{dt} $$
+    </div>
+    <div class="formula-desc">
+      <span>\( e \) — EMF indusa (V)</span>
+      <span>\( \Phi \) — fluxul magnetic (Wb)</span>
+      <span>\( t \) — timpul (s)</span>
+      <span>Semnul minus = Legea lui Lenz (vezi sectiunea urmatoare)</span>
+    </div>
+  </div>
+
+  <p class="explain">
+    Pentru o bobina cu \( N \) spire, fiecare spira contribuie cu propria EMF, deci:
+  </p>
+
+  <div class="formula-card">
+    <div class="formula-label">Legea lui Faraday pentru N spire</div>
+    <div class="formula-math">
+      $$ e = -N \cdot \frac{d\Phi}{dt} $$
+    </div>
+    <div class="formula-desc">
+      <span>\( N \) — numarul de spire</span>
+      <span>EMF-ul creste proportional cu numarul de spire</span>
+    </div>
+  </div>
+
+  <div class="key-concept">
+    <h4>Intuitie: De ce "schimbare"?</h4>
+    <p>
+      Daca fluxul magnetic e constant, nu se intampla nimic — nu apare curent. E ca si cum ai sta intr-o masina care merge cu viteza constanta: nu simti nimic. Dar cand masina accelereaza sau franeaza (fluxul se schimba), simti forta. Tot asa, EMF-ul apare <strong>doar</strong> cand fluxul se modifica in timp.
+    </p>
+  </div>
+
+  <div class="subsection">
+    <h3>Cand apare inductia electromagnetica?</h3>
+    <p class="explain">
+      Aminteste-ti ca \( \Phi = N \cdot B \cdot S \cdot \cos\alpha \). Fluxul se schimba daca <strong>oricare</strong> din aceste marimi variaza:
+    </p>
+
+    <table>
+      <thead>
+        <tr><th>Ce se schimba</th><th>Exemplu practic</th><th>Formula relevanta</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>\( B \) variaza</td>
+          <td>Magnet care se apropie/departeaza de bobina</td>
+          <td>\( e = -NS\cos\alpha \cdot \frac{dB}{dt} \)</td>
+        </tr>
+        <tr>
+          <td>\( S \) variaza</td>
+          <td>Circuit care isi schimba aria (bara care aluneca pe sine)</td>
+          <td>\( e = -NB\cos\alpha \cdot \frac{dS}{dt} \)</td>
+        </tr>
+        <tr>
+          <td>\( \alpha \) variaza</td>
+          <td>Bobina care se roteste in camp (generatorul electric!)</td>
+          <td>\( e = NBS\sin\alpha \cdot \frac{d\alpha}{dt} \)</td>
+        </tr>
+        <tr>
+          <td>\( N \) variaza</td>
+          <td>Bobina introdisa treptat intr-un camp</td>
+          <td>\( e = -BS\cos\alpha \cdot \frac{dN}{dt} \)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tip">
+      <strong>Generatorul electric</strong> functioneaza prin rotirea unei bobine intr-un camp magnetic (\( \alpha \) variaza sinusoidal). Asta produce curentul alternativ pe care il folosim zilnic!
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Magnet in miscare spre bobina</h3>
+    <div class="diagram">
+      <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="max-width:550px;">
+        <!-- Coil -->
+        <ellipse cx="380" cy="100" rx="15" ry="55" fill="none" stroke="#a78bfa" stroke-width="2.5"/>
+        <ellipse cx="395" cy="100" rx="15" ry="55" fill="none" stroke="#a78bfa" stroke-width="2"/>
+        <ellipse cx="410" cy="100" rx="15" ry="55" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
+        <text x="395" y="175" text-anchor="middle" fill="#a78bfa" font-size="12">Bobina</text>
+
+        <!-- Magnet -->
+        <rect x="100" y="75" width="80" height="50" rx="4" fill="#f87171" opacity="0.3" stroke="#f87171" stroke-width="2"/>
+        <text x="120" y="105" fill="#f87171" font-size="14" font-weight="bold">N</text>
+        <rect x="140" y="75" width="40" height="50" rx="0" fill="#60a5fa" opacity="0.3" stroke="#60a5fa" stroke-width="2"/>
+        <text x="152" y="105" fill="#60a5fa" font-size="14" font-weight="bold">S</text>
+
+        <!-- Arrow: magnet moves right -->
+        <line x1="195" y1="100" x2="340" y2="100" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="8,4" marker-end="url(#arrowYellow)"/>
+        <text x="270" y="90" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="bold">v</text>
+
+        <!-- B field lines -->
+        <path d="M 160 60 Q 280 30, 380 55" fill="none" stroke="#f87171" stroke-width="1" opacity="0.5" stroke-dasharray="3,3"/>
+        <path d="M 160 140 Q 280 170, 380 145" fill="none" stroke="#f87171" stroke-width="1" opacity="0.5" stroke-dasharray="3,3"/>
+
+        <!-- EMF indicator -->
+        <text x="445" y="80" fill="#34d399" font-size="11">e indus</text>
+        <path d="M 430 90 Q 450 100, 430 110" fill="none" stroke="#34d399" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+        <defs>
+          <marker id="arrowYellow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#fbbf24"/>
+          </marker>
+          <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#34d399"/>
+          </marker>
+        </defs>
+      </svg>
+      <div class="diagram-caption">Magnetul in miscare spre bobina — fluxul creste, apare EMF indus.</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Exemplu rezolvat</h3>
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent2);">EXEMPLU</span>
+        <h4>EMF din variatie de flux</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          Fluxul magnetic printr-o bobina cu <strong>50 de spire</strong> scade de la <strong>0,5 Wb</strong> la <strong>0,1 Wb</strong> in <strong>0,2 s</strong>. Calculeaza EMF-ul mediu indus.
+        </div>
+
+        <div class="step">
+          <div class="step-header">Pas 1: Calculam variatia de flux</div>
+          <div class="step-content">
+            <p>$$ \Delta\Phi = \Phi_f - \Phi_i = 0{,}1 - 0{,}5 = -0{,}4 \text{ Wb} $$</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Aplicam legea lui Faraday</div>
+          <div class="step-content">
+            <p>$$ e = -N \cdot \frac{\Delta\Phi}{\Delta t} = -50 \cdot \frac{-0{,}4}{0{,}2} $$</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 3: Calculam</div>
+          <div class="step-content">
+            <p>$$ e = -50 \cdot (-2) = 100 \text{ V} $$</p>
+            <p>EMF-ul mediu indus este de <strong>100 V</strong>. Semnul pozitiv inseamna ca EMF-ul se opune scaderii fluxului (Lenz!).</p>
+          </div>
+        </div>
+        <button class="reveal-all-btn" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--accent2);">Arata toti pasii</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  SECTIUNEA 3: LEGEA LUI LENZ                                  -->
+<!-- ============================================================ -->
+<section class="section" id="lenz">
+  <div class="section-header">
+    <span class="section-num">2.3</span>
+    <h2>Legea lui Lenz</h2>
+  </div>
+
+  <p class="explain">
+    Ai observat semnul minus in legea lui Faraday? Acel minus are un nume: <strong>Legea lui Lenz</strong>. E una dintre cele mai elegante legi din fizica si spune ceva profund despre natura: <strong>natura se opune schimbarii</strong>.
+  </p>
+
+  <div class="edu-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Lenz_law_demonstration.png" alt="Demonstrarea legii lui Lenz" loading="lazy">
+    <div class="edu-img-caption">Legea lui Lenz: curentul indus se opune cauzei care l-a produs</div>
+  </div>
+
+  <div class="key-concept">
+    <h4>Legea lui Lenz — in cuvinte simple</h4>
+    <p>
+      Curentul indus intr-un circuit are intotdeauna o directie astfel incat <strong>campul magnetic creat de el se opune variatiei de flux care l-a generat</strong>. Cu alte cuvinte: daca fluxul creste, curentul indus creeaza un camp care incearca sa-l micsoreze. Daca fluxul scade, curentul indus creeaza un camp care incearca sa-l mentina.
+    </p>
+  </div>
+
+  <div class="analogy">
+    <strong>Analogie:</strong> E ca un termostat natural. Daca temperatura creste, termostatul porneste aerul conditionat (se opune cresterii). Daca temperatura scade, termostatul porneste incalzirea (se opune scaderii). Natura are propriul "termostat" electromagnetic.
+  </div>
+
+  <div class="subsection">
+    <h3>Cele doua cazuri</h3>
+
+    <div class="diagram">
+      <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" style="max-width:650px;">
+        <!-- Case 1: Flux increases -->
+        <text x="175" y="20" text-anchor="middle" fill="#a78bfa" font-size="14" font-weight="bold">Flux CRESTE</text>
+
+        <!-- External B pointing up -->
+        <line x1="100" y1="180" x2="100" y2="60" stroke="#f87171" stroke-width="2.5" marker-end="url(#arrowRed2)"/>
+        <line x1="140" y1="180" x2="140" y2="60" stroke="#f87171" stroke-width="2.5" marker-end="url(#arrowRed2)"/>
+        <line x1="180" y1="180" x2="180" y2="60" stroke="#f87171" stroke-width="2.5" marker-end="url(#arrowRed2)"/>
+        <text x="210" y="130" fill="#f87171" font-size="12" font-weight="bold">B ext &uarr;</text>
+        <text x="210" y="150" fill="#f87171" font-size="10">(creste)</text>
+
+        <!-- Coil ring -->
+        <ellipse cx="140" cy="200" rx="70" ry="18" fill="none" stroke="#a78bfa" stroke-width="2.5"/>
+
+        <!-- Induced B pointing down -->
+        <line x1="140" y1="120" x2="140" y2="170" stroke="#60a5fa" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowBlue2)"/>
+        <text x="155" y="175" fill="#60a5fa" font-size="10">B indus &darr;</text>
+
+        <!-- Induced current direction -->
+        <path d="M 75 195 Q 55 200, 70 210" fill="none" stroke="#34d399" stroke-width="2" marker-end="url(#arrowGreen2)"/>
+        <text x="45" y="210" fill="#34d399" font-size="10">I indus</text>
+
+        <!-- SEPARATOR -->
+        <line x1="350" y1="20" x2="350" y2="240" stroke="#2a3550" stroke-width="1" stroke-dasharray="4,4"/>
+
+        <!-- Case 2: Flux decreases -->
+        <text x="525" y="20" text-anchor="middle" fill="#a78bfa" font-size="14" font-weight="bold">Flux SCADE</text>
+
+        <!-- External B pointing up (weaker) -->
+        <line x1="450" y1="180" x2="450" y2="80" stroke="#f87171" stroke-width="1.5" opacity="0.5" marker-end="url(#arrowRed2)"/>
+        <line x1="490" y1="180" x2="490" y2="80" stroke="#f87171" stroke-width="1.5" opacity="0.5" marker-end="url(#arrowRed2)"/>
+        <line x1="530" y1="180" x2="530" y2="80" stroke="#f87171" stroke-width="1.5" opacity="0.5" marker-end="url(#arrowRed2)"/>
+        <text x="560" y="130" fill="#f87171" font-size="12" font-weight="bold">B ext &uarr;</text>
+        <text x="560" y="150" fill="#f87171" font-size="10">(scade)</text>
+
+        <!-- Coil ring -->
+        <ellipse cx="490" cy="200" rx="70" ry="18" fill="none" stroke="#a78bfa" stroke-width="2.5"/>
+
+        <!-- Induced B pointing UP (sustains) -->
+        <line x1="490" y1="170" x2="490" y2="120" stroke="#60a5fa" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrowBlue2)"/>
+        <text x="505" y="118" fill="#60a5fa" font-size="10">B indus &uarr;</text>
+
+        <!-- Induced current direction (opposite) -->
+        <path d="M 555 210 Q 575 200, 560 192" fill="none" stroke="#34d399" stroke-width="2" marker-end="url(#arrowGreen2)"/>
+        <text x="570" y="210" fill="#34d399" font-size="10">I indus</text>
+
+        <defs>
+          <marker id="arrowRed2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#f87171"/>
+          </marker>
+          <marker id="arrowBlue2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#60a5fa"/>
+          </marker>
+          <marker id="arrowGreen2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#34d399"/>
+          </marker>
+        </defs>
+      </svg>
+      <div class="diagram-caption">Stanga: fluxul creste — campul indus se opune (in jos). Dreapta: fluxul scade — campul indus sustine (in sus).</div>
+    </div>
+
+    <p class="explain">
+      <strong>Cand fluxul creste:</strong> Curentul indus creeaza un camp magnetic in sens opus fata de campul exterior. "Hei, campul creste prea mult! Eu il impiedic."
+    </p>
+    <p class="explain">
+      <strong>Cand fluxul scade:</strong> Curentul indus creeaza un camp magnetic in acelasi sens cu campul exterior. "Hei, campul dispare! Eu incerc sa-l mentin."
+    </p>
+  </div>
+
+  <div class="subsection">
+    <h3>Aplicatii practice</h3>
+
+    <details>
+      <summary>Magnetul care cade prin tubul de cupru</summary>
+      <div class="detail-content">
+        <p>Daca lasi un magnet puternic sa cada printr-un tub de cupru, el cade <strong>mult mai incet</strong> decat in cadere libera. De ce? Pe masura ce magnetul se misca, fluxul prin fiecare sectiune a tubului se schimba, generand curenti indusi (curenti turbionari). Conform legii lui Lenz, acesti curenti creeaza campuri magnetice care se opun miscarii magnetului. Rezultat: franare electromagnetica!</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Franarea electromagnetica (curenti turbionari / eddy currents)</summary>
+      <div class="detail-content">
+        <p>Trenurile de mare viteza folosesc frane electromagnetice. Cand un disc metalic se roteste intr-un camp magnetic, in disc apar curenti turbionari care se opun miscarii. Avantaj: nu exista frecare mecanica, deci nu se uzeaza! Aceleasi curenti turbionari sunt folositi in cuptoarele cu inductie si in detectoarele de metale.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>De ce exista semnul minus?</summary>
+      <div class="detail-content">
+        <p>Semnul minus e o consecinta a <strong>conservarii energiei</strong>. Daca curentul indus ar amplifica schimbarea in loc sa o opuna, am obtine energie din nimic — ar fi un perpetuum mobile. Legea lui Lenz garanteaza ca energia e conservata: trebuie sa depui lucru mecanic (sa misti magnetul) ca sa generezi curent.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="warning">
+    <strong>Atentie la semn!</strong> In probleme, cand calculezi EMF-ul, semnul iti spune directia. Dar de cele mai multe ori, se cere <strong>valoarea absoluta</strong> a EMF-ului (modulul). Verifica ce se cere in enunt!
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  SECTIUNEA 4: INDUCTANTA L                                     -->
+<!-- ============================================================ -->
+<section class="section" id="inductanta">
+  <div class="section-header">
+    <span class="section-num">2.4</span>
+    <h2>Inductanta L</h2>
+  </div>
+
+  <p class="explain">
+    Acum sa introducem un concept nou: <strong>inductanta</strong>. Inductanta masoara capacitatea unui circuit de a produce flux magnetic in functie de curentul care il parcurge. E o proprietate geometrica si materiala a circuitului — depinde de forma, dimensiuni si materialul miezului.
+  </p>
+
+  <div class="edu-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Electronic_component_inductors.jpg" alt="Inductoare reale de diferite dimensiuni" loading="lazy">
+    <div class="edu-img-caption">Inductoare reale — bobine de diferite dimensiuni si forme</div>
+  </div>
+
+  <div class="formula-card">
+    <div class="formula-label">Definitia inductantei</div>
+    <div class="formula-math">
+      $$ L = \frac{\Phi}{I} \quad \Longleftrightarrow \quad \Phi = L \cdot I $$
+    </div>
+    <div class="formula-desc">
+      <span>\( L \) — inductanta (H, Henry)</span>
+      <span>\( \Phi \) — fluxul magnetic total (Wb)</span>
+      <span>\( I \) — curentul electric (A)</span>
+    </div>
+  </div>
+
+  <div class="analogy">
+    <strong>Analogia cu masa si inertia:</strong> Inductanta \( L \) pentru curent este ca <strong>masa \( m \)</strong> pentru viteza. Un obiect greu (masa mare) e greu de accelerat si greu de oprit. La fel, un circuit cu inductanta mare e "greu" — curentul nu poate sa creasca sau sa scada brusc. \( L \) e "inertia electrica".
+  </div>
+
+  <div class="subsection">
+    <h3>Inductanta solenoidului</h3>
+    <p class="explain">
+      Cel mai important exemplu e solenoidul (bobina lunga). Inductanta lui depinde de geometrie si de mediul din interior:
+    </p>
+    <div class="formula-card">
+      <div class="formula-label">Inductanta solenoidului</div>
+      <div class="formula-math">
+        $$ L = \frac{\mu_0 \cdot N^2 \cdot S}{\ell} $$
+      </div>
+      <div class="formula-desc">
+        <span>\( \mu_0 = 4\pi \times 10^{-7} \text{ H/m} \) — permeabilitatea vidului</span>
+        <span>\( N \) — numarul total de spire</span>
+        <span>\( S \) — aria sectiunii transversale (m&sup2;)</span>
+        <span>\( \ell \) — lungimea solenoidului (m)</span>
+      </div>
+    </div>
+
+    <div class="key-concept">
+      <h4>Intuitie: De ce \( N^2 \)?</h4>
+      <p>
+        Gandeste-te asa: campul magnetic din solenoid e proportional cu \( N \) (mai multe spire = camp mai puternic). Dar fluxul total e flux per spira inmultit cu \( N \) spire. Deci avem \( N \) de la camp si \( N \) de la numar de spire, adica \( N \times N = N^2 \). E o greseala frecventa sa folosesti doar \( N \) — retine ca e \( N^2 \)!
+      </p>
+    </div>
+
+    <p class="explain">
+      Daca solenoidul are un miez feromagnetic cu permeabilitate relativa \( \mu_r \), inductanta creste de \( \mu_r \) ori:
+    </p>
+    <div class="formula-card">
+      <div class="formula-label">Cu miez feromagnetic</div>
+      <div class="formula-math">
+        $$ L = \frac{\mu_0 \cdot \mu_r \cdot N^2 \cdot S}{\ell} $$
+      </div>
+      <div class="formula-desc">
+        <span>\( \mu_r \) — permeabilitatea relativa a miezului (\( \mu_r \gg 1 \) pentru fier)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Unitatea de masura: Henry</h3>
+    <p class="explain">
+      Inductanta se masoara in <strong>Henry (H)</strong>, numit dupa Joseph Henry.
+    </p>
+    <div class="formula-card">
+      <div class="formula-label">Unitate</div>
+      <div class="formula-math">$$ 1 \text{ H} = 1 \frac{\text{Wb}}{\text{A}} = 1 \frac{\text{V} \cdot \text{s}}{\text{A}} $$</div>
+      <div class="formula-desc">
+        <span>Un henry = inductanta care produce 1 Wb de flux la 1 A curent</span>
+      </div>
+    </div>
+    <p class="explain">
+      In practica, multe componente au inductante de ordinul milihenry (mH) sau microhenry (&mu;H). Un henry e o inductanta destul de mare!
+    </p>
+  </div>
+
+  <div class="subsection">
+    <h3>Exemplu rezolvat</h3>
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent2);">EXEMPLU</span>
+        <h4>Inductanta solenoidului</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          Un solenoid are <strong>1000 de spire</strong>, lungimea <strong>50 cm</strong> si aria sectiunii transversale <strong>10 cm&sup2;</strong>. Miezul e aer. Calculeaza inductanta.
+        </div>
+
+        <div class="step">
+          <div class="step-header">Pas 1: Convertim unitatile</div>
+          <div class="step-content">
+            <p>\( \ell = 50 \text{ cm} = 0{,}5 \text{ m} \)</p>
+            <p>\( S = 10 \text{ cm}^2 = 10 \times 10^{-4} \text{ m}^2 = 10^{-3} \text{ m}^2 \)</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Aplicam formula</div>
+          <div class="step-content">
+            <p>$$ L = \frac{\mu_0 \cdot N^2 \cdot S}{\ell} = \frac{4\pi \times 10^{-7} \cdot 1000^2 \cdot 10^{-3}}{0{,}5} $$</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 3: Calculam</div>
+          <div class="step-content">
+            <p>$$ L = \frac{4\pi \times 10^{-7} \cdot 10^6 \cdot 10^{-3}}{0{,}5} = \frac{4\pi \times 10^{-4}}{0{,}5} = 8\pi \times 10^{-4} $$</p>
+            <p>$$ L \approx 2{,}51 \times 10^{-3} \text{ H} \approx 2{,}51 \text{ mH} $$</p>
+          </div>
+        </div>
+        <button class="reveal-all-btn" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--accent2);">Arata toti pasii</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  SECTIUNEA 5: AUTOINDUCTIA                                     -->
+<!-- ============================================================ -->
+<section class="section" id="autoinductie">
+  <div class="section-header">
+    <span class="section-num">2.5</span>
+    <h2>Autoinductia</h2>
+  </div>
+
+  <p class="explain">
+    Autoinductia e fenomenul prin care o bobina <strong>se opune schimbarilor propriului curent</strong>. Cand curentul intr-o bobina se modifica, fluxul magnetic se schimba, si conform legii lui Faraday apare un EMF indus — dar de data asta, EMF-ul e indus in <strong>aceeasi bobina</strong> care a cauzat schimbarea. De aici vine "auto" din autoinductie.
+  </p>
+
+  <div class="formula-card">
+    <div class="formula-label">EMF de autoinductie</div>
+    <div class="formula-math">
+      $$ e_L = -L \cdot \frac{dI}{dt} $$
+    </div>
+    <div class="formula-desc">
+      <span>\( e_L \) — EMF de autoinductie (V)</span>
+      <span>\( L \) — inductanta bobinei (H)</span>
+      <span>\( \frac{dI}{dt} \) — rata de variatie a curentului (A/s)</span>
+    </div>
+  </div>
+
+  <p class="explain">
+    Semnul minus ne spune ca EMF-ul se opune intotdeauna schimbarii de curent:
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Situatia</th><th>Ce face \( L \)</th><th>Analogie</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Curentul <strong>creste</strong> (\( dI/dt > 0 \))</td>
+        <td>EMF negativ — se opune cresterii (franeaza)</td>
+        <td>Impingi un obiect greu — el rezista</td>
+      </tr>
+      <tr>
+        <td>Curentul <strong>scade</strong> (\( dI/dt < 0 \))</td>
+        <td>EMF pozitiv — sustine curentul (il mentine)</td>
+        <td>Opresti un obiect greu — el continua din inertie</td>
+      </tr>
+      <tr>
+        <td>Curentul <strong>constant</strong> (\( dI/dt = 0 \))</td>
+        <td>EMF = 0 — nu se intampla nimic</td>
+        <td>Obiectul merge cu viteza constanta</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="analogy">
+    <strong>Analogia cu volantul (flywheel):</strong> Gandeste-te la un volant mare si greu care se roteste. E greu sa-l pornesti (rezista la accelerare) si greu sa-l opresti (continua sa se roteasca din inertie). Un inductor face exact acelasi lucru cu curentul electric: stocheaza energie in campul magnetic si o elibereaza incet. Asta e de ce o bobina "nu lasa" curentul sa se schimbe brusc.
+  </div>
+
+  <div class="subsection">
+    <h3>Circuit cu inductor</h3>
+    <div class="diagram">
+      <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" style="max-width:450px;">
+        <!-- Battery -->
+        <line x1="50" y1="50" x2="50" y2="150" stroke="#e2e8f0" stroke-width="2"/>
+        <line x1="35" y1="70" x2="65" y2="70" stroke="#e2e8f0" stroke-width="3"/>
+        <line x1="42" y1="85" x2="58" y2="85" stroke="#e2e8f0" stroke-width="2"/>
+        <text x="25" y="80" fill="#fbbf24" font-size="11">+</text>
+        <text x="25" y="95" fill="#60a5fa" font-size="11">-</text>
+        <text x="20" y="115" fill="#94a3b8" font-size="10">&epsilon;</text>
+
+        <!-- Top wire -->
+        <line x1="50" y1="50" x2="250" y2="50" stroke="#e2e8f0" stroke-width="2"/>
+        <!-- Resistor -->
+        <rect x="120" y="38" width="60" height="24" rx="3" fill="none" stroke="#f87171" stroke-width="2"/>
+        <text x="150" y="30" text-anchor="middle" fill="#f87171" font-size="11">R</text>
+
+        <!-- Right wire down -->
+        <line x1="250" y1="50" x2="450" y2="50" stroke="#e2e8f0" stroke-width="2"/>
+        <line x1="450" y1="50" x2="450" y2="150" stroke="#e2e8f0" stroke-width="2"/>
+
+        <!-- Inductor on right side -->
+        <path d="M 450 80 Q 470 85, 470 95 Q 470 105, 450 110 Q 470 115, 470 125 Q 470 135, 450 140" fill="none" stroke="#a78bfa" stroke-width="2.5"/>
+        <text x="480" y="115" fill="#a78bfa" font-size="12" font-weight="bold">L</text>
+
+        <!-- Bottom wire -->
+        <line x1="50" y1="150" x2="450" y2="150" stroke="#e2e8f0" stroke-width="2"/>
+
+        <!-- Current arrow -->
+        <line x1="280" y1="50" x2="380" y2="50" stroke="#34d399" stroke-width="2" marker-end="url(#arrowGreen3)"/>
+        <text x="330" y="42" text-anchor="middle" fill="#34d399" font-size="11">I (creste)</text>
+
+        <!-- Self-induced EMF -->
+        <text x="405" y="115" fill="#fbbf24" font-size="10">e_L</text>
+        <line x1="420" y1="125" x2="420" y2="95" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrowYellow2)"/>
+        <text x="395" y="80" fill="#fbbf24" font-size="9">se opune</text>
+
+        <defs>
+          <marker id="arrowGreen3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#34d399"/>
+          </marker>
+          <marker id="arrowYellow2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#fbbf24"/>
+          </marker>
+        </defs>
+      </svg>
+      <div class="diagram-caption">Circuit RL: cand curentul I creste, inductorul L genereaza un EMF e_L care se opune cresterii.</div>
+    </div>
+  </div>
+
+  <div class="danger">
+    <strong>Pericol practic!</strong> Cand deconectezi un circuit cu inductanta mare, curentul incearca sa scada brusc la zero. Inductorul genereaza un EMF urias (L &middot; dI/dt e foarte mare cand dt e foarte mic), care poate produce scantei sau distruge componente. De aceea, circuitele cu inductori au intotdeauna diode de protectie.
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  SECTIUNEA 6: ENERGIA CAMPULUI MAGNETIC                        -->
+<!-- ============================================================ -->
+<section class="section" id="energie">
+  <div class="section-header">
+    <span class="section-num">2.6</span>
+    <h2>Energia campului magnetic</h2>
+  </div>
+
+  <p class="explain">
+    Un inductor parcurs de curent stocheaza energie in campul magnetic pe care il creeaza. Aceasta energie poate fi recuperata mai tarziu — exact ca un arc comprimat care stocheaza energie potentiala elastica.
+  </p>
+
+  <div class="formula-card">
+    <div class="formula-label">Energia stocata in inductor</div>
+    <div class="formula-math">
+      $$ W = \frac{1}{2} L I^2 $$
+    </div>
+    <div class="formula-desc">
+      <span>\( W \) — energia stocata (J, jouli)</span>
+      <span>\( L \) — inductanta (H)</span>
+      <span>\( I \) — curentul (A)</span>
+    </div>
+  </div>
+
+  <div class="key-concept">
+    <h4>Intuitie: O structura familiara</h4>
+    <p>Observa cat de frumos se potrivesc formulele de energie:</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Domeniu</th><th>Formula</th><th>"Inertie"</th><th>"Viteza"</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mecanica (energie cinetica)</td>
+        <td>\( W = \frac{1}{2} m v^2 \)</td>
+        <td>\( m \) (masa)</td>
+        <td>\( v \) (viteza)</td>
+      </tr>
+      <tr>
+        <td>Inductor (energie magnetica)</td>
+        <td>\( W = \frac{1}{2} L I^2 \)</td>
+        <td>\( L \) (inductanta)</td>
+        <td>\( I \) (curent)</td>
+      </tr>
+      <tr>
+        <td>Condensator (energie electrica)</td>
+        <td>\( W = \frac{1}{2} C U^2 \)</td>
+        <td>\( C \) (capacitate)</td>
+        <td>\( U \) (tensiune)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="analogy">
+    <strong>Aceeasi structura, trei domenii diferite:</strong> Energia e intotdeauna \( \frac{1}{2} \times \text{"inertie"} \times \text{"viteza"}^2 \). In mecanica, "inertia" e masa si "viteza" e viteza. La inductori, "inertia" e inductanta si "viteza" e curentul. La condensatoare, "inertia" e capacitatea si "viteza" e tensiunea. Fizica are o simetrie frumoasa!
+  </div>
+
+  <div class="subsection">
+    <h3>Derivarea formulei</h3>
+    <div class="derivation">
+      <h4>De unde vine \( W = \frac{1}{2}LI^2 \)?</h4>
+      <div class="deriv-step">
+        <span class="deriv-num">1</span>
+        <span>Puterea instantanee absorbita de inductor: \( P = e_L \cdot I = L \cdot \frac{dI}{dt} \cdot I \)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">2</span>
+        <span>Energia stocata = integral din putere: \( W = \int_0^I L \cdot I' \, dI' \)</span>
+      </div>
+      <div class="deriv-step">
+        <span class="deriv-num">3</span>
+        <span>Calculam integrala: \( W = L \cdot \frac{I'^2}{2} \Big|_0^I = \frac{1}{2}LI^2 \)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>Densitatea de energie magnetica</h3>
+    <p class="explain">
+      Energia nu e stocata "in inductor" — e stocata <strong>in campul magnetic insusi</strong>. Putem calcula cata energie exista per unitate de volum:
+    </p>
+    <div class="formula-card">
+      <div class="formula-label">Densitatea de energie magnetica</div>
+      <div class="formula-math">
+        $$ w = \frac{B^2}{2\mu_0} $$
+      </div>
+      <div class="formula-desc">
+        <span>\( w \) — densitatea de energie (J/m&sup3;)</span>
+        <span>\( B \) — inductia magnetica (T)</span>
+        <span>\( \mu_0 \) — permeabilitatea vidului</span>
+      </div>
+    </div>
+    <p class="explain">
+      Aceasta formula ne spune ca oriunde exista camp magnetic, exista energie stocata in acel camp. Cu cat campul e mai puternic, cu atat densitatea de energie e mai mare (proportional cu \( B^2 \)).
+    </p>
+  </div>
+
+  <div class="subsection">
+    <h3>Exemplu rezolvat</h3>
+    <div class="exercise">
+      <div class="exercise-header">
+        <span class="exercise-badge" style="background:var(--accent2);">EXEMPLU</span>
+        <h4>Energia stocata in bobina</h4>
+      </div>
+      <div class="exercise-body">
+        <div class="given">
+          O bobina cu inductanta <strong>L = 0,5 H</strong> este parcursa de un curent <strong>I = 3 A</strong>. Calculeaza energia stocata in campul magnetic.
+        </div>
+
+        <div class="step">
+          <div class="step-header">Pas 1: Identificam datele</div>
+          <div class="step-content">
+            <p>\( L = 0{,}5 \text{ H} \), \( I = 3 \text{ A} \)</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 2: Aplicam formula</div>
+          <div class="step-content">
+            <p>$$ W = \frac{1}{2} L I^2 = \frac{1}{2} \cdot 0{,}5 \cdot 3^2 $$</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-header">Pas 3: Calculam</div>
+          <div class="step-content">
+            <p>$$ W = \frac{1}{2} \cdot 0{,}5 \cdot 9 = 2{,}25 \text{ J} $$</p>
+            <p>Bobina stocheaza <strong>2,25 J</strong> de energie in campul magnetic.</p>
+          </div>
+        </div>
+        <button class="reveal-all-btn" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--accent2);">Arata toti pasii</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  SECTIUNEA 7: EXERCITII REZOLVATE                              -->
+<!-- ============================================================ -->
+<section class="section" id="exercitii">
+  <div class="section-header">
+    <span class="section-num">2.7</span>
+    <h2>Exercitii rezolvate</h2>
+  </div>
+
+  <p class="explain">
+    Acum sa punem totul in practica. Incearca mai intai sa rezolvi singur, apoi verifica pas cu pas. Click pe fiecare pas pentru a-l dezvalui.
+  </p>
+
+  <!-- Ex 1 -->
+  <div class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-badge" style="background:var(--accent2);">EX 1</span>
+      <h4>Flux prin bobina inclinata (usor)</h4>
+    </div>
+    <div class="exercise-body">
+      <div class="given">
+        O bobina circulara cu raza <strong>r = 5 cm</strong> si <strong>N = 100 spire</strong> se afla intr-un camp magnetic uniform \( B = 0{,}2 \text{ T} \). Normala la bobina face un unghi de <strong>30&deg;</strong> cu directia campului. Calculeaza fluxul magnetic total.
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 1: Calculam aria</div>
+        <div class="step-content">
+          <p>\( S = \pi r^2 = \pi \cdot (0{,}05)^2 = \pi \cdot 2{,}5 \times 10^{-3} = 7{,}854 \times 10^{-3} \text{ m}^2 \)</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 2: Aplicam formula fluxului total</div>
+        <div class="step-content">
+          <p>$$ \Phi_{\text{total}} = N \cdot B \cdot S \cdot \cos\alpha = 100 \cdot 0{,}2 \cdot 7{,}854 \times 10^{-3} \cdot \cos 30° $$</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 3: Calculam</div>
+        <div class="step-content">
+          <p>$$ \Phi_{\text{total}} = 100 \cdot 0{,}2 \cdot 7{,}854 \times 10^{-3} \cdot 0{,}866 = 0{,}136 \text{ Wb} $$</p>
+        </div>
+      </div>
+      <button class="reveal-all-btn" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--accent2);">Arata toti pasii</button>
+    </div>
+  </div>
+
+  <!-- Ex 2 -->
+  <div class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-badge" style="background:var(--accent2);">EX 2</span>
+      <h4>EMF din variatie de camp magnetic (usor)</h4>
+    </div>
+    <div class="exercise-body">
+      <div class="given">
+        O bobina cu <strong>N = 200 spire</strong> si aria \( S = 50 \text{ cm}^2 \) se afla intr-un camp magnetic perpendicular pe bobina. Campul creste uniform de la <strong>0,1 T</strong> la <strong>0,5 T</strong> in <strong>0,4 s</strong>. Calculeaza EMF-ul mediu indus.
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 1: Convertim unitatile</div>
+        <div class="step-content">
+          <p>\( S = 50 \text{ cm}^2 = 50 \times 10^{-4} \text{ m}^2 = 5 \times 10^{-3} \text{ m}^2 \)</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 2: Calculam variatia fluxului per spira</div>
+        <div class="step-content">
+          <p>Campul e perpendicular pe bobina, deci \( \alpha = 0° \) si \( \cos\alpha = 1 \).</p>
+          <p>$$ \Delta\Phi = S \cdot \Delta B = 5 \times 10^{-3} \cdot (0{,}5 - 0{,}1) = 5 \times 10^{-3} \cdot 0{,}4 = 2 \times 10^{-3} \text{ Wb} $$</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 3: Aplicam legea lui Faraday</div>
+        <div class="step-content">
+          <p>$$ |e| = N \cdot \frac{|\Delta\Phi|}{\Delta t} = 200 \cdot \frac{2 \times 10^{-3}}{0{,}4} = 200 \cdot 5 \times 10^{-3} = 1 \text{ V} $$</p>
+        </div>
+      </div>
+      <button class="reveal-all-btn" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--accent2);">Arata toti pasii</button>
+    </div>
+  </div>
+
+  <!-- Ex 3 -->
+  <div class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-badge" style="background:var(--accent2);">EX 3</span>
+      <h4>Directia curentului indus — Legea lui Lenz (mediu)</h4>
+    </div>
+    <div class="exercise-body">
+      <div class="given">
+        Un magnet cu polul Nord in fata se departeaza de o bobina. Campul magnetic prin bobina e orientat spre stanga (dinspre magnet spre bobina). Determina sensul curentului indus in bobina (privind dinspre magnet).
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 1: Analizam variatia fluxului</div>
+        <div class="step-content">
+          <p>Magnetul se departeaza, deci campul prin bobina <strong>scade</strong>. Fluxul scade.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 2: Aplicam Legea lui Lenz</div>
+        <div class="step-content">
+          <p>Conform Lenz, curentul indus trebuie sa <strong>se opuna scaderii fluxului</strong>. Deci curentul indus va crea un camp magnetic in <strong>acelasi sens</strong> cu campul exterior (spre stanga, adica spre magnet), incercand sa mentina fluxul.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 3: Determinam sensul curentului</div>
+        <div class="step-content">
+          <p>Ca sa creeze un camp spre stanga (spre magnet), aplicand regula mainii drepte: curentul circula in <strong>sens trigonometric</strong> (anti-orar) privind dinspre magnet. Bobina se comporta ca un electromagnet care incearca sa "atraga" magnetul inapoi.</p>
+        </div>
+      </div>
+      <button class="reveal-all-btn" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--accent2);">Arata toti pasii</button>
+    </div>
+  </div>
+
+  <!-- Ex 4 -->
+  <div class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-badge" style="background:var(--accent2);">EX 4</span>
+      <h4>Inductanta solenoidului cu miez (mediu)</h4>
+    </div>
+    <div class="exercise-body">
+      <div class="given">
+        Un solenoid are <strong>N = 500 spire</strong>, lungimea <strong>&ell; = 25 cm</strong>, raza sectiunii <strong>r = 2 cm</strong>, si un miez cu permeabilitate relativa \( \mu_r = 200 \). Calculeaza inductanta.
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 1: Convertim unitatile</div>
+        <div class="step-content">
+          <p>\( \ell = 0{,}25 \text{ m} \), \( r = 0{,}02 \text{ m} \)</p>
+          <p>\( S = \pi r^2 = \pi \cdot (0{,}02)^2 = 1{,}257 \times 10^{-3} \text{ m}^2 \)</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 2: Aplicam formula cu miez</div>
+        <div class="step-content">
+          <p>$$ L = \frac{\mu_0 \cdot \mu_r \cdot N^2 \cdot S}{\ell} = \frac{4\pi \times 10^{-7} \cdot 200 \cdot 500^2 \cdot 1{,}257 \times 10^{-3}}{0{,}25} $$</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 3: Calculam</div>
+        <div class="step-content">
+          <p>Numarator: \( 4\pi \times 10^{-7} \cdot 200 \cdot 250000 \cdot 1{,}257 \times 10^{-3} \)</p>
+          <p>\( = 4\pi \times 10^{-7} \cdot 200 \cdot 250000 \cdot 1{,}257 \times 10^{-3} \)</p>
+          <p>\( = 4\pi \times 10^{-7} \cdot 6{,}285 \times 10^{4} = 4\pi \cdot 6{,}285 \times 10^{-3} \)</p>
+          <p>\( = 7{,}896 \times 10^{-2} \)</p>
+          <p>$$ L = \frac{7{,}896 \times 10^{-2}}{0{,}25} \approx 0{,}316 \text{ H} = 316 \text{ mH} $$</p>
+          <p>Observa cat de mare e inductanta datorita miezului feromagnetic! Fara miez ar fi de 200 ori mai mica.</p>
+        </div>
+      </div>
+      <button class="reveal-all-btn" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--accent2);">Arata toti pasii</button>
+    </div>
+  </div>
+
+  <!-- Ex 5 -->
+  <div class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-badge" style="background:var(--accent2);">EX 5</span>
+      <h4>EMF de autoinductie (mediu)</h4>
+    </div>
+    <div class="exercise-body">
+      <div class="given">
+        O bobina cu inductanta <strong>L = 0,2 H</strong> este parcursa de un curent care creste uniform de la <strong>1 A</strong> la <strong>5 A</strong> in <strong>0,1 s</strong>. Calculeaza EMF-ul de autoinductie.
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 1: Calculam rata de variatie a curentului</div>
+        <div class="step-content">
+          <p>$$ \frac{dI}{dt} = \frac{\Delta I}{\Delta t} = \frac{5 - 1}{0{,}1} = \frac{4}{0{,}1} = 40 \text{ A/s} $$</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 2: Aplicam formula</div>
+        <div class="step-content">
+          <p>$$ |e_L| = L \cdot \frac{dI}{dt} = 0{,}2 \cdot 40 = 8 \text{ V} $$</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 3: Interpretam semnul</div>
+        <div class="step-content">
+          <p>EMF-ul de autoinductie este \( e_L = -8 \text{ V} \). Semnul negativ ne spune ca EMF-ul se opune cresterii curentului. Valoarea absoluta este <strong>8 V</strong>.</p>
+        </div>
+      </div>
+      <button class="reveal-all-btn" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--accent2);">Arata toti pasii</button>
+    </div>
+  </div>
+
+  <!-- Ex 6 -->
+  <div class="exercise">
+    <div class="exercise-header">
+      <span class="exercise-badge" style="background:var(--accent2);">EX 6</span>
+      <h4>Energie stocata — problema combinata (greu)</h4>
+    </div>
+    <div class="exercise-body">
+      <div class="given">
+        Un solenoid cu <strong>N = 800 spire</strong>, lungime <strong>&ell; = 40 cm</strong> si arie a sectiunii <strong>S = 5 cm&sup2;</strong> (miez de aer) este parcurs de un curent <strong>I = 2 A</strong>. Calculeaza: a) inductanta, b) energia stocata, c) densitatea de energie magnetica din interior.
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 1: Convertim unitatile</div>
+        <div class="step-content">
+          <p>\( \ell = 0{,}4 \text{ m} \), \( S = 5 \times 10^{-4} \text{ m}^2 \)</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 2: Calculam inductanta</div>
+        <div class="step-content">
+          <p>$$ L = \frac{\mu_0 N^2 S}{\ell} = \frac{4\pi \times 10^{-7} \cdot 800^2 \cdot 5 \times 10^{-4}}{0{,}4} $$</p>
+          <p>$$ L = \frac{4\pi \times 10^{-7} \cdot 640000 \cdot 5 \times 10^{-4}}{0{,}4} = \frac{4\pi \times 10^{-7} \cdot 320}{0{,}4} $$</p>
+          <p>$$ L = \frac{4\pi \times 3{,}2 \times 10^{-5}}{0{,}4} = 4\pi \times 8 \times 10^{-5} = 32\pi \times 10^{-5} $$</p>
+          <p>$$ L \approx 1{,}005 \times 10^{-3} \text{ H} \approx 1 \text{ mH} $$</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 3: Calculam energia stocata</div>
+        <div class="step-content">
+          <p>$$ W = \frac{1}{2}LI^2 = \frac{1}{2} \cdot 1{,}005 \times 10^{-3} \cdot 2^2 = \frac{1}{2} \cdot 1{,}005 \times 10^{-3} \cdot 4 $$</p>
+          <p>$$ W \approx 2{,}01 \times 10^{-3} \text{ J} \approx 2 \text{ mJ} $$</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-header">Pas 4: Calculam densitatea de energie</div>
+        <div class="step-content">
+          <p>Mai intai calculam B in solenoid: \( B = \mu_0 \cdot \frac{N}{\ell} \cdot I = 4\pi \times 10^{-7} \cdot \frac{800}{0{,}4} \cdot 2 = 4\pi \times 10^{-7} \cdot 4000 \)</p>
+          <p>\( B = 16\pi \times 10^{-4} \approx 5{,}027 \times 10^{-3} \text{ T} \)</p>
+          <p>$$ w = \frac{B^2}{2\mu_0} = \frac{(5{,}027 \times 10^{-3})^2}{2 \cdot 4\pi \times 10^{-7}} = \frac{2{,}527 \times 10^{-5}}{8\pi \times 10^{-7}} $$</p>
+          <p>$$ w \approx 10{,}05 \text{ J/m}^3 $$</p>
+          <p><em>Verificare:</em> \( W = w \cdot V = w \cdot S \cdot \ell = 10{,}05 \cdot 5 \times 10^{-4} \cdot 0{,}4 = 2{,}01 \times 10^{-3} \text{ J} \). Confirmat!</p>
+        </div>
+      </div>
+      <button class="reveal-all-btn" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:var(--accent2);">Arata toti pasii</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  SECTIUNEA 8: GRESELI COMUNE                                  -->
+<!-- ============================================================ -->
+<section class="section" id="greseli">
+  <div class="section-header">
+    <span class="section-num">2.8</span>
+    <h2>Greseli comune</h2>
+  </div>
+
+  <div class="mistakes-section">
+    <h3>Greseli frecvente la acest capitol</h3>
+
+    <div class="mistake-item">
+      <div class="wrong-way">Gresit: Se uita semnul minus in legea lui Faraday: \( e = \frac{d\Phi}{dt} \)</div>
+      <div class="right-way">Corect: \( e = -\frac{d\Phi}{dt} \). Semnul minus e Legea lui Lenz si determina sensul curentului indus. Chiar daca in unele probleme se cere doar modulul, semnul are semnificatie fizica importanta.</div>
+    </div>
+
+    <div class="mistake-item">
+      <div class="wrong-way">Gresit: Se foloseste \( \Phi = B \cdot S \) in toate situatiile, ignorand unghiul.</div>
+      <div class="right-way">Corect: \( \Phi = B \cdot S \cdot \cos\alpha \). Formula \( \Phi = BS \) e valabila DOAR cand campul e perpendicular pe suprafata (\( \alpha = 0° \)). In toate celelalte cazuri, trebuie inclus \( \cos\alpha \).</div>
+    </div>
+
+    <div class="mistake-item">
+      <div class="wrong-way">Gresit: Se foloseste N = 1 cand bobina are mai multe spire.</div>
+      <div class="right-way">Corect: Intotdeauna verifica numarul de spire! Fluxul total e \( N \cdot B \cdot S \cdot \cos\alpha \), iar EMF-ul e \( -N \cdot \frac{d\Phi}{dt} \). Uita de N si obtii un rezultat de N ori mai mic.</div>
+    </div>
+
+    <div class="mistake-item">
+      <div class="wrong-way">Gresit: In formula inductantei solenoidului se foloseste \( N \) in loc de \( N^2 \).</div>
+      <div class="right-way">Corect: \( L = \frac{\mu_0 N^2 S}{\ell} \). E \( N^2 \), nu \( N \)! Campul B e proportional cu N, iar fluxul total e proportional cu N &times; B, deci cu \( N^2 \).</div>
+    </div>
+
+    <div class="mistake-item">
+      <div class="wrong-way">Gresit: Nu se convertesc unitatile: "aria e 10 cm&sup2;, deci S = 10".</div>
+      <div class="right-way">Corect: Intotdeauna converteste in unitati SI inainte de calcul! \( 10 \text{ cm}^2 = 10 \times 10^{-4} \text{ m}^2 = 10^{-3} \text{ m}^2 \). Acelasi lucru pentru cm in metri, mm in metri, etc. Aceasta e sursa #1 de erori numerice.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  SECTIUNEA 9: QUIZ INTERACTIV                                  -->
+<!-- ============================================================ -->
+<section class="section" id="quiz">
+  <div class="section-header">
+    <span class="section-num">2.9</span>
+    <h2>Quiz interactiv</h2>
+  </div>
+
+  <p class="explain">
+    Testeaza-ti cunostintele! Ai 10 intrebari din tot capitolul. Foloseste butoanele de indiciu daca te blochezi.
+  </p>
+
+  <div class="quiz-container" id="quiz-m2"></div>
+</section>
+
+</div><!-- .m2 -->
+</div><!-- .main-content -->
+
+<footer class="footer">
+  Fizica Interactiva — Modul 2: Faraday &amp; Inductanta &middot; Teorie + Exemple + Quiz
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../js/quiz.js"></script>
+<script src="../js/progress.js"></script>
+<script src="../js/math-init.js"></script>
+
+<script>
+// ===== QUIZ DATA =====
+quizInstances['quiz-m2'] = new Quiz('quiz-m2', [
+  {
+    type: 'numeric',
+    text: 'O bobina dreptunghiulara cu aria \\( S = 40 \\text{ cm}^2 \\) se afla intr-un camp magnetic uniform \\( B = 0{,}5 \\text{ T} \\). Normala la bobina face un unghi de \\( 60° \\) cu directia campului. Calculeaza fluxul magnetic (in mWb).',
+    correct: 1,
+    unit: 'mWb',
+    tolerance: 0.05,
+    explanation: 'Φ = B·S·cosα = 0,5 · 40×10⁻⁴ · cos60° = 0,5 · 0,004 · 0,5 = 0,001 Wb = 1 mWb.',
+    hints: [
+      'Converteste aria in m²: 40 cm² = 40 × 10⁻⁴ m².',
+      'Formula: \\( \\Phi = B \\cdot S \\cdot \\cos\\alpha \\)'
+    ],
+    solution: '<strong>Rezolvare completa:</strong><br>\\( S = 40 \\text{ cm}^2 = 40 \\times 10^{-4} \\text{ m}^2 = 4 \\times 10^{-3} \\text{ m}^2 \\)<br>\\( \\Phi = B \\cdot S \\cdot \\cos\\alpha = 0{,}5 \\cdot 4 \\times 10^{-3} \\cdot \\cos 60° = 0{,}5 \\cdot 4 \\times 10^{-3} \\cdot 0{,}5 \\)<br>\\( \\Phi = 1 \\times 10^{-3} \\text{ Wb} = 1 \\text{ mWb} \\)'
+  },
+  {
+    type: 'numeric',
+    text: 'Fluxul magnetic prin o bobina cu 100 de spire scade uniform de la 0,3 Wb la 0,1 Wb in 0,5 s. Calculeaza modulul EMF-ului mediu indus (in V).',
+    correct: 40,
+    unit: 'V',
+    tolerance: 0.02,
+    explanation: '|e| = N · |ΔΦ/Δt| = 100 · |(-0,2)/0,5| = 100 · 0,4 = 40 V.',
+    hints: [
+      'Calculeaza ΔΦ = Φ_final - Φ_initial.',
+      'Formula: \\( |e| = N \\cdot \\frac{|\\Delta\\Phi|}{\\Delta t} \\)'
+    ],
+    solution: '<strong>Rezolvare completa:</strong><br>\\( \\Delta\\Phi = 0{,}1 - 0{,}3 = -0{,}2 \\text{ Wb} \\)<br>\\( |e| = N \\cdot \\frac{|\\Delta\\Phi|}{\\Delta t} = 100 \\cdot \\frac{0{,}2}{0{,}5} = 100 \\cdot 0{,}4 = 40 \\text{ V} \\)'
+  },
+  {
+    type: 'mc',
+    text: 'Un magnet cu polul Nord in fata se apropie de o bobina. Conform legii lui Lenz, curentul indus in bobina va crea un camp magnetic care:',
+    options: [
+      'Atrage magnetul spre bobina (accelereaza apropierea)',
+      'Respinge magnetul (se opune apropierii)',
+      'Nu are efect asupra magnetului',
+      'Roteste magnetul cu 90°'
+    ],
+    correct: 1,
+    explanation: 'Legea lui Lenz: curentul indus se opune cauzei. Cauza = apropierea magnetului, deci curentul indus creeaza un camp care respinge magnetul.',
+    hints: [
+      'Gandeste-te: ce ar insemna "se opune schimbarii"?',
+      'Daca magnetul se apropie, fluxul creste. Curentul indus trebuie sa reduca fluxul.'
+    ],
+    solution: '<strong>Rationament:</strong><br>1. Magnetul se apropie → fluxul prin bobina <strong>creste</strong>.<br>2. Lenz: curentul indus se opune cresterii fluxului.<br>3. Ca sa reduca fluxul, bobina creeaza un camp opus campului magnetului.<br>4. Un camp opus = polul Nord al bobinei spre polul Nord al magnetului = <strong>respingere</strong>.'
+  },
+  {
+    type: 'numeric',
+    text: 'Un solenoid cu 600 de spire, lungime 30 cm si aria sectiunii transversale 8 cm² are miez de aer. Calculeaza inductanta (in mH). Foloseste \\( \\mu_0 = 4\\pi \\times 10^{-7} \\text{ H/m} \\).',
+    correct: 1.206,
+    unit: 'mH',
+    tolerance: 0.05,
+    explanation: 'L = μ₀N²S/ℓ = 4π×10⁻⁷ · 360000 · 8×10⁻⁴ / 0,3 ≈ 1,206 mH.',
+    hints: [
+      'Converteste: ℓ = 0,3 m, S = 8×10⁻⁴ m².',
+      'Formula: \\( L = \\frac{\\mu_0 N^2 S}{\\ell} \\). Atentie: e \\( N^2 \\), nu \\( N \\)!'
+    ],
+    solution: '<strong>Rezolvare completa:</strong><br>\\( \\ell = 0{,}3 \\text{ m}, \\quad S = 8 \\times 10^{-4} \\text{ m}^2 \\)<br>\\( L = \\frac{4\\pi \\times 10^{-7} \\cdot 600^2 \\cdot 8 \\times 10^{-4}}{0{,}3} \\)<br>\\( = \\frac{4\\pi \\times 10^{-7} \\cdot 360000 \\cdot 8 \\times 10^{-4}}{0{,}3} \\)<br>\\( = \\frac{4\\pi \\times 2{,}88 \\times 10^{-4}}{0{,}3} = \\frac{3{,}619 \\times 10^{-4}}{0{,}3} \\)<br>\\( \\approx 1{,}206 \\times 10^{-3} \\text{ H} = 1{,}206 \\text{ mH} \\)'
+  },
+  {
+    type: 'numeric',
+    text: 'O bobina cu inductanta L = 0,4 H este parcursa de un curent care scade de la 6 A la 2 A in 0,05 s. Calculeaza modulul EMF-ului de autoinductie (in V).',
+    correct: 32,
+    unit: 'V',
+    tolerance: 0.02,
+    explanation: '|e_L| = L · |dI/dt| = 0,4 · |(2-6)/0,05| = 0,4 · 80 = 32 V.',
+    hints: [
+      'Calculeaza rata de variatie: dI/dt = ΔI/Δt.',
+      'Formula: \\( |e_L| = L \\cdot \\left|\\frac{dI}{dt}\\right| \\)'
+    ],
+    solution: '<strong>Rezolvare completa:</strong><br>\\( \\frac{dI}{dt} = \\frac{2 - 6}{0{,}05} = \\frac{-4}{0{,}05} = -80 \\text{ A/s} \\)<br>\\( |e_L| = L \\cdot \\left|\\frac{dI}{dt}\\right| = 0{,}4 \\cdot 80 = 32 \\text{ V} \\)'
+  },
+  {
+    type: 'numeric',
+    text: 'O bobina cu inductanta L = 2 H este parcursa de un curent I = 4 A. Calculeaza energia stocata in campul magnetic (in J).',
+    correct: 16,
+    unit: 'J',
+    tolerance: 0.02,
+    explanation: 'W = ½LI² = ½ · 2 · 16 = 16 J.',
+    hints: [
+      'Formula energiei stocate in inductor.',
+      '\\( W = \\frac{1}{2} L I^2 \\)'
+    ],
+    solution: '<strong>Rezolvare completa:</strong><br>\\( W = \\frac{1}{2} L I^2 = \\frac{1}{2} \\cdot 2 \\cdot 4^2 = \\frac{1}{2} \\cdot 2 \\cdot 16 = 16 \\text{ J} \\)'
+  },
+  {
+    type: 'mc',
+    text: 'Care afirmatie despre inductanta L a unui solenoid este CORECTA?',
+    options: [
+      'L depinde de curentul care parcurge solenoidul',
+      'L depinde doar de geometria solenoidului si de materialul miezului',
+      'L creste cand curentul creste',
+      'L se masoara in Weber'
+    ],
+    correct: 1,
+    explanation: 'Inductanta e o proprietate geometrica si materiala. L = μ₀μᵣN²S/ℓ — nu depinde de curent! Se masoara in Henry, nu Weber.',
+    hints: [
+      'Uita-te la formula inductantei solenoidului. Apare I acolo?',
+      '\\( L = \\frac{\\mu_0 \\mu_r N^2 S}{\\ell} \\) — care variabile apar?'
+    ],
+    solution: '<strong>Rationament:</strong><br>Formula \\( L = \\frac{\\mu_0 \\mu_r N^2 S}{\\ell} \\) contine doar:<br>- \\( \\mu_0, \\mu_r \\) — proprietati ale materialului<br>- \\( N, S, \\ell \\) — proprietati geometrice<br><strong>Curentul I nu apare</strong>. L e o constanta a bobinei, nu depinde de curent.'
+  },
+  {
+    type: 'mc',
+    text: 'Ce se intampla cu EMF-ul de autoinductie cand curentul prin inductor este constant?',
+    options: [
+      'EMF-ul e maxim',
+      'EMF-ul e egal cu L · I',
+      'EMF-ul este zero',
+      'EMF-ul depinde de valoarea curentului'
+    ],
+    correct: 2,
+    explanation: 'e_L = -L · dI/dt. Daca I = constant, atunci dI/dt = 0, deci e_L = 0. Inductorul se opune schimbarilor de curent, nu curentului in sine.',
+    hints: [
+      'Gandeste-te: autoinductia depinde de variatie, nu de valoare.',
+      '\\( e_L = -L \\cdot \\frac{dI}{dt} \\). Ce se intampla cand \\( \\frac{dI}{dt} = 0 \\)?'
+    ],
+    solution: '<strong>Rationament:</strong><br>\\( e_L = -L \\cdot \\frac{dI}{dt} \\)<br>Daca curentul e constant: \\( \\frac{dI}{dt} = 0 \\)<br>\\( e_L = -L \\cdot 0 = 0 \\)<br>Inductorul nu face nimic cand curentul e stabil — se opune doar <strong>schimbarilor</strong>.'
+  },
+  {
+    type: 'mc',
+    text: 'Fluxul magnetic prin o bobina cu o singura spira este \\( \\Phi = 0{,}02 \\text{ Wb} \\) cand curentul este \\( I = 4 \\text{ A} \\). Inductanta bobinei este:',
+    options: [
+      '0,005 H',
+      '0,08 H',
+      '0,5 H',
+      '5 mH'
+    ],
+    correct: 0,
+    explanation: 'L = Φ/I = 0,02/4 = 0,005 H = 5 mH. Raspunsurile A si D sunt echivalente, dar A e raspunsul exact in unitati SI.',
+    hints: [
+      'Din definitia inductantei: L = Φ/I.',
+      'Calculeaza direct: \\( L = \\frac{0{,}02}{4} \\)'
+    ],
+    solution: '<strong>Rezolvare:</strong><br>\\( L = \\frac{\\Phi}{I} = \\frac{0{,}02 \\text{ Wb}}{4 \\text{ A}} = 0{,}005 \\text{ H} = 5 \\text{ mH} \\)'
+  },
+  {
+    type: 'mc',
+    text: 'Compara energia stocata in doi inductori: inductorul A are \\( L = 1 \\text{ H}, I = 2 \\text{ A} \\) si inductorul B are \\( L = 4 \\text{ H}, I = 1 \\text{ A} \\). Care stocheaza mai multa energie?',
+    options: [
+      'Inductorul A stocheaza mai multa',
+      'Inductorul B stocheaza mai multa',
+      'Stocheaza energie egala',
+      'Nu se poate compara fara alte date'
+    ],
+    correct: 2,
+    explanation: 'W_A = ½·1·4 = 2 J. W_B = ½·4·1 = 2 J. Stocheaza energie egala!',
+    hints: [
+      'Calculeaza energia fiecaruia: W = ½LI².',
+      'W_A = ½ · 1 · 2² = ? ; W_B = ½ · 4 · 1² = ?'
+    ],
+    solution: '<strong>Rezolvare:</strong><br>\\( W_A = \\frac{1}{2} \\cdot 1 \\cdot 2^2 = \\frac{1}{2} \\cdot 4 = 2 \\text{ J} \\)<br>\\( W_B = \\frac{1}{2} \\cdot 4 \\cdot 1^2 = \\frac{1}{2} \\cdot 4 = 2 \\text{ J} \\)<br>Ambii inductori stocheaza <strong>aceeasi energie: 2 J</strong>.'
+  }
+], 'var(--accent2)');
+</script>
+
+</body>
+</html>
